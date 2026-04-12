@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Affirmations — Neuer Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/nav.css">
+<link rel="stylesheet" href="assets/css/sections.css">
+<link rel="stylesheet" href="assets/css/affirmations.css">
+</head>
+<body class="aff-page">
+
+<!-- ═══════════════════════════════════════════════════════════════
+     AFFIRMATIONS
+═══════════════════════════════════════════════════════════════ -->
+<section id="affirmations">
+  <div class="aff-inner">
+    <div class="aff-blob aff-blob-1"></div>
+    <div class="aff-blob aff-blob-2"></div>
+    <div class="aff-blob aff-blob-3"></div>
+
+    <header class="aff-header">
+      <div class="aff-eyebrow">Daily Practice</div>
+      <h2 class="aff-title">I <em>love</em> and approve<br>of myself</h2>
+      <p class="aff-subtitle">50 affirmations by Louise L. Hay</p>
+    </header>
+
+    <div class="aff-date" id="affDate"></div>
+
+    <div class="aff-card-wrap">
+      <div class="aff-card" id="affCard">
+        <div class="aff-card-num" id="affNum">01 / 50</div>
+        <div class="aff-text" id="affText"></div>
+        <div class="aff-cat" id="affCat"></div>
+      </div>
+      <div class="aff-dots" id="affDots"></div>
+    </div>
+
+    <div class="aff-controls">
+      <button class="aff-btn" onclick="affNav(-1)">← Prev</button>
+      <button class="aff-btn aff-btn-primary" onclick="affRandom()">Inspire Me</button>
+      <button class="aff-fav" id="affFav" onclick="affToggleFav()">♡</button>
+      <button class="aff-btn" onclick="affNav(1)">Next →</button>
+    </div>
+
+    <div class="aff-daily">
+      <div class="aff-daily-label">Today's set</div>
+      <div class="aff-mini-grid" id="affMini"></div>
+    </div>
+
+    <div class="aff-ornament">✦</div>
+
+    <div class="aff-foot">
+      <div class="aff-foot-powered">A feature by <span>Neuer Lab</span></div>
+      <div class="aff-foot-credit">Affirmations by Louise L. Hay</div>
+    </div>
+  </div>
+</section>
+
+<script src="assets/js/navbar.js"></script>
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/affirmations.js"></script>
+<script src="assets/js/footer.js"></script>
+</body>
+</html>
