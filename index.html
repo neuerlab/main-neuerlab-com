@@ -9,10 +9,69 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/base.css">
 <link rel="stylesheet" href="assets/css/nav.css">
-<link rel="stylesheet" href="assets/css/hero.css">
+<link rel="stylesheet" href="assets/css/footer.css?v=2">
+<link rel="stylesheet" href="assets/css/logo.css">
+<link rel="stylesheet" href="assets/css/hero.css?v=2">
 <link rel="stylesheet" href="assets/css/sections.css">
+<link rel="stylesheet" href="assets/css/journal.css">
+<style>
+/* ─── card symbols ─── */
+.card-vis-geo{position:absolute;right:-10px;bottom:-10px;width:140px;height:140px;opacity:.14;pointer-events:none;fill:none;stroke:#C9A96E}
+
+/* ─── mission enhancements ─── */
+.mission-sub{margin-top:20px;font-family:var(--fd);font-size:.97rem;line-height:1.9;color:rgba(106,74,64,.65)}
+.mission-quote{margin:68px auto 0;max-width:700px;text-align:center;padding:44px 0;border-top:1px solid rgba(184,104,90,.14);border-bottom:1px solid rgba(184,104,90,.14)}
+.mission-quote p{font-family:var(--fd);font-size:clamp(1.25rem,2.4vw,1.85rem);font-weight:300;font-style:italic;line-height:1.55;color:var(--espresso);margin:0}
+.mission-quote p em{color:var(--gold);font-style:italic}
+#mission .mission-manifesto{grid-template-columns:repeat(2,1fr);margin-top:68px}
+.manifesto-title{font-family:var(--fs);font-size:.48rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.manifesto-item{padding:32px 28px}
+.manifesto-item .manifesto-num{font-family:var(--fd);font-size:2rem;font-weight:300;color:rgba(184,104,90,.18);line-height:1;margin-bottom:12px}
+.manifesto-item .manifesto-text{font-family:var(--fd);font-size:.97rem;line-height:1.75;color:var(--cocoa)}
+@media(max-width:900px){#mission .mission-manifesto{grid-template-columns:1fr}.mission-quote{margin-top:48px;padding:32px 0}}
+
+/* ─── section rhythm: petal → blush → warm umber → white → rose gradient ─── */
+#journal-teaser{background:linear-gradient(160deg,#A85E50 0%,#C07868 50%,#CC8C7A 100%)}
+#journal-teaser .section-header .label{color:rgba(201,169,110,.7)}
+#journal-teaser .section-header h2{color:var(--cream)}
+#journal-teaser .section-header h2 em{color:var(--gold)}
+#journal-teaser .journal-all .btn-outline{color:var(--gold);border-color:rgba(201,169,110,.45)}
+#journal-teaser .journal-all .btn-outline:hover{background:var(--gold);color:var(--espresso)}
+#affirmation-teaser{background:#ffffff}
+/* ─── pathways featured box ─── */
+.offering-featured{background:linear-gradient(135deg,#7A3A28 0%,#A85840 50%,#C07050 100%) !important}
+/* ─── contact: option D ─── */
+#contact{background:linear-gradient(160deg,#3D1A14 0%,#8B4A42 50%,#C08878 100%) !important}
+</style>
 </head>
 <body>
+
+<!-- ─── NAV ──────────────────────────────────────────────────────── -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo" id="navLogo">
+    <span class="nav-logo-name">Neuer Lab</span>
+    <span class="nav-logo-sub">Mindset · Spirituality · Longevity</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#mission">Mission</a></li>
+    <li><a href="#offerings">Pathways</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="journal.html">Journal</a></li>
+    <li><a href="#contact">Connect</a></li>
+    <li><a href="affirmations.html" class="nav-aff-link">✦ Affirmations</a></li>
+  </ul>
+  <button class="nav-burger" id="navBurger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-drawer" id="navDrawer">
+  <a href="#mission">Mission</a>
+  <a href="#offerings">Pathways</a>
+  <a href="about.html">About</a>
+  <a href="journal.html">Journal</a>
+  <a href="#contact">Connect</a>
+  <a href="affirmations.html" class="nav-aff-link">✦ Affirmations</a>
+</div>
 
 <!-- ═══════════════════════════════════════════════════════════════
      HERO
@@ -59,75 +118,188 @@
   <div class="section-inner">
     <div class="mission-block reveal">
       <span class="label">Mission</span>
-      <h2>Bridging science &amp; spirit<br><em>for a new era of well-being.</em></h2>
-      <p>The Neuer Lab exists to unite ancient spiritual wisdom with cutting-edge approaches to health, longevity, and inner transformation. True well-being begins when biology and spirit meet — when high-tech becomes high-consciousness.</p>
+      <h2>A sanctuary where science<br><em>remembers the soul.</em></h2>
+      <p>The Neuer Lab exists to bridge ancient spiritual wisdom with cutting-edge approaches to health, longevity, and inner transformation — guiding individuals back to inner clarity, emotional balance, and a deeply connected way of living.</p>
+      <p class="mission-sub">We are at the threshold of a new era. One where health is no longer treated as a set of symptoms, and longevity is not merely a matter of extending years. True well-being begins when biology and spirit meet — and when the future of science remembers the ancient intelligence of the soul.</p>
     </div>
+
+    <blockquote class="mission-quote reveal">
+      <p>"The future of healthcare is not just high-tech.<br><em>It's high-consciousness.</em>"</p>
+    </blockquote>
+
     <div class="mission-manifesto reveal">
-      <div class="manifesto-item"><div class="manifesto-num">01</div><div class="manifesto-text">Respects data, and reveres the soul.</div></div>
-      <div class="manifesto-item"><div class="manifesto-num">02</div><div class="manifesto-text">Builds technology, and honors mystery.</div></div>
-      <div class="manifesto-item"><div class="manifesto-num">03</div><div class="manifesto-text">High-tech and high-consciousness — united.</div></div>
+      <div class="manifesto-item">
+        <div class="manifesto-num">01</div>
+        <div class="manifesto-title">Ancient &amp; Modern</div>
+        <div class="manifesto-text">Our ancestors knew. Our technology remembers. Neuer Lab unites them into a living practice for the present.</div>
+      </div>
+      <div class="manifesto-item">
+        <div class="manifesto-num">02</div>
+        <div class="manifesto-title">Whole-Being Health</div>
+        <div class="manifesto-text">Body, mind, energy, spirit — true well-being begins only when all four dimensions are seen and supported.</div>
+      </div>
+      <div class="manifesto-item">
+        <div class="manifesto-num">03</div>
+        <div class="manifesto-title">Meaningful Longevity</div>
+        <div class="manifesto-text">Not just more years, but years lived with clarity, purpose, and deep inner connection. A new model of a healthy life.</div>
+      </div>
+      <div class="manifesto-item">
+        <div class="manifesto-num">04</div>
+        <div class="manifesto-title">Data &amp; Soul</div>
+        <div class="manifesto-text">A path that respects data and reveres the soul — that builds with technology and still honors the mystery within.</div>
+      </div>
+    </div>
+
+    <div class="mission-cta reveal">
+      <a href="#offerings" class="btn">Discover Your Path</a>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════
-     OFFERINGS
+     PATHWAYS
 ═══════════════════════════════════════════════════════════════ -->
 <section id="offerings">
   <div class="section-inner">
     <div class="section-header reveal">
-      <span class="label">Offerings</span>
-      <h2>How I Can <em>Support You</em></h2>
+      <span class="label">Pathways</span>
+      <h2>Find Your <em>Path Forward</em></h2>
     </div>
     <div class="offering-featured reveal">
       <div class="offering-featured-inner">
         <div class="offering-tag">The Natural First Step</div>
         <div class="offering-title">Free Intro Call</div>
         <p>A conversation about your intentions and needs. No commitment — just an open, honest dialogue to see how we align.</p>
-        <a href="https://calendar.app.google/biqbVJuuzFLTgKoy7" target="_blank" class="offering-cta">Book your call</a>
+        <a href="https://calendar.app.google/biqbVJuuzFLTgKoy7" target="_blank" class="offering-cta">Begin here</a>
+        <a href="clarity.html" class="btn offering-clarity-btn">Find Your Path ✦</a>
       </div>
     </div>
     <div class="offerings-grid">
-      <div class="offering-card reveal">
-        <div class="offering-title">1:1 Mental Training</div>
-        <div class="offering-sub">60 min · Solution-Oriented</div>
-        <p class="offering-body">Unlock your mental potential with neuroscience-based insights, mindfulness, and personal development.</p>
-        <a href="https://calendar.app.google/biqbVJuuzFLTgKoy7" target="_blank" class="offering-cta">Book a session</a>
+      <div class="offering-card path-card reveal">
+        <div class="path-label">Path</div>
+        <div class="offering-title">Mental Clarity</div>
+        <div class="offering-sub">1:1 · 60 min · Neuroscience-based</div>
+        <p class="offering-body">For those navigating mental fog, limiting beliefs, or performance plateaus. Together we dissolve what holds you back and install new ways of thinking, being, and achieving.</p>
+        <div class="path-affirmation">"My mind is clear, focused, and open to what is possible."</div>
+        <div class="path-practice">
+          <div class="path-practice-label">A moment for you</div>
+          <p>Sit quietly. Place your hand on your chest. Ask: <em>What thought am I ready to release today?</em> Simply breathe with whatever arises.</p>
+        </div>
+        <a href="https://calendar.app.google/biqbVJuuzFLTgKoy7" target="_blank" class="offering-cta">Explore this path</a>
       </div>
-      <div class="offering-card reveal reveal-delay-1">
-        <div class="offering-title">Company Workshop</div>
-        <div class="offering-sub">Full Day · Leadership Teams</div>
-        <p class="offering-body">Transformative workshops for leaders. Belief systems, values, communication, goal-setting. Bespoke to your organization.</p>
-        <a href="https://calendar.app.google/biqbVJuuzFLTgKoy7" target="_blank" class="offering-cta">Inquire now</a>
+      <div class="offering-card path-card reveal reveal-delay-1">
+        <div class="path-label">Path</div>
+        <div class="offering-title">Emotional Release</div>
+        <div class="offering-sub">1:1 · Body &amp; Heart-centred</div>
+        <p class="offering-body">For those carrying stored grief, emotional weight, or a sense of being stuck in feeling. This work creates safe, held space for what needs to move through you.</p>
+        <div class="path-affirmation">"It is safe to feel. It is safe to release. I am held."</div>
+        <div class="path-practice">
+          <div class="path-practice-label">A moment for you</div>
+          <p>Press both hands gently to your heart. Breathe into that space. Allow whatever is present — without judgment — for just one minute.</p>
+        </div>
+        <a href="https://calendar.app.google/biqbVJuuzFLTgKoy7" target="_blank" class="offering-cta">Explore this path</a>
       </div>
-      <div class="offering-card reveal reveal-delay-2">
-        <div class="offering-title">Evidential Mediumship</div>
-        <div class="offering-sub">Connection to Deceased Loved Ones</div>
-        <p class="offering-body">Spirit transcends geography. I call in deceased energies for conversation, solace, and clarity — in person or live online.</p>
-        <a href="mailto:hello@neuerlab.com" class="offering-cta">Write me</a>
+      <div class="offering-card path-card reveal reveal-delay-2">
+        <div class="path-label">Path</div>
+        <div class="offering-title">Spiritual Connection</div>
+        <div class="offering-sub">In person or online · Evidential Mediumship</div>
+        <p class="offering-body">Spirit transcends geography. I call in the energies of those who have passed — for conversation, solace, and clarity. Evidence-based, deeply tender, and real.</p>
+        <div class="path-affirmation">"I am held by love that transcends all form."</div>
+        <div class="path-practice">
+          <div class="path-practice-label">A moment for you</div>
+          <p>Bring to mind someone you love — living or passed. Feel that connection in your chest. Notice: it is real. It is unbroken.</p>
+        </div>
+        <a href="mailto:hello@neuerlab.com" class="offering-cta">Explore this path</a>
+      </div>
+    </div>
+    <div class="offering-workshop reveal">
+      <div class="offering-workshop-inner">
+        <div class="offering-tag">For Organisations</div>
+        <div class="offering-title">Leadership &amp; Awareness Workshop</div>
+        <div class="offering-sub">Full Day · Bespoke · Leadership Teams</div>
+        <p>Transformative full-day workshops for leaders. Belief systems, values, conscious communication, and purposeful goal-setting — bespoke to your organisation.</p>
+        <a href="https://calendar.app.google/biqbVJuuzFLTgKoy7" target="_blank" class="offering-cta">Let's connect</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════
-     ABOUT
+     JOURNAL TEASER
 ═══════════════════════════════════════════════════════════════ -->
-<section id="about">
-  <div class="about-image">
-    <img src="assets/images/nicola.jpg" alt="Nicola Neuer" loading="lazy">
-    <div class="about-image-overlay"></div>
-  </div>
-  <div class="about-content">
-    <span class="label">About</span>
-    <h2 class="reveal">A Decade of<br><em>Inner Alchemy</em></h2>
-    <p class="reveal reveal-delay-1">Over a decade ago, I had my spiritual breakthrough — the kind that doesn't arrive gently. Through years of intense self-study, hundreds of hours of practice, and deep immersion in both science and spirit, I became who I am today.</p>
-    <p class="reveal reveal-delay-2">Today I work at the intersection of neuroscience, mindfulness, spiritual practice, and evidential mediumship — holding space for transformations that are rigorous, tender, and real.</p>
-    <div class="about-credentials reveal reveal-delay-3">
-      <div class="credential">Mindset Coach &amp; Speaker</div>
-      <div class="credential">Evidential Medium</div>
-      <div class="credential">10+ Years of Practice</div>
-      <div class="credential">Retreats in Bali &amp; worldwide</div>
+<section id="journal-teaser">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="label">Journal</span>
+      <h2>From the <em>Field</em></h2>
+    </div>
+    <div class="journal-grid">
+      <a href="journal/future-of-healthcare.html" class="journal-card reveal">
+        <div class="card-vis cat-philosophy">
+          <span class="card-vis-num">01</span>
+          <span class="card-vis-ornament">Philosophy</span>
+          <svg class="card-vis-geo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" stroke-width="0.8"/>
+            <circle cx="50" cy="50" r="28" stroke-width="0.8"/>
+            <circle cx="50" cy="50" r="12" stroke-width="0.8"/>
+            <line x1="50" y1="5" x2="50" y2="95" stroke-width="0.5"/>
+            <line x1="5" y1="50" x2="95" y2="50" stroke-width="0.5"/>
+            <line x1="14" y1="14" x2="86" y2="86" stroke-width="0.4"/>
+            <line x1="86" y1="14" x2="14" y2="86" stroke-width="0.4"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="journal-card-cat">Philosophy</div>
+          <h3>The Future of Healthcare is Consciousness</h3>
+          <p>We are at an inflection point. The body and spirit are not separate — and the next era of medicine will have to reckon with that.</p>
+          <span class="journal-card-read">Read →</span>
+        </div>
+      </a>
+      <a href="journal/alignment-not-discipline.html" class="journal-card reveal reveal-delay-1">
+        <div class="card-vis cat-burnout">
+          <span class="card-vis-num">02</span>
+          <span class="card-vis-ornament">Burnout &amp; Reset</span>
+          <svg class="card-vis-geo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="44" stroke-width="0.8"/>
+            <circle cx="50" cy="50" r="8" stroke-width="0.8"/>
+            <line x1="50" y1="6" x2="50" y2="42" stroke-width="0.7"/>
+            <line x1="50" y1="58" x2="50" y2="94" stroke-width="0.7"/>
+            <line x1="6" y1="50" x2="42" y2="50" stroke-width="0.7"/>
+            <line x1="58" y1="50" x2="94" y2="50" stroke-width="0.7"/>
+            <line x1="18" y1="18" x2="36" y2="36" stroke-width="0.5"/>
+            <line x1="64" y1="64" x2="82" y2="82" stroke-width="0.5"/>
+            <line x1="82" y1="18" x2="64" y2="36" stroke-width="0.5"/>
+            <line x1="36" y1="64" x2="18" y2="82" stroke-width="0.5"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="journal-card-cat">Burnout &amp; Reset</div>
+          <h3>You Don't Need More Discipline — You Need Alignment</h3>
+          <p>Discipline applied to the wrong direction creates suffering, not success. The question was never how hard you work.</p>
+          <span class="journal-card-read">Read →</span>
+        </div>
+      </a>
+      <a href="journal/what-mediumship-really-is.html" class="journal-card reveal reveal-delay-2">
+        <div class="card-vis cat-spiritual">
+          <span class="card-vis-num">04</span>
+          <span class="card-vis-ornament">Spiritual Practice</span>
+          <svg class="card-vis-geo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="44" stroke-width="0.8"/>
+            <polygon points="50,10 87,72 13,72" stroke-width="0.7"/>
+            <polygon points="50,90 13,28 87,28" stroke-width="0.7"/>
+            <circle cx="50" cy="50" r="10" stroke-width="0.6"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="journal-card-cat">Spiritual Practice</div>
+          <h3>What Mediumship Really Is</h3>
+          <p>Not what you've been told. Evidence, love, and the intelligence that persists long after the body is gone.</p>
+          <span class="journal-card-read">Read →</span>
+        </div>
+      </a>
+    </div>
+    <div class="journal-all reveal">
+      <a href="journal.html" class="btn btn-outline">Explore all insights</a>
     </div>
   </div>
 </section>
@@ -147,32 +319,6 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════
-     TESTIMONIALS
-═══════════════════════════════════════════════════════════════ -->
-<section id="testimonials">
-  <div class="section-inner">
-    <div class="reveal">
-      <span class="label">Voices</span>
-      <h2>Trusted by those<br><em>who've walked the path.</em></h2>
-    </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card reveal">
-        <p class="testimonial-text">"My mom said, 'I left too soon.' She passed away unexpectedly. Nicola had no way of knowing this. I am forever grateful."</p>
-        <div class="testimonial-author"><span class="author-name">Alyssa A.</span><span class="author-loc">Chicago</span></div>
-      </div>
-      <div class="testimonial-card reveal reveal-delay-1">
-        <p class="testimonial-text">"Nicola hat eine einzigartige Art, Verstorbenkontakte mit einer Klarheit und Deutlichkeit zu übermitteln, dass Berührungsängste völlig losgelassen werden können."</p>
-        <div class="testimonial-author"><span class="author-name">Silke S.</span><span class="author-loc">Vienna</span></div>
-      </div>
-      <div class="testimonial-card reveal reveal-delay-2">
-        <p class="testimonial-text">"Einfühlsam und respektvoll gibt sie die Botschaften der Verstorbenen weiter — Botschaften voller Liebe, die tief ins Herz gehen."</p>
-        <div class="testimonial-author"><span class="author-name">Raphaela W.</span><span class="author-loc">Vienna</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════
      CONTACT
 ═══════════════════════════════════════════════════════════════ -->
 <section id="contact">
@@ -180,15 +326,16 @@
   <div class="contact-inner reveal">
     <h2>Let's Begin<em>Your Journey</em></h2>
     <p>Whether you have questions, want to explore a bespoke program, or simply feel drawn to connect — I'm here.</p>
+    <p class="contact-resonance">If this resonates, we can go deeper.</p>
     <div class="contact-ctas">
-      <a href="https://calendar.app.google/biqbVJuuzFLTgKoy7" target="_blank" class="btn">Book Free Intro Call</a>
-      <a href="mailto:hello@neuerlab.com" class="btn btn-outline">Write Me</a>
+      <a href="https://calendar.app.google/biqbVJuuzFLTgKoy7" target="_blank" class="btn">Begin your work with me</a>
+      <a href="mailto:hello@neuerlab.com" class="btn btn-outline">Let's connect</a>
     </div>
+    <a href="clarity.html" class="contact-clarity-link">Not sure where to start? Find your path →</a>
   </div>
 </section>
 
-<script src="assets/js/navbar.js"></script>
 <script src="assets/js/nav.js"></script>
-<script src="assets/js/footer.js"></script>
+<script src="assets/js/footer.js?v=3"></script>
 </body>
 </html>

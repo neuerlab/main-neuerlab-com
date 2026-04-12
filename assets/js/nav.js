@@ -1,8 +1,11 @@
 // ── NAV SCROLL ────────────────────────────────────────────────
-var navbar = document.getElementById('navbar');
-window.addEventListener('scroll', function () {
-  navbar.classList.toggle('scrolled', window.scrollY > 60);
-});
+var navbar  = document.getElementById('navbar');
+var hasHero = !!document.getElementById('hero');
+if (hasHero) {
+  window.addEventListener('scroll', function () {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+}
 
 // ── MOBILE DRAWER ─────────────────────────────────────────────
 function toggleDrawer() {

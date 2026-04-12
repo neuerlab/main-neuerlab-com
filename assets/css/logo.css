@@ -1,0 +1,38 @@
+/* ─── TEXT LOGO — navbar & footer ────────────────────────────── */
+.nav-logo {
+  flex-direction:column;
+  align-items:flex-start;
+  gap:3px;
+  text-decoration:none;
+}
+.nav-logo-name {
+  font-family:var(--fd);
+  font-size:1.15rem;
+  font-weight:600;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--cream);
+  line-height:1;
+}
+.nav-logo-sub {
+  font-family:var(--fs);
+  font-size:.42rem;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:rgba(201,169,110,.75);
+  line-height:1;
+}
+
+/* Scrolled navbar — dark text */
+#navbar.scrolled .nav-logo-name { color:var(--espresso); }
+#navbar.scrolled .nav-logo-sub  { color:var(--gold); }
+
+/* Footer logo — always dark */
+.footer-logo-link {
+  text-decoration:none;
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+}
+.footer-logo-link .nav-logo-name { color:var(--espresso); font-size:1rem; }
+.footer-logo-link .nav-logo-sub  { color:var(--gold); opacity:.7; }

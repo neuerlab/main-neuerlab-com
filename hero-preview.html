@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hero Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#1A0A06; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:0; }
+
+.hero {
+  position:relative;
+  height:480px;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+}
+.hero-bg {
+  position:absolute;
+  inset:0;
+  background-image:url('assets/images/nicola.jpg');
+  background-size:cover;
+  background-position:center 22%;
+}
+.hero-overlay {
+  position:absolute;
+  inset:0;
+}
+.hero-content {
+  position:relative;
+  z-index:2;
+  padding:0 52px;
+}
+.hero-label {
+  position:absolute;
+  top:18px;
+  left:22px;
+  font-family:'Jost', sans-serif;
+  font-size:9px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:rgba(251,247,244,.35);
+  z-index:3;
+}
+h2 {
+  font-family:'Cormorant Garamond', serif;
+  font-weight:300;
+  line-height:1.05;
+}
+h2 .l1 { display:block; font-size:clamp(38px,5vw,68px); color:#FBF7F4; }
+h2 .l2 { display:block; font-size:clamp(38px,5vw,68px); color:#EACABA; font-style:italic; }
+h2 .l3 { display:block; font-size:clamp(38px,5vw,68px); color:#D4AEA0; }
+.sub {
+  font-family:'Cormorant Garamond', serif;
+  font-size:1rem;
+  font-style:italic;
+  color:rgba(251,247,244,.5);
+  margin-top:18px;
+}
+
+/* ── CURRENT ── */
+.current .hero-bg   { opacity:.30; filter:saturate(.45); }
+.current .hero-overlay { background:linear-gradient(150deg,rgba(150,72,55,.78) 0%,rgba(165,85,65,.40) 45%,rgba(150,72,55,.70) 100%); }
+.current            { background:#B8685A; }
+
+/* ── A — Lighter Veil ── */
+.opt-a .hero-bg     { opacity:.50; filter:saturate(.55); }
+.opt-a .hero-overlay { background:linear-gradient(150deg,rgba(150,72,55,.48) 0%,rgba(165,85,65,.18) 45%,rgba(150,72,55,.44) 100%); }
+.opt-a              { background:#B8685A; }
+
+/* ── B — Deep Ember ── */
+.opt-b .hero-bg     { opacity:.25; filter:saturate(.35); }
+.opt-b .hero-overlay { background:linear-gradient(160deg,rgba(60,20,10,.90) 0%,rgba(120,55,35,.55) 50%,rgba(60,20,10,.84) 100%); }
+.opt-b              { background:#3C1408; }
+
+/* ── C — Golden Dusk ── */
+.opt-c .hero-bg     { opacity:.32; filter:saturate(.50); }
+.opt-c .hero-overlay { background:linear-gradient(150deg,rgba(140,85,30,.80) 0%,rgba(190,140,60,.36) 45%,rgba(130,75,25,.74) 100%); }
+.opt-c              { background:#8C5520; }
+
+/* ── D — Rose Petal ── */
+.opt-d .hero-bg     { opacity:.42; filter:saturate(.55); }
+.opt-d .hero-overlay { background:linear-gradient(150deg,rgba(175,95,85,.68) 0%,rgba(210,145,130,.28) 45%,rgba(170,90,80,.62) 100%); }
+.opt-d              { background:#C07868; }
+
+/* ── E — Midnight ── */
+.opt-e .hero-bg     { opacity:.22; filter:saturate(.28); }
+.opt-e .hero-overlay { background:linear-gradient(160deg,rgba(25,10,5,.93) 0%,rgba(80,35,20,.62) 50%,rgba(25,10,5,.88) 100%); }
+.opt-e              { background:#190A04; }
+
+/* ── F — Warm Ash ── */
+.opt-f .hero-bg     { opacity:.32; filter:saturate(.18); }
+.opt-f .hero-overlay { background:linear-gradient(150deg,rgba(88,68,60,.80) 0%,rgba(130,105,90,.36) 45%,rgba(82,62,55,.74) 100%); }
+.opt-f              { background:#584438; }
+</style>
+</head>
+<body>
+
+<div class="hero current">
+  <div class="hero-label">Current</div>
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h2><span class="l1">Mindset.</span><span class="l2">Spirituality.</span><span class="l3">Longevity.</span></h2>
+    <p class="sub">A new era of wellness begins with inner knowing.</p>
+  </div>
+</div>
+
+<div class="hero opt-a">
+  <div class="hero-label">A — Lighter Veil</div>
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h2><span class="l1">Mindset.</span><span class="l2">Spirituality.</span><span class="l3">Longevity.</span></h2>
+    <p class="sub">A new era of wellness begins with inner knowing.</p>
+  </div>
+</div>
+
+<div class="hero opt-b">
+  <div class="hero-label">B — Deep Ember</div>
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h2><span class="l1">Mindset.</span><span class="l2">Spirituality.</span><span class="l3">Longevity.</span></h2>
+    <p class="sub">A new era of wellness begins with inner knowing.</p>
+  </div>
+</div>
+
+<div class="hero opt-c">
+  <div class="hero-label">C — Golden Dusk</div>
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h2><span class="l1">Mindset.</span><span class="l2">Spirituality.</span><span class="l3">Longevity.</span></h2>
+    <p class="sub">A new era of wellness begins with inner knowing.</p>
+  </div>
+</div>
+
+<div class="hero opt-d">
+  <div class="hero-label">D — Rose Petal</div>
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h2><span class="l1">Mindset.</span><span class="l2">Spirituality.</span><span class="l3">Longevity.</span></h2>
+    <p class="sub">A new era of wellness begins with inner knowing.</p>
+  </div>
+</div>
+
+<div class="hero opt-e">
+  <div class="hero-label">E — Midnight</div>
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h2><span class="l1">Mindset.</span><span class="l2">Spirituality.</span><span class="l3">Longevity.</span></h2>
+    <p class="sub">A new era of wellness begins with inner knowing.</p>
+  </div>
+</div>
+
+<div class="hero opt-f">
+  <div class="hero-label">F — Warm Ash</div>
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h2><span class="l1">Mindset.</span><span class="l2">Spirituality.</span><span class="l3">Longevity.</span></h2>
+    <p class="sub">A new era of wellness begins with inner knowing.</p>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gradient Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#1A0A06; font-family:'Jost', sans-serif; padding:48px 32px; display:flex; flex-direction:column; gap:0; }
+.row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:0; }
+.swatch {
+  padding:64px 40px 48px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  gap:18px;
+  position:relative;
+  min-height:280px;
+}
+.tag {
+  font-size:10px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:rgba(251,247,244,.35);
+  font-family:'Jost', sans-serif;
+  font-weight:300;
+}
+.swatch h2 {
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(28px,3vw,42px);
+  font-weight:300;
+  line-height:1.1;
+  color:#FBF7F4;
+}
+.swatch h2 em { color:#C9A96E; font-style:italic; display:block; }
+.swatch p {
+  font-family:'Cormorant Garamond', serif;
+  font-size:15px;
+  font-style:italic;
+  color:rgba(251,247,244,.45);
+  line-height:1.7;
+}
+.label-tag {
+  position:absolute;
+  top:18px;
+  left:22px;
+  font-size:9px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:rgba(251,247,244,.25);
+}
+.current  { background: linear-gradient(135deg,#1C2461 0%,#C4846A 100%); }
+.opt-a    { background: linear-gradient(135deg,#1A0A06 0%,#3D1F15 60%,#6A3828 100%); }
+.opt-b    { background: linear-gradient(160deg,#1E1208 0%,#2C1810 45%,#5C3A20 100%); }
+.opt-c    { background: linear-gradient(160deg,#2C1810 0%,#7A3E30 55%,#C4786A 100%); }
+.opt-d    { background: linear-gradient(160deg,#3D1A14 0%,#8B4A42 50%,#C08878 100%); }
+.opt-e    { background: linear-gradient(180deg,#120806 0%,#2C1810 40%,#4A2820 100%); }
+.opt-f    { background: linear-gradient(135deg,#1A0E08 0%,#3C2215 40%,#6B4028 70%,#9A6045 100%); }
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="swatch current">
+    <div class="label-tag">Current</div>
+    <div class="tag">Mission</div>
+    <h2>Ready to Begin<em>Your Journey</em></h2>
+    <p>If this resonates, we can go deeper.</p>
+  </div>
+  <div class="swatch opt-a">
+    <div class="label-tag">A — Deep Ember</div>
+    <div class="tag">Mission</div>
+    <h2>Ready to Begin<em>Your Journey</em></h2>
+    <p>If this resonates, we can go deeper.</p>
+  </div>
+  <div class="swatch opt-b">
+    <div class="label-tag">B — Smoke & Gold</div>
+    <div class="tag">Mission</div>
+    <h2>Ready to Begin<em>Your Journey</em></h2>
+    <p>If this resonates, we can go deeper.</p>
+  </div>
+</div>
+<div class="row">
+  <div class="swatch opt-c">
+    <div class="label-tag">C — Dusk Terracotta</div>
+    <div class="tag">Mission</div>
+    <h2>Ready to Begin<em>Your Journey</em></h2>
+    <p>If this resonates, we can go deeper.</p>
+  </div>
+  <div class="swatch opt-d">
+    <div class="label-tag">D — Rose Ash</div>
+    <div class="tag">Mission</div>
+    <h2>Ready to Begin<em>Your Journey</em></h2>
+    <p>If this resonates, we can go deeper.</p>
+  </div>
+  <div class="swatch opt-e">
+    <div class="label-tag">E — Midnight Petal</div>
+    <div class="tag">Mission</div>
+    <h2>Ready to Begin<em>Your Journey</em></h2>
+    <p>If this resonates, we can go deeper.</p>
+  </div>
+</div>
+<div class="row">
+  <div class="swatch opt-f">
+    <div class="label-tag">F — Sacred Umber</div>
+    <div class="tag">Mission</div>
+    <h2>Ready to Begin<em>Your Journey</em></h2>
+    <p>If this resonates, we can go deeper.</p>
+  </div>
+</div>
+</body>
+</html>
