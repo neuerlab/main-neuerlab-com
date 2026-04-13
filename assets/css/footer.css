@@ -23,9 +23,9 @@ footer { background:var(--petal); border-top:1px solid rgba(184,104,90,.1); padd
   gap:48px;
 }
 .footer-bottom .footer-copy {
-  font-size:.5rem;
+  font-size:.85rem;
   letter-spacing:.16em;
-  color:rgba(58,36,32,.75);
+  color:rgba(58,36,32,.85);
   text-transform:uppercase;
   margin:0;
 }
@@ -36,11 +36,11 @@ footer { background:var(--petal); border-top:1px solid rgba(184,104,90,.1); padd
   margin:0;
 }
 .footer-bottom .footer-links a {
-  font-size:.5rem;
+  font-size:.85rem;
   letter-spacing:.16em;
   text-transform:uppercase;
   text-decoration:none;
-  color:rgba(58,36,32,.75);
+  color:rgba(58,36,32,.85);
   transition:color .3s;
 }
 .footer-bottom .footer-links a:hover { color:var(--gold); }
