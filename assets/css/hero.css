@@ -1,6 +1,6 @@
 /* ─── HERO ───────────────────────────────────────────────────── */
 #hero { min-height:100vh; display:flex; align-items:center; background:#C07868; padding-top:68px; }
-.hero-bg { position:absolute; inset:0; background-size:cover; background-position:55% 22%; opacity:.42; filter:saturate(.55); }
+.hero-bg { position:absolute; inset:0; background-size:cover; background-position:68% 22%; opacity:.42; filter:saturate(.55); }
 .hero-bg::after { content:''; position:absolute; inset:0; background:linear-gradient(150deg,rgba(175,95,85,.68) 0%,rgba(210,145,130,.28) 45%,rgba(170,90,80,.62) 100%); }
 .hero-glow { position:absolute; right:13%; top:50%; transform:translateY(-50%); width:540px; height:540px; background:radial-gradient(ellipse,rgba(255,215,195,.12) 0%,transparent 70%); pointer-events:none; }
 .hero-geometry { position:absolute; right:6%; top:50%; transform:translateY(-50%); width:420px; height:420px; opacity:.32; z-index:1; animation:slowRot 60s linear infinite; }
