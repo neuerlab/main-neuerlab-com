@@ -70,11 +70,11 @@
 .about-image-overlay { position:absolute; inset:0; background:linear-gradient(to right,rgba(184,104,90,.3) 0%,rgba(184,104,90,.1) 60%),linear-gradient(to top,rgba(184,104,90,.42) 0%,transparent 40%); }
 .about-content { background:var(--petal); padding:88px 60px; display:flex; flex-direction:column; justify-content:center; }
 .about-content .label { display:block; margin-bottom:16px; color:var(--gold); }
-.about-content h2 { font-family:var(--fd); font-size:clamp(28px,3.2vw,46px); font-weight:300; line-height:1.15; color:var(--espresso); margin-bottom:26px; }
+.about-content h2 { font-family:'Inter', system-ui, sans-serif; font-size:clamp(28px,3.2vw,46px); font-weight:300; line-height:1.15; color:var(--espresso); margin-bottom:26px; }
 .about-content h2 em { color:var(--gold); font-style:italic; }
-.about-content p { font-family:var(--fd); font-size:.85rem; line-height:1.9; color:var(--cocoa); margin-bottom:16px; }
+.about-content p { font-family:'Inter', system-ui, sans-serif; font-size:.95rem; line-height:1.9; color:var(--cocoa); margin-bottom:16px; }
 .about-credentials { display:flex; flex-direction:column; gap:9px; margin-top:24px; }
-.credential { display:flex; align-items:center; gap:12px; font-size:.68rem; letter-spacing:.1em; color:var(--cocoa); }
+.credential { display:flex; align-items:center; gap:12px; font-family:'Inter', system-ui, sans-serif; font-size:.85rem; letter-spacing:.1em; color:var(--cocoa); }
 .credential::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0; }
 
 /* ─── AFFIRMATION TEASER ────────────────────────────────────── */
