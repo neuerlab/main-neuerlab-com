@@ -8,7 +8,7 @@ var paths = {
     practice: 'Sit quietly for a moment. Place your hand on your chest. Ask yourself: What thought am I ready to release today? Simply breathe with whatever arises. No force. No analysis.',
     cta: 'https://calendar.app.google/biqbVJuuzFLTgKoy7',
     ctaLabel: 'Begin your work with me',
-    ctaSecondary: 'mailto:hello@neuerlab.com',
+    ctaSecondary: 'mailto:office@neuerlab.com',
     ctaSecondaryLabel: "Let's connect"
   },
   emotional: {
@@ -19,7 +19,7 @@ var paths = {
     practice: 'Press both hands gently to your heart. Breathe into that space. Allow whatever emotion is present — without judgment — for just one minute. You do not need to solve anything.',
     cta: 'https://calendar.app.google/biqbVJuuzFLTgKoy7',
     ctaLabel: 'Begin your work with me',
-    ctaSecondary: 'mailto:hello@neuerlab.com',
+    ctaSecondary: 'mailto:office@neuerlab.com',
     ctaSecondaryLabel: "Let's connect"
   },
   spiritual: {
@@ -28,7 +28,7 @@ var paths = {
     desc: 'Spirit transcends geography. I call in the energies of those who have passed — for conversation, solace, and clarity. Evidence-based, deeply tender, and real.',
     affirmation: '"I am held by love that transcends all form."',
     practice: 'Bring to mind someone you love — living or passed. Feel the quality of that connection in your chest. Notice: that feeling is real. It has not gone anywhere. It is unbroken.',
-    cta: 'mailto:hello@neuerlab.com',
+    cta: 'mailto:office@neuerlab.com',
     ctaLabel: 'Write to Nicola',
     ctaSecondary: 'https://calendar.app.google/biqbVJuuzFLTgKoy7',
     ctaSecondaryLabel: 'Book a call first'
