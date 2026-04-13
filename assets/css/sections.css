@@ -4,11 +4,11 @@
 .mission-block .label { display:block; margin-bottom:20px; color:var(--gold); }
 .mission-block h2 { font-family:var(--fd); font-size:clamp(30px,3.8vw,52px); font-weight:300; line-height:1.15; color:var(--espresso); margin-bottom:28px; }
 .mission-block h2 em { color:var(--gold); font-style:italic; }
-.mission-block p { font-family:var(--fd); font-size:1.05rem; line-height:1.9; color:var(--cocoa); }
+.mission-block p { font-family:var(--fd); font-size:.85rem; line-height:1.9; color:var(--cocoa); }
 .mission-manifesto { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(184,104,90,.12); border:1px solid rgba(184,104,90,.12); margin-top:64px; }
 .manifesto-item { background:var(--petal); padding:28px 24px; }
 .manifesto-num { font-family:var(--fd); font-size:2.4rem; font-weight:300; color:rgba(184,104,90,.2); line-height:1; margin-bottom:10px; }
-.manifesto-text { font-family:var(--fd); font-size:.93rem; line-height:1.7; color:var(--cocoa); }
+.manifesto-text { font-family:var(--fd); font-size:.85rem; line-height:1.7; color:var(--cocoa); }
 
 /* ─── OFFERINGS ──────────────────────────────────────────────── */
 #offerings { background:var(--blush); padding:110px 0; }
@@ -22,7 +22,7 @@
 .offering-featured-inner { max-width:560px; }
 .offering-tag { font-family:var(--fs); font-size:.58rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin-bottom:14px; }
 .offering-featured .offering-title { font-family:var(--fd); font-size:clamp(24px,2.8vw,38px); font-weight:400; color:var(--cream); margin-bottom:12px; line-height:1.15; }
-.offering-featured p { font-family:var(--fd); font-size:.97rem; line-height:1.85; color:rgba(250,245,242,.6); margin-bottom:24px; }
+.offering-featured p { font-family:var(--fd); font-size:.85rem; line-height:1.85; color:rgba(250,245,242,.6); margin-bottom:24px; }
 .offering-featured .offering-cta { color:var(--gold); }
 
 /* offering cards — light, open */
@@ -31,7 +31,7 @@
 .offering-card:hover { background:rgba(255,255,255,.92); }
 .offering-card .offering-title { font-family:var(--fd); font-size:1.3rem; font-weight:500; color:var(--espresso); margin-bottom:5px; line-height:1.2; }
 .offering-sub { font-size:.58rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); margin-bottom:18px; }
-.offering-body { font-family:var(--fd); font-size:.9rem; line-height:1.82; color:var(--cocoa); margin-bottom:24px; }
+.offering-body { font-family:var(--fd); font-size:.85rem; line-height:1.82; color:var(--cocoa); margin-bottom:24px; }
 .offering-cta { font-size:.58rem; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:gap .3s; }
 .offering-cta:hover { gap:14px; }
 .offering-cta::after { content:'\2192'; }
@@ -44,7 +44,7 @@
 .path-affirmation { font-family:var(--fd); font-size:.93rem; font-style:italic; font-weight:300; line-height:1.65; color:var(--espresso); border-left:2px solid var(--gold); padding-left:14px; margin:22px 0 18px; }
 .path-practice { background:rgba(201,169,110,.07); border-radius:2px; padding:16px 18px; margin-bottom:24px; }
 .path-practice-label { font-family:var(--fs); font-size:.5rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
-.path-practice p { font-family:var(--fd); font-size:.86rem; line-height:1.78; color:var(--cocoa); margin:0; }
+.path-practice p { font-family:var(--fd); font-size:.85rem; line-height:1.78; color:var(--cocoa); margin:0; }
 .path-practice p em { color:var(--espresso); }
 
 /* clarity button inside featured card */
@@ -55,7 +55,7 @@
 .offering-workshop { background:var(--petal); padding:40px 48px; margin-top:1px; }
 .offering-workshop-inner { max-width:640px; }
 .offering-workshop .offering-title { font-family:var(--fd); font-size:clamp(18px,2vw,26px); font-weight:400; color:var(--espresso); margin-bottom:6px; }
-.offering-workshop p { font-family:var(--fd); font-size:.92rem; line-height:1.82; color:var(--cocoa); margin:12px 0 20px; }
+.offering-workshop p { font-family:var(--fd); font-size:.85rem; line-height:1.82; color:var(--cocoa); margin:12px 0 20px; }
 
 /* contact resonance line */
 .contact-resonance { font-family:var(--fd); font-size:.9rem; font-style:italic; color:rgba(201,169,110,.7) !important; margin-bottom:8px !important; }
@@ -72,7 +72,7 @@
 .about-content .label { display:block; margin-bottom:16px; color:var(--gold); }
 .about-content h2 { font-family:var(--fd); font-size:clamp(28px,3.2vw,46px); font-weight:300; line-height:1.15; color:var(--espresso); margin-bottom:26px; }
 .about-content h2 em { color:var(--gold); font-style:italic; }
-.about-content p { font-family:var(--fd); font-size:.97rem; line-height:1.9; color:var(--cocoa); margin-bottom:16px; }
+.about-content p { font-family:var(--fd); font-size:.85rem; line-height:1.9; color:var(--cocoa); margin-bottom:16px; }
 .about-credentials { display:flex; flex-direction:column; gap:9px; margin-top:24px; }
 .credential { display:flex; align-items:center; gap:12px; font-size:.68rem; letter-spacing:.1em; color:var(--cocoa); }
 .credential::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0; }
@@ -95,7 +95,7 @@
 .testimonials-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; }
 .testimonial-card { background:rgba(255,255,255,.1); padding:36px 32px; transition:background .3s; }
 .testimonial-card:hover { background:rgba(255,255,255,.17); }
-.testimonial-text { font-family:var(--fd); font-size:.95rem; line-height:1.85; color:rgba(251,247,244,.85); margin-bottom:24px; font-style:italic; }
+.testimonial-text { font-family:var(--fd); font-size:.85rem; line-height:1.85; color:rgba(251,247,244,.85); margin-bottom:24px; font-style:italic; }
 .testimonial-author { display:flex; align-items:center; gap:8px; }
 .author-name { font-family:var(--fs); font-size:.65rem; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:rgba(251,247,244,.7); }
 .author-loc { font-size:.6rem; letter-spacing:.08em; color:rgba(251,247,244,.4); }
@@ -106,7 +106,7 @@
 .contact-inner { position:relative; z-index:2; text-align:center; max-width:620px; margin:0 auto; padding:0 28px; }
 #contact h2 { font-family:var(--fd); font-size:clamp(42px,6vw,80px); font-weight:300; line-height:1.05; margin-bottom:20px; color:var(--cream); }
 #contact h2 em { color:var(--gold); font-style:italic; display:block; }
-#contact p { font-family:var(--fd); font-size:1rem; font-style:italic; color:rgba(251,247,244,.5); line-height:1.75; margin-bottom:44px; }
+#contact p { font-family:var(--fd); font-size:.85rem; font-style:italic; color:rgba(251,247,244,.5); line-height:1.75; margin-bottom:44px; }
 .contact-ctas { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
 
 /* ─── RESPONSIVE ─────────────────────────────────────────────── */
