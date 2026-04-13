@@ -29,9 +29,9 @@
 .offerings-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(184,104,90,.12); }
 .offering-card { background:rgba(255,255,255,.7); padding:40px 32px; position:relative; transition:background .3s; }
 .offering-card:hover { background:rgba(255,255,255,.92); }
-.offering-card .offering-title { font-family:var(--fd); font-size:1.3rem; font-weight:500; color:var(--espresso); margin-bottom:5px; line-height:1.2; }
+.offering-card .offering-title { font-family:'Inter', system-ui, sans-serif; font-size:1.3rem; font-weight:500; color:var(--espresso); margin-bottom:5px; line-height:1.2; }
 .offering-sub { font-size:.58rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); margin-bottom:18px; }
-.offering-body { font-family:var(--fd); font-size:.85rem; line-height:1.82; color:var(--cocoa); margin-bottom:24px; }
+.offering-body { font-family:'Inter', system-ui, sans-serif; font-size:.95rem; line-height:1.82; color:var(--cocoa); margin-bottom:24px; }
 .offering-cta { font-size:.58rem; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:gap .3s; }
 .offering-cta:hover { gap:14px; }
 .offering-cta::after { content:'\2192'; }
@@ -54,8 +54,8 @@
 /* workshop block */
 .offering-workshop { background:var(--petal); padding:40px 48px; margin-top:1px; }
 .offering-workshop-inner { max-width:640px; }
-.offering-workshop .offering-title { font-family:var(--fd); font-size:clamp(18px,2vw,26px); font-weight:400; color:var(--espresso); margin-bottom:6px; }
-.offering-workshop p { font-family:var(--fd); font-size:.85rem; line-height:1.82; color:var(--cocoa); margin:12px 0 20px; }
+.offering-workshop .offering-title { font-family:'Inter', system-ui, sans-serif; font-size:clamp(18px,2vw,26px); font-weight:400; color:var(--espresso); margin-bottom:6px; }
+.offering-workshop p { font-family:'Inter', system-ui, sans-serif; font-size:.95rem; line-height:1.82; color:var(--cocoa); margin:12px 0 20px; }
 
 /* contact resonance line */
 .contact-resonance { font-family:var(--fd); font-size:.9rem; font-style:italic; color:rgba(201,169,110,.7) !important; margin-bottom:8px !important; }
