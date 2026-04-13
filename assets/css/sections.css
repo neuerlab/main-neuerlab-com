@@ -2,9 +2,9 @@
 #mission { background:var(--petal); padding:110px 0; }
 .mission-block { max-width:720px; }
 .mission-block .label { display:block; margin-bottom:20px; color:var(--gold); }
-.mission-block h2 { font-family:var(--fd); font-size:clamp(30px,3.8vw,52px); font-weight:300; line-height:1.15; color:var(--espresso); margin-bottom:28px; }
+.mission-block h2 { font-family:'Inter', system-ui, sans-serif; font-size:clamp(30px,3.8vw,52px); font-weight:300; line-height:1.15; color:var(--espresso); margin-bottom:28px; }
 .mission-block h2 em { color:var(--gold); font-style:italic; }
-.mission-block p { font-family:var(--fd); font-size:.85rem; line-height:1.9; color:var(--cocoa); }
+.mission-block p { font-family:'Inter', system-ui, sans-serif; font-size:.85rem; line-height:1.9; color:var(--cocoa); }
 .mission-manifesto { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(184,104,90,.12); border:1px solid rgba(184,104,90,.12); margin-top:64px; }
 .manifesto-item { background:var(--petal); padding:28px 24px; }
 .manifesto-num { font-family:var(--fd); font-size:2.4rem; font-weight:300; color:rgba(184,104,90,.2); line-height:1; margin-bottom:10px; }
