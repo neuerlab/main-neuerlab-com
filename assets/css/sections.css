@@ -41,10 +41,10 @@
 
 /* path cards */
 .path-label { font-family:var(--fs); font-size:.52rem; letter-spacing:.26em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
-.path-affirmation { font-family:var(--fd); font-size:.95rem; font-style:italic; font-weight:300; line-height:1.65; color:var(--espresso); border-left:2px solid var(--gold); padding-left:14px; margin:22px 0 18px; }
+.path-affirmation { font-family:var(--fd); font-size:1.1rem; font-style:italic; font-weight:300; line-height:1.65; color:var(--espresso); border-left:2px solid var(--gold); padding-left:14px; margin:22px 0 18px; }
 .path-practice { background:rgba(201,169,110,.07); border-radius:2px; padding:16px 18px; margin-bottom:24px; }
 .path-practice-label { font-family:var(--fs); font-size:.5rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
-.path-practice p { font-family:var(--fd); font-size:.95rem; line-height:1.78; color:var(--cocoa); margin:0; }
+.path-practice p { font-family:var(--fd); font-size:1.1rem; line-height:1.78; color:var(--cocoa); margin:0; }
 .path-practice p em { color:var(--espresso); }
 
 /* clarity button inside featured card */
