@@ -95,7 +95,8 @@
 .testimonials-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; }
 .testimonial-card { background:rgba(255,255,255,.1); padding:36px 32px; transition:background .3s; }
 .testimonial-card:hover { background:rgba(255,255,255,.17); }
-.testimonial-text { font-family:var(--fd); font-size:.85rem; line-height:1.85; color:rgba(251,247,244,.85); margin-bottom:24px; font-style:italic; }
+.testimonial-headline { font-family:'Inter', system-ui, sans-serif; font-size:.62rem; font-weight:500; letter-spacing:.18em; text-transform:uppercase; color:rgba(251,247,244,.45); margin-bottom:14px; }
+.testimonial-text { font-family:'Inter', system-ui, sans-serif; font-size:.85rem; line-height:1.85; color:rgba(251,247,244,.85); margin-bottom:24px; font-style:italic; }
 .testimonial-author { display:flex; align-items:center; gap:8px; }
 .author-name { font-family:var(--fs); font-size:.65rem; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:rgba(251,247,244,.7); }
 .author-loc { font-size:.6rem; letter-spacing:.08em; color:rgba(251,247,244,.4); }
