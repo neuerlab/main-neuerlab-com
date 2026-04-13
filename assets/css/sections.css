@@ -14,15 +14,15 @@
 #offerings { background:var(--blush); padding:110px 0; }
 .section-header { margin-bottom:56px; }
 .section-header .label { display:block; margin-bottom:16px; color:var(--gold); }
-.section-header h2 { font-family:var(--fd); font-size:clamp(30px,3.8vw,52px); font-weight:300; line-height:1.15; color:var(--espresso); }
+.section-header h2 { font-family:'Inter', system-ui, sans-serif; font-size:clamp(30px,3.8vw,52px); font-weight:300; line-height:1.15; color:var(--espresso); }
 .section-header h2 em { color:var(--gold); font-style:italic; }
 
 /* featured offering */
 .offering-featured { background:var(--rose-deep); padding:52px 48px; margin-bottom:2px; }
 .offering-featured-inner { max-width:560px; }
 .offering-tag { font-family:var(--fs); font-size:.58rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin-bottom:14px; }
-.offering-featured .offering-title { font-family:var(--fd); font-size:clamp(24px,2.8vw,38px); font-weight:400; color:var(--cream); margin-bottom:12px; line-height:1.15; }
-.offering-featured p { font-family:var(--fd); font-size:.85rem; line-height:1.85; color:rgba(250,245,242,.6); margin-bottom:24px; }
+.offering-featured .offering-title { font-family:'Inter', system-ui, sans-serif; font-size:clamp(24px,2.8vw,38px); font-weight:400; color:var(--cream); margin-bottom:12px; line-height:1.15; }
+.offering-featured p { font-family:'Inter', system-ui, sans-serif; font-size:.95rem; line-height:1.85; color:rgba(250,245,242,.6); margin-bottom:24px; }
 .offering-featured .offering-cta { color:var(--gold); }
 
 /* offering cards — light, open */
