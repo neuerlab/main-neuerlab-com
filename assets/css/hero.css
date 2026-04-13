@@ -10,7 +10,7 @@
 .hero-headline span { display:block; font-size:clamp(52px,8vw,110px); }
 .hero-headline .line-1 { color:var(--cream); animation:fadeUp 1s ease .1s both; }
 .hero-headline .line-2 { color:#EACABA; font-style:italic; animation:fadeUp 1s ease .24s both; }
-.hero-headline .line-3 { color:#D4AEA0; animation:fadeUp 1s ease .38s both; }
+.hero-headline .line-3 { color:#9A7260; animation:fadeUp 1s ease .38s both; }
 .hero-sub { font-family:var(--fd); font-size:1.1rem; font-style:italic; color:rgba(251,247,244,.5); margin-bottom:48px; animation:fadeUp 1s ease .52s both; }
 .hero-cta { display:flex; gap:16px; flex-wrap:wrap; animation:fadeUp 1s ease .66s both; }
 .hero-cta .btn { background:rgba(251,247,244,.92); color:var(--espresso); border-color:rgba(251,247,244,.92); letter-spacing:.22em; padding:16px 38px; }
