@@ -58,7 +58,7 @@
 .offering-workshop p { font-family:'Inter', system-ui, sans-serif; font-size:.95rem; line-height:1.82; color:var(--cocoa); margin:12px 0 20px; }
 
 /* contact resonance line */
-.contact-resonance { font-family:var(--fd); font-size:.9rem; font-style:italic; color:rgba(201,169,110,.7) !important; margin-bottom:8px !important; }
+.contact-resonance { font-family:'Inter', system-ui, sans-serif; font-size:1.1rem; color:rgba(201,169,110,.7) !important; margin-bottom:8px !important; }
 .contact-clarity-link { display:inline-block; margin-top:22px; font-family:var(--fs); font-size:.58rem; letter-spacing:.16em; text-transform:uppercase; color:rgba(251,247,244,.3); text-decoration:none; transition:color .3s; }
 .contact-clarity-link:hover { color:rgba(201,169,110,.65); }
 
@@ -107,7 +107,7 @@
 .contact-inner { position:relative; z-index:2; text-align:center; max-width:620px; margin:0 auto; padding:0 28px; }
 #contact h2 { font-family:var(--fd); font-size:clamp(42px,6vw,80px); font-weight:300; line-height:1.05; margin-bottom:20px; color:var(--cream); }
 #contact h2 em { color:var(--gold); font-style:italic; display:block; }
-#contact p { font-family:var(--fd); font-size:.85rem; font-style:italic; color:rgba(251,247,244,.5); line-height:1.75; margin-bottom:44px; }
+#contact p { font-family:'Inter', system-ui, sans-serif; font-size:1.1rem; color:rgba(251,247,244,.5); line-height:1.75; margin-bottom:44px; }
 .contact-ctas { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
 
 /* ─── RESPONSIVE ─────────────────────────────────────────────── */
