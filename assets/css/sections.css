@@ -100,9 +100,9 @@
 #testimonials .label { display:block; margin-bottom:16px; color:rgba(251,247,244,.5); }
 #testimonials h2 { font-family:var(--fd); font-size:clamp(30px,3.8vw,52px); font-weight:300; line-height:1.15; color:var(--cream); margin-bottom:56px; }
 #testimonials h2 em { color:rgba(255,235,220,.7); font-style:italic; }
-.testimonials-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; }
-.testimonial-card { background:rgba(255,255,255,.1); padding:36px 32px; transition:background .3s; }
-.testimonial-card:hover { background:rgba(255,255,255,.17); }
+.testimonials-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.testimonial-card { background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.2); border-radius:12px; padding:36px 32px; transition:background .3s; }
+.testimonial-card:hover { background:rgba(255,255,255,.22); }
 .testimonial-headline { font-family:'Inter', system-ui, sans-serif; font-size:.62rem; font-weight:500; letter-spacing:.18em; text-transform:uppercase; color:rgba(251,247,244,.45); margin-bottom:14px; }
 .testimonial-text { font-family:var(--fd); font-size:1.15rem; line-height:1.85; color:rgba(251,247,244,.85); margin-bottom:24px; font-style:italic; }
 .testimonial-author { display:flex; align-items:center; gap:8px; }
@@ -127,7 +127,7 @@
   #affirmation-teaser { padding:64px 0; }
 
   #testimonials { padding:72px 0; }
-  .testimonials-grid { grid-template-columns:1fr; gap:1px; }
+  .testimonials-grid { grid-template-columns:1fr; gap:16px; }
 
   .offering-workshop { padding:32px 24px; }
 
