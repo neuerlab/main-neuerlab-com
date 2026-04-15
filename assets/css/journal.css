@@ -277,11 +277,13 @@
   .journal-grid { grid-template-columns:1fr; }
   .article-wrap { padding:100px 24px 72px; }
   .card-vis { height:120px; }
+  .card-vis-ornament { right:auto; left:24px; top:14px; }
   .card-vis-geo { width:60px; height:60px; right:10px; bottom:auto; top:10px; opacity:.5; }
 }
 @media (max-width:480px) {
   .journal-full-grid { grid-template-columns:1fr; }
   .card-vis { height:110px; padding:14px 18px; }
   .journal-full-grid .card-vis { height:130px; }
+  .card-vis-ornament { right:auto; left:18px; top:12px; }
   .card-vis-geo { width:50px; height:50px; right:8px; bottom:auto; top:8px; opacity:.5; }
 }
