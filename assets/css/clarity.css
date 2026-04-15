@@ -45,7 +45,7 @@
 }
 .clarity-sub {
   font-family:var(--fd);
-  font-size:1rem;
+  font-size:1.15rem;
   font-style:italic;
   color:var(--cocoa);
   opacity:.65;
@@ -85,7 +85,7 @@
 }
 .choice-desc {
   font-family:var(--fd);
-  font-size:.87rem;
+  font-size:1.15rem;
   line-height:1.7;
   color:var(--cocoa);
 }
@@ -135,7 +135,7 @@
 }
 .result-desc {
   font-family:var(--fd);
-  font-size:1.02rem;
+  font-size:1.15rem;
   line-height:1.9;
   color:var(--cocoa);
   max-width:600px;
@@ -170,14 +170,14 @@
 }
 .result-practice p {
   font-family:var(--fd);
-  font-size:.95rem;
+  font-size:1.15rem;
   line-height:1.82;
   color:var(--cocoa);
   margin:0;
 }
 .result-resonance {
   font-family:var(--fd);
-  font-size:.97rem;
+  font-size:1.15rem;
   font-style:italic;
   color:var(--cocoa);
   opacity:.6;

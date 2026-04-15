@@ -31,9 +31,9 @@ body.aff-page { background:#FBF7F4; }
 .aff-eyebrow::before, .aff-eyebrow::after { content:''; width:28px; height:1px; background:rgba(139,94,60,.35); }
 .aff-title { font-family:var(--fd); font-weight:300; font-size:clamp(1.9rem,4.2vw,3.1rem); color:var(--espresso); line-height:1.1; }
 .aff-title em { font-style:italic; color:#8B5E3C; }
-.aff-subtitle { margin-top:9px; font-family:var(--fd); font-size:.87rem; font-style:italic; color:rgba(43,36,25,.45); }
+.aff-subtitle { margin-top:9px; font-family:var(--fd); font-size:1.15rem; font-style:italic; color:rgba(43,36,25,.45); }
 
-.aff-date { font-family:var(--fd); font-style:italic; font-size:.87rem; color:rgba(43,36,25,.4); margin-bottom:30px; animation:fadeUp .8s .1s ease both; position:relative; z-index:1; }
+.aff-date { font-family:var(--fd); font-style:italic; font-size:1.15rem; color:rgba(43,36,25,.4); margin-bottom:30px; animation:fadeUp .8s .1s ease both; position:relative; z-index:1; }
 
 .aff-card-wrap { width:100%; max-width:680px; animation:fadeUp .8s .2s ease both; position:relative; z-index:1; }
 .aff-card {

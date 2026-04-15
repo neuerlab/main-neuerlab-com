@@ -20,7 +20,7 @@
 .journal-index-header h1 em { color:var(--gold); font-style:italic; }
 .journal-index-header p {
   font-family:var(--fd);
-  font-size:1.02rem;
+  font-size:1.15rem;
   line-height:1.85;
   color:var(--cocoa);
 }
@@ -123,14 +123,14 @@
 }
 .journal-card p {
   font-family:var(--fd);
-  font-size:.88rem;
+  font-size:1.15rem;
   line-height:1.75;
   color:var(--cocoa);
   flex:1;
 }
 .journal-card-read {
   font-family:var(--fs);
-  font-size:.55rem;
+  font-size:.68rem;
   letter-spacing:.18em;
   text-transform:uppercase;
   color:var(--gold);
@@ -200,7 +200,7 @@
 }
 .article-body p {
   font-family:var(--fd);
-  font-size:1rem;
+  font-size:1.15rem;
   line-height:1.95;
   color:var(--cocoa);
   margin-bottom:24px;
@@ -232,7 +232,7 @@
 }
 .article-practice p {
   font-family:var(--fd);
-  font-size:.95rem;
+  font-size:1.15rem;
   line-height:1.82;
   color:var(--cocoa);
   margin:0;
@@ -245,7 +245,7 @@
 }
 .article-closing {
   font-family:var(--fd);
-  font-size:1rem;
+  font-size:1.15rem;
   font-style:italic;
   color:var(--cocoa);
   opacity:.65;
