@@ -276,9 +276,14 @@
   .journal-full-grid { grid-template-columns:1fr; }
   .journal-grid { grid-template-columns:1fr; }
   .article-wrap { padding:100px 24px 72px; }
+  .card-vis { height:110px; }
+  .card-vis-geo { width:90px; height:90px; right:-5px; bottom:auto; top:8px; }
 }
 @media (max-width:480px) {
   .journal-full-grid { grid-template-columns:1fr; }
-  .card-vis { height:120px; }
-  .journal-full-grid .card-vis { height:140px; }
+  .card-vis { height:100px; padding:14px 18px; }
+  .journal-full-grid .card-vis { height:120px; }
+  .card-vis-geo { width:80px; height:80px; right:-5px; bottom:auto; top:5px; }
+  .card-vis-num { font-size:3.5rem; }
+  .card-vis-ornament { font-size:.65rem; top:14px; right:16px; }
 }
