@@ -18,7 +18,7 @@
             '<div class="footer-col-label">Navigate</div>' +
             '<nav class="footer-nav footer-nav-col">' +
               '<a href="' + base + 'index.html#mission">Mission</a>' +
-              '<a href="' + base + 'index.html#offerings">Pathways</a>' +
+              '<a href="' + base + 'clarity.html">Pathways</a>' +
               '<a href="' + base + 'about.html">About</a>' +
               '<a href="' + base + 'journal.html">Journal</a>' +
               '<a href="' + base + 'index.html#contact">Connect</a>' +
@@ -27,10 +27,10 @@
           '<div class="footer-col">' +
             '<div class="footer-col-label">Pathways</div>' +
             '<nav class="footer-nav footer-nav-col">' +
-              '<a href="' + base + 'index.html#offerings">Mental Clarity</a>' +
-              '<a href="' + base + 'index.html#offerings">Emotional Release</a>' +
-              '<a href="' + base + 'index.html#offerings">Spiritual Connection</a>' +
-              '<a href="' + base + 'index.html#offerings">Leadership Workshop</a>' +
+              '<a href="' + base + 'clarity.html">Mental Clarity</a>' +
+              '<a href="' + base + 'clarity.html">Emotional Release</a>' +
+              '<a href="' + base + 'clarity.html">Spiritual Connection</a>' +
+              '<a href="' + base + 'clarity.html">Leadership Workshop</a>' +
             '</nav>' +
           '</div>' +
           '<div class="footer-col">' +
