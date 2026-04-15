@@ -63,7 +63,7 @@
   font-weight:300;
   line-height:1;
   color:var(--espresso);
-  opacity:.1;
+  opacity:.16;
   user-select:none;
   letter-spacing:-.02em;
 }
@@ -75,7 +75,7 @@
   letter-spacing:.18em;
   font-family:var(--fs);
   text-transform:uppercase;
-  opacity:.35;
+  opacity:.5;
   color:var(--espresso);
 }
 .card-vis-geo {
@@ -84,19 +84,19 @@
   bottom:-10px;
   width:140px;
   height:140px;
-  opacity:.14;
+  opacity:.75;
   pointer-events:none;
   fill:none;
-  stroke:#C9A96E;
+  stroke:#3A2010;
 }
 .journal-full-grid .card-vis-geo { width:170px; height:170px; }
 
 /* Category colour themes */
-.cat-philosophy  { background:linear-gradient(145deg, rgba(106,74,64,.06) 0%, rgba(90,60,50,.18) 100%); }
-.cat-burnout     { background:linear-gradient(145deg, rgba(201,169,110,.1) 0%, rgba(190,150,80,.26) 100%); }
-.cat-inner       { background:linear-gradient(145deg, rgba(220,190,175,.12) 0%, rgba(184,104,90,.22) 100%); }
-.cat-spiritual   { background:linear-gradient(145deg, rgba(140,70,75,.08) 0%, rgba(165,85,80,.22) 100%); }
-.cat-mind        { background:linear-gradient(145deg, rgba(160,140,120,.08) 0%, rgba(140,115,95,.2) 100%); }
+.cat-philosophy  { background:linear-gradient(145deg, rgba(106,74,64,.16) 0%, rgba(90,60,50,.44) 100%); }
+.cat-burnout     { background:linear-gradient(145deg, rgba(201,169,110,.24) 0%, rgba(190,150,80,.58) 100%); }
+.cat-inner       { background:linear-gradient(145deg, rgba(220,190,175,.28) 0%, rgba(184,104,90,.52) 100%); }
+.cat-spiritual   { background:linear-gradient(145deg, rgba(140,70,75,.20) 0%, rgba(165,85,80,.50) 100%); }
+.cat-mind        { background:linear-gradient(145deg, rgba(160,140,120,.18) 0%, rgba(140,115,95,.44) 100%); }
 
 /* Card body (below visual) */
 .card-body {

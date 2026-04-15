@@ -27,8 +27,8 @@
 .featured-btn { background:var(--gold) !important; color:var(--espresso) !important; border-color:var(--gold) !important; }
 .featured-btn:hover { background:transparent !important; color:var(--gold) !important; }
 .featured-or { font-family:var(--fd); font-size:1rem; font-style:italic; color:rgba(251,247,244,.35); }
-.featured-alt { font-family:var(--fd); font-size:.95rem; color:rgba(251,247,244,.5); text-decoration:none; transition:color .3s; }
-.featured-alt:hover { color:var(--gold); }
+.featured-alt { font-family:var(--fd); font-size:1.05rem; color:rgba(251,247,244,.5); text-decoration:underline; text-underline-offset:3px; text-decoration-color:rgba(251,247,244,.25); transition:color .3s, text-decoration-color .3s; }
+.featured-alt:hover { color:var(--gold); text-decoration-color:rgba(196,132,106,.5); }
 
 /* offering cards */
 .offerings-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(184,104,90,.12); }
