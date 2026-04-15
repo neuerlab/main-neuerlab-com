@@ -99,16 +99,28 @@ body.align-page { background:#FBF7F4; }
   animation:fadeUp 500ms .32s ease-out forwards;
 }
 .align-card.visible .align-mood-tag {
-  animation:fadeIn 400ms .55s ease-out forwards;
+  animation:fadeIn 400ms .62s ease-out forwards;
 }
 
-.align-aff { font-family:var(--fd); font-weight:300; font-size:clamp(1.3rem,2.6vw,1.8rem); line-height:1.55; color:#2E2418; margin-bottom:16px; }
-.align-guide { font-family:var(--fd); font-style:italic; font-size:1.05rem; color:rgba(43,36,25,.5); margin-bottom:24px; line-height:1.65; }
-.align-mood-tag { display:inline-flex; align-items:center; gap:10px; font-size:.57rem; font-weight:300; letter-spacing:.22em; text-transform:uppercase; color:var(--cocoa); }
+.align-aff { font-family:var(--fd); font-weight:300; font-size:clamp(1.3rem,2.6vw,1.8rem); line-height:1.55; color:#2E2418; margin-bottom:14px; }
+.align-guide { font-family:var(--fd); font-style:italic; font-size:1.05rem; color:rgba(43,36,25,.5); margin-bottom:0; line-height:1.65; }
+
+.align-mood-tag { display:inline-flex; align-items:center; gap:10px; font-size:.57rem; font-weight:300; letter-spacing:.22em; text-transform:uppercase; color:var(--cocoa); margin-top:20px; }
 .align-mood-tag::before, .align-mood-tag::after { content:''; display:inline-block; width:16px; height:1px; background:var(--cocoa); opacity:.45; }
 
+/* ─── STEP BRIDGE ────────────────────────────────────────────── */
+.align-bridge {
+  width:100%; max-width:640px; margin-top:36px; text-align:center;
+  position:relative; z-index:1;
+  opacity:0; transform:translateY(10px);
+  transition:opacity .6s ease, transform .6s ease;
+}
+.align-bridge.visible { opacity:1; transform:translateY(0); }
+.align-bridge-text { font-family:var(--fd); font-size:1.2rem; color:rgba(43,36,25,.6); margin-bottom:6px; }
+.align-bridge-sub  { font-family:var(--fd); font-style:italic; font-size:.95rem; color:rgba(43,36,25,.35); }
+
 /* ─── HABITS ─────────────────────────────────────────────────── */
-.align-habits-wrap { width:100%; max-width:640px; margin-top:40px; position:relative; z-index:1; }
+.align-habits-wrap { width:100%; max-width:640px; margin-top:28px; position:relative; z-index:1; }
 
 /* label line expands on reveal */
 .align-habits-label {
@@ -127,8 +139,8 @@ body.align-page { background:#FBF7F4; }
 
 /* habit items stagger in via JS adding .visible */
 .habit-item {
-  display:flex; flex-direction:column; align-items:center; gap:9px;
-  padding:22px 12px 18px; cursor:pointer; position:relative; overflow:hidden;
+  display:flex; flex-direction:column; align-items:center; gap:8px;
+  padding:22px 12px 16px; cursor:pointer; position:relative; overflow:hidden;
   background:rgba(255,255,255,.65); border:1px solid rgba(201,169,110,.18);
   user-select:none; list-style:none;
   opacity:0; transform:translateY(10px);
@@ -139,6 +151,16 @@ body.align-page { background:#FBF7F4; }
 .habit-item.checked  { border-color:#8B5E3C; background:rgba(139,94,60,.06); }
 .habit-item.checked::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:#8B5E3C; }
 .habit-item input[type=checkbox] { position:absolute; opacity:0; width:0; height:0; }
+
+/* circle affordance — top-right, signals interactivity */
+.habit-circle {
+  position:absolute; top:10px; right:10px;
+  width:11px; height:11px; border-radius:50%;
+  border:1px solid rgba(201,169,110,.35);
+  transition:background .3s, border-color .3s;
+  flex-shrink:0;
+}
+.habit-item.checked .habit-circle { background:#8B5E3C; border-color:#8B5E3C; }
 
 /* subtle pulse when checked */
 @keyframes habitPulse {
@@ -155,9 +177,27 @@ body.align-page { background:#FBF7F4; }
 .habit-check { font-size:.7rem; color:transparent; transition:color .3s; font-family:var(--fs); }
 .habit-item.checked .habit-check { color:#8B5E3C; }
 
+/* per-mood micro-guidance — appears after mood selection */
+.habit-hint {
+  font-family:var(--fd); font-style:italic;
+  font-size:.72rem; line-height:1.55; letter-spacing:.01em;
+  color:rgba(43,36,25,.32); text-align:center;
+  min-height:2.2em; transition:color .3s;
+}
+.habit-item.checked .habit-hint { color:rgba(139,94,60,.5); }
+
+/* ─── PROGRESS COUNTER ───────────────────────────────────────── */
+.align-progress {
+  margin-top:22px; text-align:center;
+  font-family:var(--fs); font-size:.62rem; letter-spacing:.2em; text-transform:uppercase;
+  color:rgba(43,36,25,.35); min-height:1.2em;
+  transition:color .4s;
+}
+.align-progress .progress-num { color:#8B5E3C; font-weight:500; }
+
 /* ─── STREAK ─────────────────────────────────────────────────── */
-.align-streak { margin-top:28px; text-align:center; font-family:var(--fd); font-style:italic; font-size:1.05rem; color:rgba(43,36,25,.38); line-height:1.5; }
-.align-streak strong { color:#8B5E3C; font-style:normal; font-weight:600; font-size:1.15rem; }
+.align-streak { margin-top:8px; text-align:center; font-family:var(--fd); font-style:italic; font-size:1rem; color:rgba(43,36,25,.35); line-height:1.5; }
+.align-streak strong { color:#8B5E3C; font-style:normal; font-weight:600; font-size:1.1rem; }
 
 /* ─── ALL-DONE: SOFTEN EARLIER SECTIONS ─────────────────────── */
 .align-inner.all-done .align-step    { opacity:.55; transition:opacity 1s ease; }

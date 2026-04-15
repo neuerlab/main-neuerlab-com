@@ -1,10 +1,60 @@
 // ── DATA ─────────────────────────────────────────────────────
 const MOODS = {
-  calm:     { label:'At Ease',   icon:'◇', affirmation:'I am at peace with this moment.',        guidance:'Stay here. Let this deepen within you.',                          tag:'Peace'    },
-  anxious:  { label:'Unsettled', icon:'△', affirmation:'I am safe right now.',                   guidance:'Slow your breath. Nothing is urgent.',                            tag:'Safety'   },
-  lost:     { label:'Unclear',   icon:'◎', affirmation:'Clarity unfolds step by step.',          guidance:"You don't need the full path — just the next step.",              tag:'Clarity'  },
-  focused:  { label:'Clear',     icon:'◆', affirmation:'My energy is directed and clear.',       guidance:'Use this momentum wisely.',                                       tag:'Focus'    },
-  grateful: { label:'Open',      icon:'♡', affirmation:'I appreciate everything that is here.',  guidance:'Let this expand gently within you.',                              tag:'Gratitude'}
+  calm: {
+    label:'At Ease', icon:'◇', tag:'Peace',
+    affirmation:'I am at peace with this moment.',
+    guidance:'Stay here. Let this deepen within you.',
+    habits:{
+      breathwork: "Breathe in gently… and out, just as soft.",
+      silence:    "Feel the steadiness in your body… the quiet balance.",
+      movement:   "Let yourself arrive here.",
+      gratitude:  "Nothing to fix, nothing to change."
+    }
+  },
+  anxious: {
+    label:'Unsettled', icon:'△', tag:'Safety',
+    affirmation:'I am safe right now.',
+    guidance:'Slow your breath. Nothing is urgent.',
+    habits:{
+      breathwork: "Take a slow breath in… and a longer breath out.",
+      silence:    "Pause for a moment.",
+      movement:   "Notice what feels restless… without naming it.",
+      gratitude:  "You don't need to solve this right now… just soften around it."
+    }
+  },
+  lost: {
+    label:'Unclear', icon:'◎', tag:'Clarity',
+    affirmation:'Clarity unfolds step by step.',
+    guidance:"You don't need the full path — just the next step.",
+    habits:{
+      breathwork: "Breathe in… and out… without searching for answers.",
+      silence:    "Notice the space between thoughts… even if it's brief.",
+      movement:   "Gently slow things down.",
+      gratitude:  "It's okay not to know yet."
+    }
+  },
+  focused: {
+    label:'Clear', icon:'◆', tag:'Focus',
+    affirmation:'My energy is directed and clear.',
+    guidance:'Use this momentum wisely.',
+    habits:{
+      breathwork: "Take a calm breath in… and out.",
+      silence:    "Notice the sense of knowing… the steadiness of it.",
+      movement:   "Feel how your body responds to this clarity.",
+      gratitude:  "Trust what feels true right now."
+    }
+  },
+  grateful: {
+    label:'Open', icon:'♡', tag:'Gratitude',
+    affirmation:'I appreciate everything that is here.',
+    guidance:'Let this expand gently within you.',
+    habits:{
+      breathwork: "Breathe in… inviting… and out… releasing.",
+      silence:    "Notice the space within you… wide and available.",
+      movement:   "Bring awareness to your chest… soft and receptive.",
+      gratitude:  "Rest in this openness… and let it expand."
+    }
+  }
 };
 
 const HABITS = [
@@ -37,10 +87,11 @@ function buildHabits() {
     const el = document.createElement('label');
     el.className = 'habit-item';
     el.innerHTML =
+      `<span class="habit-circle"></span>` +
       `<input type="checkbox" data-idx="${i}">` +
       `<span class="habit-icon">${h.icon}</span>` +
       `<span class="habit-name">${h.label}</span>` +
-      `<span class="habit-check">✓</span>`;
+      `<span class="habit-hint" data-key="${h.key}"></span>`;
     el.querySelector('input').addEventListener('change', () => onHabitChange(i));
     grid.appendChild(el);
   });
@@ -48,35 +99,46 @@ function buildHabits() {
 
 // ── SESSION RESTORE ───────────────────────────────────────────
 function restoreSession() {
-  const savedDate = localStorage.getItem('nl_align_date');
-  if (savedDate !== new Date().toDateString()) return;
+  // Visual state always starts fresh — only streak persists across days
+  renderStreak();
+}
 
-  const mood   = localStorage.getItem('nl_align_mood');
-  const habits = JSON.parse(localStorage.getItem('nl_align_habits') || 'null');
+// ── HABIT RESET (on mood change) ─────────────────────────────
+function resetHabits() {
+  alignHabits         = [false, false, false, false];
+  completionTriggered = false;
 
-  if (mood && MOODS[mood]) {
-    selectMood(mood, false);
-    if (habits) {
-      alignHabits = habits;
-      document.querySelectorAll('.habit-item input').forEach((cb, i) => {
-        cb.checked = habits[i] || false;
-        cb.closest('.habit-item').classList.toggle('checked', habits[i] || false);
-      });
-      renderStreak();
-      const count = habits.filter(Boolean).length;
-      if (count === 4) {
-        completionTriggered = true;
-        showCompletionSilent();
-      } else if (count >= 2) {
-        showPartialMsg();
-      }
-    }
-  }
+  // Uncheck all habit tiles
+  document.querySelectorAll('.habit-item').forEach(item => {
+    item.querySelector('input').checked = false;
+    item.classList.remove('checked', 'pulse');
+  });
+
+  // Hide partial + completion sections
+  hidePartialMsg();
+  ['alignCompletion','alignMoment','alignReflection','alignPhilosophy','alignReturnText','alignDeeper']
+    .forEach(id => {
+      const el = document.getElementById(id);
+      if (el) { el.classList.remove('visible'); el.style.display = 'none'; }
+    });
+
+  // Lift the all-done softening
+  document.getElementById('alignInner').classList.remove('all-done');
+
+  // Reset progress counter
+  renderProgress();
+
+  // Clear saved habit state for today
+  localStorage.removeItem('nl_align_habits');
 }
 
 // ── MOOD SELECTION ────────────────────────────────────────────
 function selectMood(mood, save) {
   if (save === undefined) save = true;
+
+  // If switching moods after habits are visible, reset habit state
+  if (habitsRevealed && mood !== alignMood) resetHabits();
+
   alignMood = mood;
   const data = MOODS[mood];
 
@@ -92,19 +154,34 @@ function selectMood(mood, save) {
   document.getElementById('alignGuide').textContent   = data.guidance;
   document.getElementById('alignMoodTag').textContent = data.tag;
 
-  // Reveal card with transition
+  // Per-habit hints — update each time mood changes
+  document.querySelectorAll('.habit-hint').forEach(el => {
+    el.textContent = data.habits[el.dataset.key] || '';
+  });
+
+  // Reveal (or re-animate) card
+  const card = document.getElementById('alignCard');
   const resp = document.getElementById('alignResponse');
   resp.style.display = 'block';
+  // Remove visible first so CSS animations replay on mood switch
+  card.classList.remove('visible');
   requestAnimationFrame(() =>
-    requestAnimationFrame(() =>
-      document.getElementById('alignCard').classList.add('visible')
-    )
+    requestAnimationFrame(() => card.classList.add('visible'))
   );
 
-  // Reveal habits section — staggered, only once
+  // Reveal bridge + habits — only once
   if (!habitsRevealed) {
     habitsRevealed = true;
-    setTimeout(revealHabitsSection, 650);
+    // Bridge appears after affirmation settles
+    setTimeout(() => {
+      const bridge = document.getElementById('alignBridge');
+      if (bridge) {
+        bridge.style.display = 'block';
+        requestAnimationFrame(() => requestAnimationFrame(() => bridge.classList.add('visible')));
+      }
+      // Habits follow immediately after bridge paints
+      setTimeout(revealHabitsSection, 120);
+    }, 700);
   }
 
   if (save) {
@@ -121,16 +198,16 @@ function revealHabitsSection() {
 
   wrap.style.display = 'block';
   foot.style.display = 'block';
+  renderProgress();
 
-  // Expand the label divider line
-  requestAnimationFrame(() =>
-    requestAnimationFrame(() => label && label.classList.add('expand'))
-  );
-
-  // Stagger each habit card in
-  document.querySelectorAll('.habit-item').forEach((item, i) =>
-    setTimeout(() => item.classList.add('visible'), 80 + i * 90)
-  );
+  // Double-rAF: let display:block paint before triggering transitions
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    label && label.classList.add('expand');
+    // Stagger each habit card in
+    document.querySelectorAll('.habit-item').forEach((item, i) =>
+      setTimeout(() => item.classList.add('visible'), i * 90)
+    );
+  }));
 }
 
 // ── HABIT INTERACTION ─────────────────────────────────────────
@@ -149,6 +226,7 @@ function onHabitChange(idx) {
 
   localStorage.setItem('nl_align_habits', JSON.stringify(alignHabits));
   updateStreakCount();
+  renderProgress();
   renderStreak();
   checkCompletionState();
 }
@@ -205,6 +283,7 @@ function triggerFullCompletion() {
 // Restore: show final state instantly, no cascade
 function showCompletionSilent() {
   document.getElementById('alignInner').classList.add('all-done');
+  renderProgress();
   ['alignCompletion','alignMoment','alignReflection','alignPhilosophy','alignReturnText','alignDeeper']
     .forEach(id => {
       const el = document.getElementById(id);
@@ -212,6 +291,22 @@ function showCompletionSilent() {
       el.style.display = 'block';
       el.classList.add('visible');
     });
+}
+
+// ── PROGRESS COUNTER ──────────────────────────────────────────
+function renderProgress() {
+  const el = document.getElementById('alignProgress');
+  if (!el) return;
+  const count = alignHabits.filter(Boolean).length;
+  const total = HABITS.length;
+
+  if (count === 0) {
+    el.innerHTML = 'Tap each practice to mark it complete';
+  } else if (count < total) {
+    el.innerHTML = `<span class="progress-num">${count}</span> of ${total} complete`;
+  } else {
+    el.innerHTML = `<span class="progress-num">${total} of ${total}</span> — loop closed ✦`;
+  }
 }
 
 // ── STREAK ────────────────────────────────────────────────────
@@ -226,17 +321,11 @@ function updateStreakCount() {
 }
 
 function renderStreak() {
-  const streak    = parseInt(localStorage.getItem('nl_align_streak') || '0');
-  const completed = alignHabits.filter(Boolean).length;
-  const el        = document.getElementById('alignStreak');
+  const streak = parseInt(localStorage.getItem('nl_align_streak') || '0');
+  const el     = document.getElementById('alignStreak');
   if (!el) return;
-
-  if (streak > 0) {
-    const d = streak === 1 ? 'day' : 'days';
-    el.innerHTML = `Streak: <strong>${streak}</strong> ${d} ✦`;
-  } else if (completed === HABITS.length) {
-    el.innerHTML = 'All practices complete ✦';
-  } else {
-    el.innerHTML = `Complete all ${HABITS.length} to begin your streak`;
-  }
+  // Only show streak when it exists — progress counter handles the rest
+  el.innerHTML = streak > 0
+    ? `Streak: <strong>${streak}</strong> ${streak === 1 ? 'day' : 'days'} ✦`
+    : '';
 }
