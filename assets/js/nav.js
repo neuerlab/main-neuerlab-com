@@ -40,8 +40,23 @@ setTimeout(function () {
   document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible'); });
 }, 300);
 
+// ── TOOLS DROPDOWN ────────────────────────────────────────────
+var toolsTrigger = document.getElementById('navToolsTrigger');
+var toolsItem    = toolsTrigger && toolsTrigger.closest('.nav-tools-item');
+
+function openTools()  { if (!toolsItem) return; toolsItem.classList.add('open');    toolsTrigger.setAttribute('aria-expanded','true');  }
+function closeTools() { if (!toolsItem) return; toolsItem.classList.remove('open'); toolsTrigger.setAttribute('aria-expanded','false'); }
+function toggleTools(e) { e.stopPropagation(); toolsItem.classList.contains('open') ? closeTools() : openTools(); }
+
+if (toolsTrigger) toolsTrigger.addEventListener('click', toggleTools);
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeTools(); });
+document.addEventListener('click',   function(e) { if (toolsItem && !toolsItem.contains(e.target)) closeTools(); });
+document.querySelectorAll('.nav-tool-featured, .nav-tool-item').forEach(function(a) {
+  a.addEventListener('click', closeTools);
+});
+
 // ── ACTIVE NAV HIGHLIGHT ──────────────────────────────────────
-var navLinks = document.querySelectorAll('.nav-links a:not(.nav-aff-link)');
+var navLinks = document.querySelectorAll('.nav-links a:not(.nav-tools-trigger)');
 var secObs   = new IntersectionObserver(function (entries) {
   entries.forEach(function (e) {
     if (e.isIntersecting) {
