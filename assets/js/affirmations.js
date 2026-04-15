@@ -53,10 +53,12 @@ const AFFS = [
 ];
 
 // ── STATE ─────────────────────────────────────────────────────
-let affIdx  = 0;
-let affFavs = JSON.parse(localStorage.getItem('nl_favs') || '[]');
-let affSeen = JSON.parse(localStorage.getItem('nl_seen') || '[]');
-let affDaily = [];
+let affIdx      = 0;
+let affFavs     = JSON.parse(localStorage.getItem('nl_favs') || '[]');
+let affSeen     = JSON.parse(localStorage.getItem('nl_seen') || '[]');
+let affDaily    = [];
+let affDotStart = 0;   // persistent dot-window start position
+let affTimer    = null; // animation timeout handle
 
 // ── SEEDED RNG ────────────────────────────────────────────────
 function affSeeded(s) {
@@ -71,22 +73,28 @@ function affGetDaily() {
 }
 
 // ── DISPLAY ───────────────────────────────────────────────────
-function affShow(idx, animate) {
+// jump=true  → re-center dot window (Inspire Me / direct clicks)
+// jump=false → scroll dot window only at edges (PREV / NEXT)
+function affShow(idx, animate, jump) {
+  affIdx = idx; // update immediately so rapid clicks chain correctly
   const card = document.getElementById('affCard'), a = AFFS[idx];
   const run = () => {
     document.getElementById('affNum').textContent = String(idx + 1).padStart(2, '0') + ' / 50';
     document.getElementById('affText').textContent = a.text;
     document.getElementById('affCat').textContent  = a.cat;
-    affIdx = idx;
     if (!affSeen.includes(idx)) { affSeen.push(idx); localStorage.setItem('nl_seen', JSON.stringify(affSeen)); }
-    affDots(); affMiniUpdate(); affFavUpdate();
+    affDots(jump); affMiniUpdate(); affFavUpdate();
     if (animate) card.classList.remove('out');
   };
-  if (animate) { card.classList.add('out'); setTimeout(run, 360); } else run();
+  if (animate) {
+    if (affTimer) clearTimeout(affTimer);
+    card.classList.add('out');
+    affTimer = setTimeout(() => { affTimer = null; run(); }, 360);
+  } else run();
 }
 
-function affNav(dir)    { affShow((affIdx + dir + 50) % 50, true); }
-function affRandom()    { let n; do { n = Math.floor(Math.random() * 50); } while (n === affIdx); affShow(n, true); }
+function affNav(dir)    { affShow((affIdx + dir + 50) % 50, true, false); }
+function affRandom()    { let n; do { n = Math.floor(Math.random() * 50); } while (n === affIdx); affShow(n, true, true); }
 
 function affToggleFav() {
   affFavs = affFavs.includes(affIdx) ? affFavs.filter(f => f !== affIdx) : [...affFavs, affIdx];
@@ -99,14 +107,22 @@ function affFavUpdate() {
   b.classList.toggle('active', affFavs.includes(affIdx));
 }
 
-function affDots() {
+function affDots(jump) {
+  const W = 9;
+  if (jump) {
+    // Re-center window on affIdx (big jumps: Inspire Me, direct click)
+    affDotStart = Math.max(0, Math.min(50 - W, affIdx - Math.floor(W / 2)));
+  } else {
+    // Lazy-scroll: only shift window when affIdx leaves the current range
+    if (affIdx < affDotStart) affDotStart = affIdx;
+    else if (affIdx >= affDotStart + W) affDotStart = affIdx - W + 1;
+    affDotStart = Math.max(0, Math.min(50 - W, affDotStart));
+  }
   const c = document.getElementById('affDots'); c.innerHTML = '';
-  const W = 9; let s = Math.max(0, affIdx - Math.floor(W / 2)), e = Math.min(49, s + W - 1);
-  if (e - s < W - 1) s = Math.max(0, e - W + 1);
-  for (let i = s; i <= e; i++) {
+  for (let i = affDotStart; i < affDotStart + W; i++) {
     const d = document.createElement('div');
     d.className = 'aff-dot' + (i === affIdx ? ' active' : '') + (affSeen.includes(i) && i !== affIdx ? ' viewed' : '');
-    d.onclick = ((x) => () => affShow(x, true))(i);
+    d.onclick = ((x) => () => affShow(x, true, true))(i);
     c.appendChild(d);
   }
 }
@@ -117,7 +133,7 @@ function affMiniRender() {
     const a = AFFS[idx], el = document.createElement('div');
     el.className = 'aff-mini' + (idx === affIdx ? ' active' : '');
     el.innerHTML = '<div class="aff-mini-cat">' + a.cat + '</div><div class="aff-mini-text">' + a.text + '</div>';
-    el.onclick = () => affShow(idx, true);
+    el.onclick = () => affShow(idx, true, true);
     c.appendChild(el);
   });
 }
@@ -132,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   affDaily = affGetDaily();
   affIdx   = affDaily[0];
-  affShow(affIdx, false);
+  affShow(affIdx, false, true);
   affMiniRender();
 });
 

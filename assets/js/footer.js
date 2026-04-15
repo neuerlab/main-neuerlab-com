@@ -19,8 +19,8 @@
             '<nav class="footer-nav footer-nav-col">' +
               '<a href="' + base + 'index.html#mission">Mission</a>' +
               '<a href="' + base + 'clarity.html">Pathways</a>' +
-              '<a href="' + base + 'about.html">About</a>' +
               '<a href="' + base + 'journal.html">Journal</a>' +
+              '<a href="' + base + 'about.html">About</a>' +
               '<a href="' + base + 'index.html#contact">Connect</a>' +
             '</nav>' +
           '</div>' +
