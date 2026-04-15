@@ -118,21 +118,24 @@
           <span class="card-vis-num">02</span>
           <span class="card-vis-ornament">Burnout &amp; Reset</span>
           <svg class="card-vis-geo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <!-- Burnout & Reset: horizontal energy lines cut by a vertical reset axis -->
+            <defs><clipPath id="clip-b"><circle cx="50" cy="50" r="45"/></clipPath></defs>
+            <!-- Burnout & Reset: horizontal energy lines + vertical reset axis, clipped to circle -->
             <circle cx="50" cy="50" r="46" stroke-width="0.6"/>
             <circle cx="50" cy="50" r="4"  stroke-width="0.8"/>
-            <line x1="4" y1="20" x2="96" y2="20" stroke-width="0.35"/>
-            <line x1="4" y1="26" x2="96" y2="26" stroke-width="0.3"/>
-            <line x1="4" y1="32" x2="96" y2="32" stroke-width="0.35"/>
-            <line x1="4" y1="38" x2="96" y2="38" stroke-width="0.3"/>
-            <line x1="4" y1="44" x2="96" y2="44" stroke-width="0.4"/>
-            <line x1="4" y1="50" x2="96" y2="50" stroke-width="0.5"/>
-            <line x1="4" y1="56" x2="96" y2="56" stroke-width="0.4"/>
-            <line x1="4" y1="62" x2="96" y2="62" stroke-width="0.3"/>
-            <line x1="4" y1="68" x2="96" y2="68" stroke-width="0.35"/>
-            <line x1="4" y1="74" x2="96" y2="74" stroke-width="0.3"/>
-            <line x1="4" y1="80" x2="96" y2="80" stroke-width="0.35"/>
-            <line x1="50" y1="4" x2="50" y2="96" stroke-width="0.6"/>
+            <g clip-path="url(#clip-b)">
+              <line x1="4" y1="20" x2="96" y2="20" stroke-width="0.35"/>
+              <line x1="4" y1="26" x2="96" y2="26" stroke-width="0.3"/>
+              <line x1="4" y1="32" x2="96" y2="32" stroke-width="0.35"/>
+              <line x1="4" y1="38" x2="96" y2="38" stroke-width="0.3"/>
+              <line x1="4" y1="44" x2="96" y2="44" stroke-width="0.4"/>
+              <line x1="4" y1="50" x2="96" y2="50" stroke-width="0.5"/>
+              <line x1="4" y1="56" x2="96" y2="56" stroke-width="0.4"/>
+              <line x1="4" y1="62" x2="96" y2="62" stroke-width="0.3"/>
+              <line x1="4" y1="68" x2="96" y2="68" stroke-width="0.35"/>
+              <line x1="4" y1="74" x2="96" y2="74" stroke-width="0.3"/>
+              <line x1="4" y1="80" x2="96" y2="80" stroke-width="0.35"/>
+              <line x1="50" y1="4" x2="50" y2="96" stroke-width="0.6"/>
+            </g>
           </svg>
         </div>
         <div class="card-body">
@@ -196,23 +199,26 @@
           <span class="card-vis-num">05</span>
           <span class="card-vis-ornament">Mind &amp; Awareness</span>
           <svg class="card-vis-geo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <!-- Mind & Awareness: orthogonal grid — structure, clarity, the analytical mind -->
+            <defs><clipPath id="clip-m"><circle cx="50" cy="50" r="45"/></clipPath></defs>
+            <!-- Mind & Awareness: orthogonal grid clipped to circle -->
             <circle cx="50" cy="50" r="46" stroke-width="0.6"/>
             <circle cx="50" cy="50" r="3"  stroke-width="0.8"/>
-            <line x1="20" y1="4"  x2="20" y2="96" stroke-width="0.35"/>
-            <line x1="30" y1="4"  x2="30" y2="96" stroke-width="0.35"/>
-            <line x1="40" y1="4"  x2="40" y2="96" stroke-width="0.35"/>
-            <line x1="50" y1="4"  x2="50" y2="96" stroke-width="0.5"/>
-            <line x1="60" y1="4"  x2="60" y2="96" stroke-width="0.35"/>
-            <line x1="70" y1="4"  x2="70" y2="96" stroke-width="0.35"/>
-            <line x1="80" y1="4"  x2="80" y2="96" stroke-width="0.35"/>
-            <line x1="4"  y1="20" x2="96" y2="20" stroke-width="0.35"/>
-            <line x1="4"  y1="30" x2="96" y2="30" stroke-width="0.35"/>
-            <line x1="4"  y1="40" x2="96" y2="40" stroke-width="0.35"/>
-            <line x1="4"  y1="50" x2="96" y2="50" stroke-width="0.5"/>
-            <line x1="4"  y1="60" x2="96" y2="60" stroke-width="0.35"/>
-            <line x1="4"  y1="70" x2="96" y2="70" stroke-width="0.35"/>
-            <line x1="4"  y1="80" x2="96" y2="80" stroke-width="0.35"/>
+            <g clip-path="url(#clip-m)">
+              <line x1="20" y1="4"  x2="20" y2="96" stroke-width="0.35"/>
+              <line x1="30" y1="4"  x2="30" y2="96" stroke-width="0.35"/>
+              <line x1="40" y1="4"  x2="40" y2="96" stroke-width="0.35"/>
+              <line x1="50" y1="4"  x2="50" y2="96" stroke-width="0.5"/>
+              <line x1="60" y1="4"  x2="60" y2="96" stroke-width="0.35"/>
+              <line x1="70" y1="4"  x2="70" y2="96" stroke-width="0.35"/>
+              <line x1="80" y1="4"  x2="80" y2="96" stroke-width="0.35"/>
+              <line x1="4"  y1="20" x2="96" y2="20" stroke-width="0.35"/>
+              <line x1="4"  y1="30" x2="96" y2="30" stroke-width="0.35"/>
+              <line x1="4"  y1="40" x2="96" y2="40" stroke-width="0.35"/>
+              <line x1="4"  y1="50" x2="96" y2="50" stroke-width="0.5"/>
+              <line x1="4"  y1="60" x2="96" y2="60" stroke-width="0.35"/>
+              <line x1="4"  y1="70" x2="96" y2="70" stroke-width="0.35"/>
+              <line x1="4"  y1="80" x2="96" y2="80" stroke-width="0.35"/>
+            </g>
           </svg>
         </div>
         <div class="card-body">
