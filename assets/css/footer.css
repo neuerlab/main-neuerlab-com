@@ -23,8 +23,8 @@ footer { background:var(--petal); border-top:1px solid rgba(184,104,90,.1); padd
   gap:48px;
 }
 .footer-bottom .footer-copy {
-  font-size:.85rem;
-  letter-spacing:.16em;
+  font-size:.56rem;
+  letter-spacing:.18em;
   color:rgba(58,36,32,.85);
   text-transform:uppercase;
   margin:0;
@@ -36,8 +36,8 @@ footer { background:var(--petal); border-top:1px solid rgba(184,104,90,.1); padd
   margin:0;
 }
 .footer-bottom .footer-links a {
-  font-size:.85rem;
-  letter-spacing:.16em;
+  font-size:.56rem;
+  letter-spacing:.18em;
   text-transform:uppercase;
   text-decoration:none;
   color:rgba(58,36,32,.85);
