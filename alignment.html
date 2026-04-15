@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="assets/css/nav.css">
 <link rel="stylesheet" href="assets/css/footer.css?v=13">
 <link rel="stylesheet" href="assets/css/logo.css">
-<link rel="stylesheet" href="assets/css/alignment.css?v=1">
+<link rel="stylesheet" href="assets/css/alignment.css?v=2">
 </head>
 <body class="align-page">
 
@@ -46,7 +46,7 @@
      DAILY ALIGNMENT
 ═══════════════════════════════════════════════════════════════ -->
 <section id="alignment">
-  <div class="align-inner">
+  <div class="align-inner" id="alignInner">
     <div class="align-blob align-blob-1"></div>
     <div class="align-blob align-blob-2"></div>
     <div class="align-blob align-blob-3"></div>
@@ -55,34 +55,35 @@
     <header class="align-header">
       <div class="align-eyebrow">Daily Practice</div>
       <h1 class="align-title">Daily <em>Alignment</em></h1>
-      <p class="align-subtitle">Check in · Affirm · Build your ritual</p>
+      <p class="align-subtitle">Arrive · Acknowledge · Align</p>
     </header>
 
     <div class="align-date" id="alignDate"></div>
 
     <!-- ─── STEP 1: MOOD CHECK-IN ──────────────────────────── -->
     <div class="align-step">
-      <p class="align-question">How are you feeling today?</p>
+      <p class="align-question">How are you, right now?</p>
+      <p class="align-whisper">Choose what feels true.</p>
       <div class="align-moods" id="moodGrid">
         <button class="mood-btn" data-mood="calm"     onclick="selectMood('calm')">
           <span class="mood-icon">◇</span>
-          <span class="mood-label">Calm</span>
+          <span class="mood-label">At Ease</span>
         </button>
         <button class="mood-btn" data-mood="anxious"  onclick="selectMood('anxious')">
           <span class="mood-icon">△</span>
-          <span class="mood-label">Anxious</span>
+          <span class="mood-label">Unsettled</span>
         </button>
         <button class="mood-btn" data-mood="lost"     onclick="selectMood('lost')">
           <span class="mood-icon">◎</span>
-          <span class="mood-label">Lost</span>
+          <span class="mood-label">Unclear</span>
         </button>
         <button class="mood-btn" data-mood="focused"  onclick="selectMood('focused')">
           <span class="mood-icon">◆</span>
-          <span class="mood-label">Focused</span>
+          <span class="mood-label">Clear</span>
         </button>
         <button class="mood-btn" data-mood="grateful" onclick="selectMood('grateful')">
           <span class="mood-icon">♡</span>
-          <span class="mood-label">Grateful</span>
+          <span class="mood-label">Open</span>
         </button>
       </div>
     </div>
@@ -98,12 +99,49 @@
 
     <!-- ─── STEP 3+4: HABITS + STREAK ─────────────────────── -->
     <div class="align-habits-wrap" id="alignHabitsWrap" style="display:none">
-      <div class="align-habits-label">Today's Alignment</div>
+      <div class="align-habits-label" id="alignHabitsLabel">Your Alignment Today</div>
       <div class="align-habits-grid" id="alignHabitsGrid"></div>
       <div class="align-streak" id="alignStreak"></div>
     </div>
 
-    <!-- ─── FOOT (hidden until mood selected) ─────────────── -->
+    <!-- ─── PARTIAL COMPLETION (2–3 habits) ───────────────── -->
+    <div class="align-partial" id="alignPartial" style="display:none">
+      <p class="align-partial-text">You showed up for yourself today.</p>
+      <p class="align-partial-sub">That is enough.</p>
+    </div>
+
+    <!-- ─── FULL COMPLETION CASCADE (all 4 habits) ────────── -->
+    <div class="align-completion" id="alignCompletion" style="display:none">
+
+      <div class="align-moment" id="alignMoment" style="display:none">
+        <p class="align-moment-line">Take a moment.</p>
+        <p class="align-moment-line">Notice how you feel now.</p>
+      </div>
+
+      <p class="align-reflection" id="alignReflection" style="display:none">
+        What feels different?
+      </p>
+
+      <div class="align-philosophy" id="alignPhilosophy" style="display:none">
+        <p><em>Alignment isn't something you achieve.</em></p>
+        <p><em>It's something you return to.</em></p>
+      </div>
+
+      <p class="align-return-text" id="alignReturnText" style="display:none">
+        Return tomorrow.
+      </p>
+
+      <div class="align-deeper" id="alignDeeper" style="display:none">
+        <p class="align-deeper-prompt">If you want to go deeper, I'm here.</p>
+        <div class="align-deeper-ctas">
+          <a href="https://calendar.app.google/biqbVJuuzFLTgKoy7" target="_blank" class="btn">Book a session</a>
+          <a href="clarity.html" class="btn btn-outline">Explore your path</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ─── TOOLS LINK (shown after mood selected) ────────── -->
     <div id="alignFoot" style="display:none">
       <div class="align-divider">
         <span class="align-divider-inner">More tools</span>
@@ -113,7 +151,7 @@
       </div>
     </div>
 
-    <div class="align-privacy">Your data stays private · Stored only on your device · No login required</div>
+    <div class="align-privacy">This space is private. Nothing leaves your device.</div>
 
     <div class="align-ornament">✦</div>
     <div class="align-foot">
