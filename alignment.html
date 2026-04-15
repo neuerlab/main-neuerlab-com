@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Alignment — Neuer Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css?v=12">
+<link rel="stylesheet" href="assets/css/nav.css">
+<link rel="stylesheet" href="assets/css/footer.css?v=13">
+<link rel="stylesheet" href="assets/css/logo.css">
+<link rel="stylesheet" href="assets/css/alignment.css?v=1">
+</head>
+<body class="align-page">
+
+<!-- ─── NAV ──────────────────────────────────────────────────────── -->
+<nav id="navbar" class="scrolled">
+  <a href="index.html" class="nav-logo" id="navLogo">
+    <span class="nav-logo-name">Neuer Lab</span>
+    <span class="nav-logo-sub">Mindset · Spirituality · Longevity</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#mission">Mission</a></li>
+    <li><a href="clarity.html">Pathways</a></li>
+    <li><a href="journal.html">Journal</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#contact">Connect</a></li>
+    <li><a href="affirmations.html" class="nav-aff-link">✦ Affirmations</a></li>
+  </ul>
+  <button class="nav-burger" id="navBurger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-drawer" id="navDrawer">
+  <a href="index.html#mission">Mission</a>
+  <a href="clarity.html">Pathways</a>
+  <a href="journal.html">Journal</a>
+  <a href="about.html">About</a>
+  <a href="index.html#contact">Connect</a>
+  <a href="affirmations.html" class="nav-aff-link">✦ Affirmations</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     DAILY ALIGNMENT
+═══════════════════════════════════════════════════════════════ -->
+<section id="alignment">
+  <div class="align-inner">
+    <div class="align-blob align-blob-1"></div>
+    <div class="align-blob align-blob-2"></div>
+    <div class="align-blob align-blob-3"></div>
+
+    <!-- ─── HEADER ─────────────────────────────────────────── -->
+    <header class="align-header">
+      <div class="align-eyebrow">Daily Practice</div>
+      <h1 class="align-title">Daily <em>Alignment</em></h1>
+      <p class="align-subtitle">Check in · Affirm · Build your ritual</p>
+    </header>
+
+    <div class="align-date" id="alignDate"></div>
+
+    <!-- ─── STEP 1: MOOD CHECK-IN ──────────────────────────── -->
+    <div class="align-step">
+      <p class="align-question">How are you feeling today?</p>
+      <div class="align-moods" id="moodGrid">
+        <button class="mood-btn" data-mood="calm"     onclick="selectMood('calm')">
+          <span class="mood-icon">◇</span>
+          <span class="mood-label">Calm</span>
+        </button>
+        <button class="mood-btn" data-mood="anxious"  onclick="selectMood('anxious')">
+          <span class="mood-icon">△</span>
+          <span class="mood-label">Anxious</span>
+        </button>
+        <button class="mood-btn" data-mood="lost"     onclick="selectMood('lost')">
+          <span class="mood-icon">◎</span>
+          <span class="mood-label">Lost</span>
+        </button>
+        <button class="mood-btn" data-mood="focused"  onclick="selectMood('focused')">
+          <span class="mood-icon">◆</span>
+          <span class="mood-label">Focused</span>
+        </button>
+        <button class="mood-btn" data-mood="grateful" onclick="selectMood('grateful')">
+          <span class="mood-icon">♡</span>
+          <span class="mood-label">Grateful</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ─── STEP 2: RESPONSE CARD ──────────────────────────── -->
+    <div class="align-response" id="alignResponse" style="display:none">
+      <div class="align-card" id="alignCard">
+        <div class="align-aff"      id="alignAff"></div>
+        <div class="align-guide"    id="alignGuide"></div>
+        <div class="align-mood-tag" id="alignMoodTag"></div>
+      </div>
+    </div>
+
+    <!-- ─── STEP 3+4: HABITS + STREAK ─────────────────────── -->
+    <div class="align-habits-wrap" id="alignHabitsWrap" style="display:none">
+      <div class="align-habits-label">Today's Alignment</div>
+      <div class="align-habits-grid" id="alignHabitsGrid"></div>
+      <div class="align-streak" id="alignStreak"></div>
+    </div>
+
+    <!-- ─── FOOT (hidden until mood selected) ─────────────── -->
+    <div id="alignFoot" style="display:none">
+      <div class="align-divider">
+        <span class="align-divider-inner">More tools</span>
+      </div>
+      <div class="align-tools-link">
+        <a href="affirmations.html">Explore Daily Affirmations ✦</a>
+      </div>
+    </div>
+
+    <div class="align-privacy">Your data stays private · Stored only on your device · No login required</div>
+
+    <div class="align-ornament">✦</div>
+    <div class="align-foot">
+      <div class="align-foot-powered">A feature by <span>Neuer Lab</span></div>
+    </div>
+
+  </div>
+</section>
+
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/alignment.js"></script>
+<script src="assets/js/footer.js?v=12"></script>
+</body>
+</html>

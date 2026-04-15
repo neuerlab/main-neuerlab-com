@@ -37,6 +37,7 @@
             '<div class="footer-col-label">Tools</div>' +
             '<nav class="footer-nav footer-nav-col">' +
               '<a href="' + base + 'affirmations.html">Daily Affirmations</a>' +
+              '<a href="' + base + 'alignment.html">Daily Alignment</a>' +
               '<a href="' + base + 'clarity.html">Find Your Path</a>' +
             '</nav>' +
           '</div>' +
