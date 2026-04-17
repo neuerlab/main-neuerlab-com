@@ -73,12 +73,8 @@ body.guide-page .nav-burger span { background:var(--espresso); }
   margin:0 auto;
   padding:0 56px;
   width:100%;
-  display:grid;
-  grid-template-columns:1.4fr 1fr;
-  gap:64px;
-  align-items:center;
 }
-.guide-hero-text { max-width:620px; }
+.guide-hero-text { max-width:780px; }
 .guide-hero-eyebrow {
   font-family:var(--fs);
   font-size:.58rem;
@@ -185,82 +181,6 @@ body.guide-page .nav-burger span { background:var(--espresso); }
   font-size:1.65rem;
   font-weight:400;
   color:var(--cream);
-}
-
-/* Book mockup */
-.guide-hero-book {
-  position:relative;
-  aspect-ratio:3/4;
-  max-width:360px;
-  margin-left:auto;
-  animation:fadeUp 1s ease .5s both;
-}
-.guide-book {
-  position:absolute;
-  inset:0;
-  background:linear-gradient(135deg, #1e0f0c 0%, #3D1A14 50%, #5A2A22 100%);
-  box-shadow:
-    0 2px 4px rgba(0,0,0,.12),
-    0 20px 48px rgba(0,0,0,.3),
-    0 40px 80px rgba(0,0,0,.2),
-    inset 0 0 0 1px rgba(255,255,255,.04);
-  padding:40px 36px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  color:var(--cream);
-  transform:rotate(-2deg);
-  transition:transform .6s ease;
-}
-.guide-book:hover { transform:rotate(0deg) translateY(-8px); }
-.guide-book-top {
-  display:flex;
-  flex-direction:column;
-  gap:4px;
-}
-.guide-book-label {
-  font-family:var(--fs);
-  font-size:.5rem;
-  letter-spacing:.3em;
-  text-transform:uppercase;
-  color:var(--gold);
-  opacity:.85;
-}
-.guide-book-brand {
-  font-family:var(--fd);
-  font-style:italic;
-  font-size:.9rem;
-  color:rgba(251,247,244,.55);
-}
-.guide-book-title {
-  font-family:var(--fd);
-  font-weight:300;
-  font-size:2.6rem;
-  line-height:1.02;
-  letter-spacing:-.015em;
-  color:var(--cream);
-}
-.guide-book-title em {
-  font-style:italic;
-  color:var(--gold);
-  display:block;
-}
-.guide-book-bottom {
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-end;
-  font-family:var(--fs);
-  font-size:.5rem;
-  text-transform:uppercase;
-  letter-spacing:.24em;
-  color:rgba(251,247,244,.5);
-}
-.guide-book-ornament {
-  width:36px;
-  height:1px;
-  background:var(--gold);
-  opacity:.5;
-  margin-bottom:6px;
 }
 
 /* ─── PRINCIPLE (statement) ──────────────────────────────────── */
@@ -853,8 +773,7 @@ body.guide-page .nav-burger span { background:var(--espresso); }
 
 /* ─── RESPONSIVE ─────────────────────────────────────────────── */
 @media (max-width:900px) {
-  .guide-hero-content { grid-template-columns:1fr; gap:48px; padding:0 24px; }
-  .guide-hero-book { max-width:260px; margin:0 auto; }
+  .guide-hero-content { padding:0 24px; }
   .guide-pillars-grid { grid-template-columns:1fr 1fr; }
   .guide-contents-grid { grid-template-columns:1fr; gap:36px; }
   .guide-inclusions-grid { grid-template-columns:1fr; gap:40px; }
@@ -885,6 +804,7 @@ body.guide-page .nav-burger span { background:var(--espresso); }
   <ul class="nav-links">
     <li><a href="index.html#mission">Mission</a></li>
     <li><a href="clarity.html">Pathways</a></li>
+    <li><a href="longevity-guide.html">Guide</a></li>
     <li><a href="journal.html">Journal</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="index.html#contact">Connect</a></li>
@@ -920,6 +840,7 @@ body.guide-page .nav-burger span { background:var(--espresso); }
 <div class="nav-drawer" id="navDrawer">
   <a href="index.html#mission">Mission</a>
   <a href="clarity.html">Pathways</a>
+  <a href="longevity-guide.html">Guide</a>
   <a href="journal.html">Journal</a>
   <a href="about.html">About</a>
   <a href="index.html#contact">Connect</a>
@@ -967,22 +888,6 @@ body.guide-page .nav-burger span { background:var(--espresso); }
         <div class="guide-price-inline">
           <span class="guide-price-old">€ 39.90</span>
           <span class="guide-price-new">€ 29</span>
-        </div>
-      </div>
-    </div>
-    <div class="guide-hero-book">
-      <div class="guide-book">
-        <div class="guide-book-top">
-          <div class="guide-book-label">Neuer Lab · Volume I</div>
-          <div class="guide-book-brand">a workbook</div>
-        </div>
-        <div class="guide-book-title">The<br>Longevity<br><em>Guide</em></div>
-        <div class="guide-book-bottom">
-          <div>
-            <div class="guide-book-ornament"></div>
-            <div>Mind · Body · Rest</div>
-          </div>
-          <div>PDF</div>
         </div>
       </div>
     </div>
