@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Longevity Guide — Neuer Lab</title>
+<meta name="description" content="Ein Arbeitsbuch für bewusstes Leben. Vier Säulen — Geist, Ernährung, Bewegung, Regeneration — und eine fünfte, stille: Sinn. Von Neuer Lab.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&family=Jost:wght@200;300;400;500&family=Josefin+Sans:wght@100;200;300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css?v=12">
+<link rel="stylesheet" href="assets/css/nav.css">
+<link rel="stylesheet" href="assets/css/footer.css?v=13">
+<link rel="stylesheet" href="assets/css/logo.css">
+<link rel="stylesheet" href="assets/css/sections.css?v=12">
+
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   LONGEVITY GUIDE DE — page-specific styles
+═══════════════════════════════════════════════════════════════ */
+
+body.guide-page { background:var(--petal); }
+
+body.guide-page #navbar { background:rgba(250,245,242,.97); backdrop-filter:blur(16px); border-bottom:1px solid rgba(184,104,90,.12); }
+body.guide-page .nav-logo-name { color:var(--espresso); }
+body.guide-page .nav-logo-sub { color:var(--gold); }
+body.guide-page .nav-links a { color:rgba(106,74,64,.75); }
+body.guide-page .nav-links a:hover { color:var(--gold); }
+body.guide-page .nav-tools-trigger { color:var(--gold); border-color:rgba(196,132,106,.45); background:transparent; }
+body.guide-page .nav-tools-trigger:hover { background:var(--gold); color:var(--espresso); border-color:var(--gold); }
+body.guide-page .nav-burger span { background:var(--espresso); }
+
+/* ─── GUIDE HERO ─────────────────────────────────────────────── */
+#guide-hero {
+  min-height:92vh;
+  background:linear-gradient(160deg, #A85E50 0%, #C07868 50%, #CC8C7A 100%);
+  display:flex;
+  align-items:center;
+  padding:140px 0 100px;
+  position:relative;
+  overflow:hidden;
+}
+.guide-hero-geometry {
+  position:absolute;
+  right:-120px;
+  top:50%;
+  transform:translateY(-50%);
+  width:620px;
+  height:620px;
+  opacity:.22;
+  z-index:1;
+  animation:guideRot 90s linear infinite;
+  pointer-events:none;
+}
+@keyframes guideRot { to { transform:translateY(-50%) rotate(360deg); } }
+.guide-hero-glow {
+  position:absolute;
+  left:15%;
+  top:45%;
+  transform:translate(-50%,-50%);
+  width:520px;
+  height:520px;
+  background:radial-gradient(ellipse,rgba(232,203,188,.18) 0%,transparent 70%);
+  pointer-events:none;
+  z-index:1;
+}
+.guide-hero-content {
+  position:relative;
+  z-index:2;
+  max-width:1160px;
+  margin:0 auto;
+  padding:0 56px;
+  width:100%;
+}
+.guide-hero-text { max-width:780px; }
+.guide-hero-eyebrow {
+  font-family:var(--fs);
+  font-size:.58rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:26px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  animation:fadeUp 1s ease .1s both;
+}
+.guide-hero-eyebrow::before {
+  content:'';
+  width:36px;
+  height:1px;
+  background:var(--gold);
+}
+.guide-hero h1 {
+  font-family:'Josefin Sans', 'Inter', system-ui, sans-serif;
+  font-size:clamp(32px,4.2vw,62px);
+  font-weight:200;
+  line-height:1.08;
+  color:var(--cream);
+  margin-bottom:26px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  animation:fadeUp 1s ease .25s both;
+}
+.guide-hero h1 em {
+  color:#EACABA;
+  font-style:normal;
+  font-weight:200;
+  display:block;
+  letter-spacing:.18em;
+}
+.guide-hero-sub {
+  font-family:var(--fd);
+  font-size:clamp(1.05rem,1.6vw,1.3rem);
+  font-style:italic;
+  font-weight:300;
+  line-height:1.7;
+  color:rgba(251,247,244,.78);
+  margin-bottom:40px;
+  animation:fadeUp 1s ease .4s both;
+}
+.guide-hero-meta {
+  display:flex;
+  align-items:center;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-bottom:44px;
+  animation:fadeUp 1s ease .55s both;
+}
+.guide-hero-meta span {
+  font-family:var(--fs);
+  font-size:.58rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:rgba(251,247,244,.55);
+}
+.guide-hero-meta-dot { color:var(--gold) !important; }
+.guide-hero-ctas {
+  display:flex;
+  align-items:center;
+  gap:24px;
+  flex-wrap:wrap;
+  animation:fadeUp 1s ease .7s both;
+}
+.btn-guide-primary {
+  display:inline-block;
+  font-family:var(--fs);
+  font-size:.72rem;
+  font-weight:500;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  text-decoration:none;
+  padding:16px 34px;
+  background:var(--gold);
+  color:var(--rose-deep);
+  border:1px solid var(--gold);
+  transition:background .3s, color .3s, transform .2s, box-shadow .3s;
+  box-shadow:0 4px 24px rgba(196,132,106,.3);
+}
+.btn-guide-primary:hover {
+  background:var(--rose-deep);
+  color:var(--gold);
+  transform:translateY(-1px);
+  box-shadow:0 6px 32px rgba(122,58,44,.35);
+}
+.guide-price-inline {
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  font-family:var(--fd);
+}
+.guide-price-old {
+  text-decoration:line-through;
+  color:rgba(251,247,244,.45);
+  font-size:1.1rem;
+  font-weight:300;
+}
+.guide-price-new {
+  font-size:1.65rem;
+  font-weight:400;
+  color:var(--cream);
+}
+
+/* ─── PRINCIPLE ──────────────────────────────────────────────── */
+#guide-principle { background:var(--petal); padding:110px 0; }
+.guide-principle-inner { text-align:center; max-width:760px; margin:0 auto; }
+.guide-principle-inner .label { display:block; margin-bottom:22px; }
+.guide-principle-inner h2 {
+  font-family:'Inter', system-ui, sans-serif;
+  font-size:clamp(30px,3.8vw,52px);
+  font-weight:300;
+  line-height:1.15;
+  color:var(--espresso);
+  margin-bottom:28px;
+}
+.guide-principle-inner h2 em { color:var(--gold); font-style:italic; }
+.guide-principle-body {
+  font-family:var(--fd);
+  font-size:1.22rem;
+  line-height:1.9;
+  color:var(--cocoa);
+  margin-bottom:24px;
+}
+.guide-principle-quote {
+  margin-top:52px;
+  padding:36px 0;
+  border-top:1px solid rgba(184,104,90,.14);
+  border-bottom:1px solid rgba(184,104,90,.14);
+  font-family:var(--fd);
+  font-size:clamp(1.3rem,2.4vw,1.85rem);
+  font-weight:300;
+  font-style:italic;
+  line-height:1.55;
+  color:var(--espresso);
+}
+.guide-principle-quote em { color:var(--gold); }
+
+/* ─── PILLARS ────────────────────────────────────────────────── */
+#guide-pillars { background:var(--blush); padding:110px 0; }
+.guide-pillars-head { margin-bottom:56px; max-width:640px; }
+.guide-pillars-head .label { display:block; margin-bottom:16px; }
+.guide-pillars-head h2 {
+  font-family:'Inter', system-ui, sans-serif;
+  font-size:clamp(30px,3.8vw,52px);
+  font-weight:300;
+  line-height:1.15;
+  color:var(--espresso);
+}
+.guide-pillars-head h2 em { color:var(--gold); font-style:italic; }
+.guide-pillars-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:rgba(184,104,90,.12);
+  border:1px solid rgba(184,104,90,.12);
+}
+.guide-pillar { background:var(--petal); padding:38px 30px; }
+.guide-pillar-num {
+  font-family:var(--fd);
+  font-size:2.4rem;
+  font-weight:300;
+  color:rgba(184,104,90,.28);
+  line-height:1;
+  margin-bottom:16px;
+}
+.guide-pillar h3 {
+  font-family:var(--fd);
+  font-size:1.3rem;
+  font-weight:500;
+  color:var(--espresso);
+  margin-bottom:12px;
+  line-height:1.2;
+}
+.guide-pillar p {
+  font-family:var(--fd);
+  font-size:1.05rem;
+  line-height:1.75;
+  color:var(--cocoa);
+}
+
+/* ─── EXCERPT ────────────────────────────────────────────────── */
+#guide-excerpt {
+  background:linear-gradient(160deg, #A85E50 0%, #C07868 50%, #CC8C7A 100%);
+  padding:110px 0;
+}
+.guide-excerpt-inner { max-width:780px; margin:0 auto; text-align:center; }
+.guide-excerpt-inner .label { display:block; margin-bottom:16px; color:rgba(201,169,110,.8); }
+.guide-excerpt-inner h2 {
+  font-family:var(--fd);
+  font-size:clamp(30px,3.8vw,48px);
+  font-weight:300;
+  line-height:1.15;
+  color:var(--cream);
+  margin-bottom:48px;
+}
+.guide-excerpt-inner h2 em { color:var(--gold); font-style:italic; }
+.guide-excerpt-body {
+  text-align:left;
+  padding:40px 44px;
+  background:rgba(255,255,255,.06);
+  border-left:2px solid var(--gold);
+  backdrop-filter:blur(4px);
+}
+.guide-excerpt-body p {
+  font-family:var(--fd);
+  font-size:1.18rem;
+  font-weight:300;
+  line-height:1.8;
+  color:rgba(251,247,244,.92);
+  margin-bottom:20px;
+}
+.guide-excerpt-body p:last-child { margin-bottom:0; }
+.guide-excerpt-source {
+  margin-top:30px;
+  font-family:var(--fs);
+  font-size:.58rem;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:rgba(251,247,244,.5);
+}
+
+/* ─── MOMENT ─────────────────────────────────────────────────── */
+#guide-moment { background:var(--petal); padding:110px 0; }
+.guide-moment-inner { max-width:680px; margin:0 auto; text-align:center; }
+.guide-moment-inner .label { display:block; margin-bottom:20px; }
+.guide-moment-inner h2 {
+  font-family:var(--fd);
+  font-size:clamp(28px,3.4vw,44px);
+  font-weight:300;
+  line-height:1.15;
+  color:var(--espresso);
+  margin-bottom:48px;
+}
+.guide-moment-inner h2 em { color:var(--gold); font-style:italic; }
+.guide-moment-card {
+  background:rgba(201,169,110,.07);
+  padding:40px 44px;
+  border:1px solid rgba(196,132,106,.18);
+}
+.guide-moment-sparkle {
+  display:block;
+  font-size:1.3rem;
+  color:var(--gold);
+  margin-bottom:20px;
+  letter-spacing:.5em;
+}
+.guide-moment-card p {
+  font-family:var(--fd);
+  font-style:italic;
+  font-weight:300;
+  font-size:1.2rem;
+  line-height:1.75;
+  color:var(--cocoa);
+  margin:0;
+}
+.guide-moment-card p em { color:var(--espresso); }
+
+/* ─── CONTENTS ───────────────────────────────────────────────── */
+#guide-contents { background:var(--blush); padding:110px 0; }
+.guide-contents-grid {
+  display:grid;
+  grid-template-columns:1fr 1.1fr;
+  gap:64px;
+  align-items:start;
+}
+.guide-contents-head .label { display:block; margin-bottom:16px; }
+.guide-contents-head h2 {
+  font-family:'Inter', system-ui, sans-serif;
+  font-size:clamp(30px,3.8vw,52px);
+  font-weight:300;
+  line-height:1.15;
+  color:var(--espresso);
+  margin-bottom:24px;
+}
+.guide-contents-head h2 em { color:var(--gold); font-style:italic; }
+.guide-contents-head p {
+  font-family:var(--fd);
+  font-size:1.15rem;
+  line-height:1.85;
+  color:var(--cocoa);
+}
+.guide-toc {
+  list-style:none;
+  border-top:1px solid rgba(184,104,90,.14);
+}
+.guide-toc li {
+  display:flex;
+  align-items:baseline;
+  padding:18px 0;
+  border-bottom:1px solid rgba(184,104,90,.14);
+  gap:20px;
+}
+.guide-toc-num {
+  font-family:var(--fd);
+  font-style:italic;
+  color:var(--gold);
+  font-size:.95rem;
+  min-width:32px;
+}
+.guide-toc-name {
+  font-family:var(--fd);
+  font-size:1.15rem;
+  font-weight:400;
+  color:var(--espresso);
+  flex:1;
+}
+.guide-toc-meta {
+  font-family:var(--fs);
+  font-size:.58rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--cocoa);
+  opacity:.65;
+  white-space:nowrap;
+}
+
+/* ─── INCLUSIONS ─────────────────────────────────────────────── */
+#guide-inclusions { background:var(--petal); padding:110px 0; }
+.guide-inclusions-head { text-align:center; margin-bottom:64px; max-width:600px; margin-left:auto; margin-right:auto; }
+.guide-inclusions-head .label { display:block; margin-bottom:16px; }
+.guide-inclusions-head h2 {
+  font-family:var(--fd);
+  font-size:clamp(28px,3.4vw,44px);
+  font-weight:300;
+  line-height:1.15;
+  color:var(--espresso);
+}
+.guide-inclusions-head h2 em { color:var(--gold); font-style:italic; }
+.guide-inclusions-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:32px;
+}
+.guide-inclusion { text-align:center; padding:0 12px; }
+.guide-inclusion-sparkle {
+  display:block;
+  font-size:1.1rem;
+  color:var(--gold);
+  margin-bottom:18px;
+  letter-spacing:.4em;
+}
+.guide-inclusion h3 {
+  font-family:var(--fd);
+  font-size:1.35rem;
+  font-weight:500;
+  color:var(--espresso);
+  margin-bottom:12px;
+}
+.guide-inclusion p {
+  font-family:var(--fd);
+  font-size:1.05rem;
+  line-height:1.75;
+  color:var(--cocoa);
+}
+
+/* ─── PATH ───────────────────────────────────────────────────── */
+#guide-path { background:var(--blush); padding:110px 0; }
+.guide-path-head { text-align:center; margin-bottom:56px; max-width:640px; margin-left:auto; margin-right:auto; }
+.guide-path-head .label { display:block; margin-bottom:16px; }
+.guide-path-head h2 {
+  font-family:'Inter', system-ui, sans-serif;
+  font-size:clamp(30px,3.8vw,48px);
+  font-weight:300;
+  line-height:1.15;
+  color:var(--espresso);
+  margin-bottom:20px;
+}
+.guide-path-head h2 em { color:var(--gold); font-style:italic; }
+.guide-path-head p {
+  font-family:var(--fd);
+  font-size:1.15rem;
+  font-style:italic;
+  line-height:1.75;
+  color:var(--cocoa);
+}
+.guide-weeks {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+.guide-week {
+  background:var(--petal);
+  padding:32px 26px;
+  border:1px solid rgba(184,104,90,.12);
+  transition:transform .4s ease, box-shadow .4s ease;
+}
+.guide-week:hover { transform:translateY(-4px); box-shadow:0 8px 32px rgba(106,74,64,.1); }
+.guide-week-num {
+  font-family:var(--fd);
+  font-style:italic;
+  font-size:.9rem;
+  color:var(--gold);
+  letter-spacing:.08em;
+  margin-bottom:10px;
+}
+.guide-week h3 {
+  font-family:var(--fd);
+  font-size:1.3rem;
+  font-weight:500;
+  color:var(--espresso);
+  margin-bottom:14px;
+  line-height:1.2;
+}
+.guide-week p {
+  font-family:var(--fd);
+  font-size:1rem;
+  line-height:1.7;
+  color:var(--cocoa);
+}
+
+/* ─── FOR WHOM ───────────────────────────────────────────────── */
+#guide-for-whom { background:var(--petal); padding:110px 0; }
+.guide-for-whom-head { text-align:center; margin-bottom:56px; max-width:520px; margin-left:auto; margin-right:auto; }
+.guide-for-whom-head .label { display:block; margin-bottom:16px; }
+.guide-for-whom-head h2 {
+  font-family:var(--fd);
+  font-size:clamp(28px,3.4vw,44px);
+  font-weight:300;
+  line-height:1.15;
+  color:var(--espresso);
+}
+.guide-for-whom-head h2 em { color:var(--gold); font-style:italic; }
+.guide-audience {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:48px;
+  max-width:900px;
+  margin:0 auto;
+}
+.guide-audience-col h3 {
+  font-family:var(--fd);
+  font-style:italic;
+  font-size:1.3rem;
+  font-weight:400;
+  margin-bottom:24px;
+  padding-bottom:14px;
+  border-bottom:1px solid rgba(184,104,90,.18);
+}
+.guide-audience-col.for h3 { color:var(--gold); }
+.guide-audience-col.against h3 { color:var(--cocoa); opacity:.7; }
+.guide-audience-col ul { list-style:none; display:flex; flex-direction:column; gap:14px; }
+.guide-audience-col li {
+  font-family:var(--fd);
+  font-size:1.1rem;
+  line-height:1.7;
+  color:var(--cocoa);
+  display:flex;
+  gap:12px;
+  align-items:baseline;
+}
+.guide-audience-col.for li::before { content:'✦'; color:var(--gold); font-size:.7rem; flex-shrink:0; }
+.guide-audience-col.against li::before { content:'—'; color:var(--cocoa); opacity:.5; flex-shrink:0; }
+
+/* ─── AUTHOR ─────────────────────────────────────────────────── */
+#guide-author { background:var(--blush); padding:110px 0; }
+.guide-author-inner { max-width:680px; margin:0 auto; text-align:center; }
+.guide-author-inner .label { display:block; margin-bottom:20px; }
+.guide-author-inner h2 {
+  font-family:var(--fd);
+  font-size:clamp(28px,3.4vw,44px);
+  font-weight:300;
+  line-height:1.15;
+  color:var(--espresso);
+  margin-bottom:36px;
+}
+.guide-author-inner h2 em { color:var(--gold); font-style:italic; }
+.guide-author-body p {
+  font-family:var(--fd);
+  font-size:1.2rem;
+  font-style:italic;
+  line-height:1.85;
+  color:var(--cocoa);
+  margin-bottom:20px;
+}
+.guide-author-attrib {
+  margin-top:32px;
+  font-family:var(--fs);
+  font-size:.6rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--cocoa);
+  opacity:.65;
+}
+
+/* ─── FAQ ────────────────────────────────────────────────────── */
+#guide-faq { background:var(--petal); padding:110px 0; }
+.guide-faq-head { text-align:center; margin-bottom:52px; }
+.guide-faq-head .label { display:block; margin-bottom:16px; }
+.guide-faq-head h2 {
+  font-family:var(--fd);
+  font-size:clamp(28px,3.4vw,44px);
+  font-weight:300;
+  line-height:1.15;
+  color:var(--espresso);
+}
+.guide-faq-head h2 em { color:var(--gold); font-style:italic; }
+.guide-faq-list { max-width:760px; margin:0 auto; }
+.guide-faq-item { border-bottom:1px solid rgba(184,104,90,.14); padding:22px 0; }
+.guide-faq-item:first-child { border-top:1px solid rgba(184,104,90,.14); }
+.guide-faq-item summary {
+  font-family:var(--fd);
+  font-size:1.2rem;
+  font-weight:500;
+  color:var(--espresso);
+  cursor:pointer;
+  list-style:none;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  transition:color .3s;
+}
+.guide-faq-item summary::-webkit-details-marker { display:none; }
+.guide-faq-item summary:hover { color:var(--gold); }
+.guide-faq-item summary::after {
+  content:'+';
+  font-family:var(--fd);
+  font-size:1.5rem;
+  font-weight:300;
+  color:var(--gold);
+  transition:transform .3s;
+  flex-shrink:0;
+}
+.guide-faq-item[open] summary::after { transform:rotate(45deg); }
+.guide-faq-item p {
+  padding-top:14px;
+  font-family:var(--fd);
+  font-size:1.1rem;
+  line-height:1.8;
+  color:var(--cocoa);
+}
+
+/* ─── ORDER ──────────────────────────────────────────────────── */
+#guide-order {
+  background:linear-gradient(160deg, #3D1A14 0%, #7A3A2C 50%, #A85840 100%);
+  padding:140px 0 120px;
+  position:relative;
+  overflow:hidden;
+  text-align:center;
+}
+.guide-order-glow {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:620px;
+  height:620px;
+  background:radial-gradient(ellipse,rgba(238,180,160,.12) 0%,transparent 65%);
+  pointer-events:none;
+}
+.guide-order-inner {
+  position:relative;
+  z-index:2;
+  max-width:640px;
+  margin:0 auto;
+  padding:0 28px;
+}
+.guide-order-inner .label { color:rgba(201,169,110,.85); display:block; margin-bottom:20px; }
+.guide-order-inner h2 {
+  font-family:var(--fd);
+  font-size:clamp(36px,5vw,64px);
+  font-weight:300;
+  line-height:1.08;
+  color:var(--cream);
+  margin-bottom:22px;
+}
+.guide-order-inner h2 em { color:var(--gold); font-style:italic; display:block; }
+.guide-order-lead {
+  font-family:var(--fd);
+  font-size:1.2rem;
+  font-style:italic;
+  line-height:1.7;
+  color:rgba(251,247,244,.68);
+  margin-bottom:48px;
+}
+.guide-price-card {
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  gap:20px;
+  padding:36px 48px;
+  border:1px solid rgba(251,247,244,.15);
+  background:rgba(251,247,244,.04);
+  margin-bottom:36px;
+  backdrop-filter:blur(6px);
+}
+.guide-launch-badge {
+  font-family:var(--fs);
+  font-size:.56rem;
+  letter-spacing:.35em;
+  text-transform:uppercase;
+  color:var(--gold);
+  padding:7px 16px;
+  border:1px solid var(--gold);
+}
+.guide-price-display {
+  display:flex;
+  align-items:baseline;
+  gap:14px;
+  font-family:var(--fd);
+}
+.guide-price-display .price-old {
+  text-decoration:line-through;
+  color:rgba(251,247,244,.45);
+  font-size:1.5rem;
+  font-weight:300;
+}
+.guide-price-display .price-new {
+  font-size:3.2rem;
+  font-weight:400;
+  color:var(--cream);
+  letter-spacing:-.02em;
+}
+.guide-price-note {
+  font-family:var(--fs);
+  font-size:.6rem;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+  color:rgba(251,247,244,.55);
+}
+.btn-guide-primary-lg {
+  display:inline-block;
+  font-family:var(--fs);
+  font-size:.78rem;
+  font-weight:500;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  text-decoration:none;
+  padding:20px 44px;
+  background:var(--gold);
+  color:var(--rose-deep);
+  border:1px solid var(--gold);
+  transition:background .3s, color .3s, transform .2s, box-shadow .3s;
+  box-shadow:0 6px 32px rgba(196,132,106,.35);
+}
+.btn-guide-primary-lg:hover {
+  background:transparent;
+  color:var(--gold);
+  transform:translateY(-1px);
+  box-shadow:0 8px 40px rgba(196,132,106,.45);
+}
+.guide-guarantee {
+  margin-top:32px;
+  font-family:var(--fs);
+  font-size:.65rem;
+  letter-spacing:.2em;
+  color:rgba(251,247,244,.55);
+}
+.guide-guarantee-sparkle { color:var(--gold); margin-right:8px; }
+
+/* ─── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width:900px) {
+  .guide-hero-content { padding:0 24px; }
+  .guide-pillars-grid { grid-template-columns:1fr 1fr; }
+  .guide-contents-grid { grid-template-columns:1fr; gap:36px; }
+  .guide-inclusions-grid { grid-template-columns:1fr; gap:40px; }
+  .guide-weeks { grid-template-columns:1fr 1fr; }
+  .guide-audience { grid-template-columns:1fr; gap:36px; }
+  #guide-hero, #guide-principle, #guide-pillars, #guide-excerpt, #guide-moment, #guide-contents, #guide-inclusions, #guide-path, #guide-for-whom, #guide-author, #guide-faq, #guide-order { padding:72px 0; }
+  #guide-hero { padding:110px 0 72px; }
+  .guide-excerpt-body { padding:28px 24px; }
+  .guide-hero-ctas { flex-direction:column; align-items:flex-start; gap:20px; }
+}
+@media (max-width:560px) {
+  .guide-pillars-grid { grid-template-columns:1fr; }
+  .guide-weeks { grid-template-columns:1fr; }
+  .guide-price-display .price-new { font-size:2.6rem; }
+  .guide-price-card { padding:28px 24px; }
+}
+</style>
+</head>
+
+<body class="guide-page">
+
+<!-- ─── NAV ──────────────────────────────────────────────────── -->
+<nav id="navbar" class="scrolled">
+  <a href="index.html" class="nav-logo" id="navLogo">
+    <span class="nav-logo-name">Neuer Lab</span>
+    <span class="nav-logo-sub">Mindset · Spirituality · Longevity</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#mission">Mission</a></li>
+    <li><a href="clarity.html">Pathways</a></li>
+    <li><a href="longevity-guide.html">Guide</a></li>
+    <li><a href="journal.html">Journal</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#contact">Connect</a></li>
+    <li class="nav-tools-item">
+      <button class="nav-tools-trigger" id="navToolsTrigger" aria-expanded="false">✦ Tools <svg class="nav-tools-chevron" width="8" height="5" viewBox="0 0 8 5" fill="none"><path d="M1 1l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="nav-tools-dropdown" id="navToolsDropdown">
+        <a href="alignment.html" class="nav-tool-featured">
+          <span class="nav-tool-icon">✦</span>
+          <span class="nav-tool-body">
+            <span class="nav-tool-name">Daily Alignment</span>
+            <span class="nav-tool-desc">Arrive · Acknowledge · Align</span>
+          </span>
+        </a>
+        <a href="affirmations.html" class="nav-tool-item">
+          <span class="nav-tool-body">
+            <span class="nav-tool-name">Daily Affirmations</span>
+            <span class="nav-tool-desc">50 affirmations by Louise L. Hay</span>
+          </span>
+        </a>
+        <a href="clarity.html" class="nav-tool-item">
+          <span class="nav-tool-body">
+            <span class="nav-tool-name">Find Your Path</span>
+            <span class="nav-tool-desc">Mental clarity · Emotional release</span>
+          </span>
+        </a>
+      </div>
+    </li>
+  </ul>
+  <button class="nav-burger" id="navBurger" aria-label="Menü">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-drawer" id="navDrawer">
+  <a href="index.html#mission">Mission</a>
+  <a href="clarity.html">Pathways</a>
+  <a href="longevity-guide.html">Guide</a>
+  <a href="journal.html">Journal</a>
+  <a href="about.html">About</a>
+  <a href="index.html#contact">Connect</a>
+  <div class="nav-drawer-group">
+    <span class="nav-drawer-group-label">Tools</span>
+    <a href="alignment.html">✦ Daily Alignment</a>
+    <a href="affirmations.html">Daily Affirmations</a>
+    <a href="clarity.html">Find Your Path</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════════════════ -->
+<section id="guide-hero">
+  <div class="guide-hero-glow"></div>
+  <svg class="guide-hero-geometry" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="250" cy="250" r="240" stroke="#C9A96E" stroke-width="0.5"/>
+    <circle cx="250" cy="250" r="180" stroke="#C9A96E" stroke-width="0.5"/>
+    <circle cx="250" cy="250" r="120" stroke="#C9A96E" stroke-width="0.5"/>
+    <circle cx="250" cy="250" r="60"  stroke="#C9A96E" stroke-width="0.5"/>
+    <circle cx="250" cy="130" r="120" stroke="#C9A96E" stroke-width="0.3"/>
+    <circle cx="250" cy="370" r="120" stroke="#C9A96E" stroke-width="0.3"/>
+    <circle cx="354" cy="190" r="120" stroke="#C9A96E" stroke-width="0.3"/>
+    <circle cx="146" cy="190" r="120" stroke="#C9A96E" stroke-width="0.3"/>
+    <circle cx="354" cy="310" r="120" stroke="#C9A96E" stroke-width="0.3"/>
+    <circle cx="146" cy="310" r="120" stroke="#C9A96E" stroke-width="0.3"/>
+  </svg>
+  <div class="guide-hero-content">
+    <div class="guide-hero-text">
+      <div class="guide-hero-eyebrow">Ein neues Arbeitsbuch von Neuer Lab</div>
+      <h1>The Longevity Guide — <em>dein Leben wirklich bewohnen.</em></h1>
+      <p class="guide-hero-sub">Kein Programm. Kein Protokoll. Ein Arbeitsbuch, das die Wissenschaft über das Nervensystem, Ernährung, Bewegung und Regeneration zu einer Praxis verbindet, die du wirklich leben kannst — mit Bewusstsein, mit Sinn, mit Raum zum Atmen.</p>
+      <div class="guide-hero-meta">
+        <span>5 Kapitel</span>
+        <span class="guide-hero-meta-dot">✦</span>
+        <span>25 Übungen</span>
+        <span class="guide-hero-meta-dot">✦</span>
+        <span>40+ Fragen</span>
+        <span class="guide-hero-meta-dot">✦</span>
+        <span>30-Tage-Einstieg</span>
+      </div>
+      <div class="guide-hero-ctas">
+        <a href="#guide-order" class="btn-guide-primary">Guide bestellen →</a>
+        <div class="guide-price-inline">
+          <span class="guide-price-old">€ 39,90</span>
+          <span class="guide-price-new">€ 29</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     THE IDEA
+═══════════════════════════════════════════════════════════════ -->
+<section id="guide-principle">
+  <div class="section-inner">
+    <div class="guide-principle-inner reveal">
+      <span class="label">Die Idee</span>
+      <h2>Longevity ist kein Ziel. <em>Es ist eine Haltung.</em></h2>
+      <p class="guide-principle-body">Im Neuer-Lab-Verständnis ist ein langes Leben keine bloße Verlängerung von Jahren — es ist die bewusste Pflege von Lebensenergie. Körperlich, mental, emotional, spirituell. Ein Körper in Bewegung, ein Geist in Klarheit, ein Herz mit Sinn.</p>
+      <p class="guide-principle-body">Dieser Guide fragt dich nicht, ob du optimierst. Er fragt, ob du integrierst.</p>
+      <div class="guide-principle-quote">
+        Longevity entsteht dort, wo Regulation, Regeneration und <em>Sinn</em> zusammenkommen.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     FOUR PILLARS
+═══════════════════════════════════════════════════════════════ -->
+<section id="guide-pillars">
+  <div class="section-inner">
+    <div class="guide-pillars-head reveal">
+      <span class="label">Vier Säulen</span>
+      <h2>Was den Körper trägt. <em>Was den Geist klärt.</em></h2>
+    </div>
+    <div class="guide-pillars-grid reveal">
+      <div class="guide-pillar">
+        <div class="guide-pillar-num">01</div>
+        <h3>Geist & Nervensystem</h3>
+        <p>Mentale Klarheit, Neuroplastizität, emotionale Selbstregulation. Dein biologisches Alter beginnt im Nervensystem — und du kannst es beeinflussen.</p>
+      </div>
+      <div class="guide-pillar">
+        <div class="guide-pillar-num">02</div>
+        <h3>Ernährung</h3>
+        <p>Nahrung als Information. Protein, Mikronährstoffe, die Darm-Hirn-Achse. Was deine Zellen wirklich brauchen — jenseits von Kalorien und Trends.</p>
+      </div>
+      <div class="guide-pillar">
+        <div class="guide-pillar-num">03</div>
+        <h3>Bewegung & Kraft</h3>
+        <p>Kraft als Währung der Eigenständigkeit. Warum Krafttraining die Sterblichkeit mehr senkt als Ausdauer allein — und was minimal-effektiv wirklich bedeutet.</p>
+      </div>
+      <div class="guide-pillar">
+        <div class="guide-pillar-num">04</div>
+        <h3>Schlaf & Regeneration</h3>
+        <p>Schlafarchitektur, Hormesis, die Praxis des Nichtstuns. Der Körper wird nicht im Training stärker. Er wird stärker in der Erholung.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     EXCERPT
+═══════════════════════════════════════════════════════════════ -->
+<section id="guide-excerpt">
+  <div class="section-inner">
+    <div class="guide-excerpt-inner reveal">
+      <span class="label">Ein Einblick</span>
+      <h2>Ein stiller Moment <em>von innen.</em></h2>
+      <div class="guide-excerpt-body">
+        <p>Reflexionsfragen sind die leisesten — und gleichzeitig wirksamsten — Werkzeuge der persönlichen Entwicklung. Sie sind keine Tests. Sie sind keine Aufgaben. Sie sind Einladungen, einen Gedanken länger im Bewusstsein zu halten, als es einem lieb ist. Denn genau in diesem Halten entsteht Erkenntnis.</p>
+        <p>Die meisten Menschen lesen eine Frage, beantworten sie innerlich in zwei Sekunden und blättern weiter. Das ist der sicherste Weg, nichts zu verändern. Eine Reflexionsfrage braucht Raum. Sie braucht Stille. Und sie braucht die Bereitschaft, die erste bequeme Antwort nicht einfach zu akzeptieren.</p>
+      </div>
+      <div class="guide-excerpt-source">— Aus dem Kapitel: Wie du mit Reflexionsfragen arbeitest</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     A MOMENT FOR YOU
+═══════════════════════════════════════════════════════════════ -->
+<section id="guide-moment">
+  <div class="section-inner">
+    <div class="guide-moment-inner reveal">
+      <span class="label">Ein Moment für dich</span>
+      <h2>Bevor du <em>weiterliest.</em></h2>
+      <div class="guide-moment-card">
+        <span class="guide-moment-sparkle">✦</span>
+        <p>Leg eine Hand auf deine Brust. Atme langsam ein. Frag dich: <em>Wie würde es sich anfühlen, die nächsten zwanzig Jahre in dem Körper zu leben, den ich jetzt habe — nur klarer, ruhiger, stärker?</em> Nimm wahr, was auftaucht. Genau dort beginnt diese Arbeit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     CONTENTS
+═══════════════════════════════════════════════════════════════ -->
+<section id="guide-contents">
+  <div class="section-inner">
+    <div class="guide-contents-grid">
+      <div class="guide-contents-head reveal">
+        <span class="label">Was dich erwartet</span>
+        <h2>Eine Struktur zum <em>langsamen Durchgehen.</em></h2>
+        <p>Jedes Kapitel beginnt mit der Wissenschaft, geht weiter mit Praxis und schließt mit Reflexion. Der Guide ist dazu gedacht, einmal gelesen — und immer wieder zur Hand genommen zu werden, wenn du dich veränderst.</p>
+      </div>
+      <ul class="guide-toc reveal reveal-delay-1">
+        <li><span class="guide-toc-num">I.</span><span class="guide-toc-name">Einführung — Das Neuer-Lab-Prinzip</span><span class="guide-toc-meta">Grundlage</span></li>
+        <li><span class="guide-toc-num">II.</span><span class="guide-toc-name">Wie du mit Reflexionsfragen arbeitest</span><span class="guide-toc-meta">Methode</span></li>
+        <li><span class="guide-toc-num">III.</span><span class="guide-toc-name">Mentaltraining & Neuroplastizität</span><span class="guide-toc-meta">Kapitel 1</span></li>
+        <li><span class="guide-toc-num">IV.</span><span class="guide-toc-name">Ernährung als Stabilitätsfaktor</span><span class="guide-toc-meta">Kapitel 2</span></li>
+        <li><span class="guide-toc-num">V.</span><span class="guide-toc-name">Bewegung als biologisches Anti-Aging</span><span class="guide-toc-meta">Kapitel 3</span></li>
+        <li><span class="guide-toc-num">VI.</span><span class="guide-toc-name">Regeneration, Schlaf & gezielte Reize</span><span class="guide-toc-meta">Kapitel 4</span></li>
+        <li><span class="guide-toc-num">VII.</span><span class="guide-toc-name">Integration — Sinn als stille Säule</span><span class="guide-toc-meta">Kapitel 5</span></li>
+        <li><span class="guide-toc-num">VIII.</span><span class="guide-toc-name">Dein 30-Tage-Einstieg</span><span class="guide-toc-meta">Anhang</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     THREE COMPANIONS
+═══════════════════════════════════════════════════════════════ -->
+<section id="guide-inclusions">
+  <div class="section-inner">
+    <div class="guide-inclusions-head reveal">
+      <span class="label">Was du bekommst</span>
+      <h2>Drei Begleiter <em>für die Arbeit.</em></h2>
+    </div>
+    <div class="guide-inclusions-grid">
+      <div class="guide-inclusion reveal">
+        <span class="guide-inclusion-sparkle">✦</span>
+        <h3>Der Guide</h3>
+        <p>Fünf vollständige Kapitel, die Wissenschaft mit gelebter Praxis verweben. Ein Arbeitsbuch, das du mit dir trägst — kein Buch, das du einmal durchliest und weglegst.</p>
+      </div>
+      <div class="guide-inclusion reveal reveal-delay-1">
+        <span class="guide-inclusion-sparkle">✦</span>
+        <h3>Die Übungen</h3>
+        <p>Fünfundzwanzig Achtsamkeitsübungen — Atem, Körper, Präsenz, Ernährung, Ruhe. Jede klein genug, um sie noch heute zu beginnen.</p>
+      </div>
+      <div class="guide-inclusion reveal reveal-delay-2">
+        <span class="guide-inclusion-sparkle">✦</span>
+        <h3>Die Reflexionsfragen</h3>
+        <p>Über vierzig Reflexionsfragen mit einer klaren Methode, um damit zu arbeiten. Schreiben, das dich unter die Oberfläche bringt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     30-DAY PATH
+═══════════════════════════════════════════════════════════════ -->
+<section id="guide-path">
+  <div class="section-inner">
+    <div class="guide-path-head reveal">
+      <span class="label">Dein 30-Tage-Einstieg</span>
+      <h2>Vier Wochen. <em>Schritt für Schritt.</em></h2>
+      <p>Kein Programm zum Durchhalten. Ein sanfter Rahmen zum Starten — damit du weißt, wo du beginnst, und wie du weitermachst, ohne dich zu überfordern.</p>
+    </div>
+    <div class="guide-weeks reveal">
+      <div class="guide-week">
+        <div class="guide-week-num">Woche I.</div>
+        <h3>Nervensystem</h3>
+        <p>Verlängerte Ausatmung. Mikropausen zwischen Tätigkeiten. Eine Stunde ohne Bildschirm vor dem Schlafen.</p>
+      </div>
+      <div class="guide-week">
+        <div class="guide-week-num">Woche II.</div>
+        <h3>Ernährung</h3>
+        <p>Drei proteinreiche Mahlzeiten. Eine Mahlzeit täglich ohne Ablenkung. Ein Hunger-Check vor dem Essen.</p>
+      </div>
+      <div class="guide-week">
+        <div class="guide-week-num">Woche III.</div>
+        <h3>Bewegung</h3>
+        <p>Zwei Krafteinheiten. Siebentausend Schritte täglich. Zehn Minuten Mobilität.</p>
+      </div>
+      <div class="guide-week">
+        <div class="guide-week-num">Woche IV.</div>
+        <h3>Ruhe & Sinn</h3>
+        <p>Festes Schlaffenster. Eine Viertelstunde bewusstes Nichtstun täglich. Ein stiller Beitrag für andere.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     FOR WHOM
+═══════════════════════════════════════════════════════════════ -->
+<section id="guide-for-whom">
+  <div class="section-inner">
+    <div class="guide-for-whom-head reveal">
+      <span class="label">Für wen dieser Guide ist</span>
+      <h2>Dieser Guide ist <em>für dich,</em> wenn …</h2>
+    </div>
+    <div class="guide-audience reveal">
+      <div class="guide-audience-col for">
+        <h3>Du findest hier deinen Platz</h3>
+        <ul>
+          <li>Du willst wissenschaftlich fundierte Orientierung — ohne den Biohacking-Ton.</li>
+          <li>Du willst nicht nur länger leben — sondern klarer, stärker und präsenter.</li>
+          <li>Du willst Veränderung in dein Leben integrieren, nicht obendrauf stapeln.</li>
+          <li>Du bist bereit, Fragen sitzen zu lassen, die sich nicht sofort beantworten.</li>
+          <li>Du verstehst, dass Gesundheit eine Praxis ist — kein Projekt.</li>
+        </ul>
+      </div>
+      <div class="guide-audience-col against">
+        <h3>Du bist vielleicht woanders besser aufgehoben</h3>
+        <ul>
+          <li>Du suchst schnelle Lösungen oder Wundermethoden.</li>
+          <li>Du willst einen strikten Diätplan oder ein Wettkampf-Trainingsprogramm.</li>
+          <li>Du willst unterhalten werden, nicht eingeladen zu arbeiten.</li>
+          <li>Du glaubst, dass Lesen allein etwas verändert.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     AUTHOR
+═══════════════════════════════════════════════════════════════ -->
+<section id="guide-author">
+  <div class="section-inner">
+    <div class="guide-author-inner reveal">
+      <span class="label">Ein Wort von Nicola</span>
+      <h2>Warum dieser Guide <em>entstanden ist.</em></h2>
+      <div class="guide-author-body">
+        <p>„Ich arbeite seit mehr als zehn Jahren an der Schnittstelle von Neurowissenschaft, Achtsamkeit und spiritueller Praxis. Was ich immer wieder erlebe: Menschen brauchen keine weiteren Informationen. Sie brauchen eine Einladung, das zu leben, was sie eigentlich schon wissen.</p>
+        <p>Dieser Guide ist genau diese Einladung. Er ist präzise, wo er es sein muss, und behutsam, wo er es kann. Er ist das, was ich mir gewünscht hätte, dass jemand ihn mir — leise — vor Jahren in die Hand gegeben hätte."</p>
+      </div>
+      <div class="guide-author-attrib">— Nicola Neuer, Neuer Lab</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     FAQ
+═══════════════════════════════════════════════════════════════ -->
+<section id="guide-faq">
+  <div class="section-inner">
+    <div class="guide-faq-head reveal">
+      <span class="label">Häufige Fragen</span>
+      <h2>Was du vielleicht <em>wissen möchtest.</em></h2>
+    </div>
+    <div class="guide-faq-list reveal">
+      <details class="guide-faq-item">
+        <summary>In welchem Format erhalte ich den Guide?</summary>
+        <p>Als digitales PDF — optimiert für Bildschirm und Druck. Auf jedem Gerät lesbar. Nach dem Kauf erhältst du den Download-Link sofort per E-Mail.</p>
+      </details>
+      <details class="guide-faq-item">
+        <summary>Brauche ich Vorerfahrung mit Meditation oder Training?</summary>
+        <p>Nein. Der Guide beginnt mit den Grundlagen und baut behutsam auf. Egal ob du gerade erst anfängst oder schon jahrelang an dir arbeitest — die Struktur holt dich dort ab, wo du bist.</p>
+      </details>
+      <details class="guide-faq-item">
+        <summary>Ist das ein Buch zum Lesen oder ein Arbeitsbuch zum Nutzen?</summary>
+        <p>Ein Arbeitsbuch. Jedes Kapitel enthält Übungen und Reflexionsfragen, mit denen du aktiv arbeiten sollst — nicht nur lesen. Der Guide entfaltet sich durch deine Präsenz, nicht nur durch deine Augen.</p>
+      </details>
+      <details class="guide-faq-item">
+        <summary>Wie verhält sich der Guide zur 1:1-Arbeit mit Nicola?</summary>
+        <p>Der Guide ist eine vollständige, eigenständige Praxis. Er kann auch Ausgangspunkt für tiefere gemeinsame Arbeit sein — viele Leserinnen und Leser kommen nach dem Guide mit einem klareren Bild davon, was sie in einer Session erkunden möchten.</p>
+      </details>
+      <details class="guide-faq-item">
+        <summary>Gibt es eine Rückgabemöglichkeit?</summary>
+        <p>Da es sich um ein digitales Produkt handelt, ist nach dem Download keine Rückgabe möglich. Ich lade dich ein, den Auszug auf dieser Seite zu lesen — um zu spüren, ob der Ton und der Ansatz zu dir passen, bevor du bestellst.</p>
+      </details>
+      <details class="guide-faq-item">
+        <summary>Was unterscheidet diesen Guide von anderen Longevity-Büchern?</summary>
+        <p>Die meisten Longevity-Ansätze konzentrieren sich auf Biochemie oder Optimierungs-Hacks. Dieser Guide verbindet die vier Säulen mit einer fünften, stillen: Sinn. Er ehrt die Daten — und erinnert sich an die Seele.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     ORDER
+═══════════════════════════════════════════════════════════════ -->
+<section id="guide-order">
+  <div class="guide-order-glow"></div>
+  <div class="guide-order-inner reveal">
+    <span class="label">Jetzt starten</span>
+    <h2>Fang dort an, <em>wo du heute stehst.</em></h2>
+    <p class="guide-order-lead">Ein Arbeitsbuch, das dich über Monate und Jahre begleitet. Zum Einführungspreis für alle, die früh kommen.</p>
+
+    <div class="guide-price-card">
+      <div class="guide-launch-badge">Einführungspreis · Begrenzt</div>
+      <div class="guide-price-display">
+        <span class="price-old">€ 39,90</span>
+        <span class="price-new">€ 29</span>
+      </div>
+      <div class="guide-price-note">Einmalig · Digitales PDF · Sofort-Download</div>
+    </div>
+
+    <div>
+      <a href="#" class="btn-guide-primary-lg" id="stripeCheckout">The Longevity Guide bestellen →</a>
+    </div>
+
+    <div class="guide-guarantee">
+      <span class="guide-guarantee-sparkle">✦</span>
+      Sichere Zahlung via Stripe · Sofortige Lieferung nach dem Kauf
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────────────────────── -->
+<footer id="site-footer"></footer>
+
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/footer.js?v=12"></script>
+
+</body>
+</html>
