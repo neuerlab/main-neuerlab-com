@@ -103,11 +103,18 @@ body.guide-page .nav-burger span { background:var(--espresso); }
   animation:fadeUp 1s ease .25s both;
 }
 .guide-hero h1 em {
-  color:#EACABA;
-  font-style:normal;
-  font-weight:200;
-  display:block;
-  letter-spacing:.18em;
+  .guide-hero-tagline {
+  font-family:var(--fs);
+  font-size:clamp(1.05rem,1.6vw,1.3rem);
+  font-weight:300;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:rgba(251,247,244,.55);
+  margin-top:28px;
+  margin-bottom:40px;
+  line-height:1.7;
+  animation:fadeUp 1s ease .4s both;
+}
 }
   font-family:var(--fd);
   font-size:clamp(1.05rem,1.6vw,1.3rem);
@@ -834,8 +841,8 @@ body.guide-page .nav-burger span { background:var(--espresso); }
   <div class="guide-hero-content">
     <div class="guide-hero-text">
       <div class="guide-hero-eyebrow">Ein neues Arbeitsbuch von Neuer Lab</div>
-      <h1>The Longevity Guide — <em>Inspirationen für ein bewusstes, freies und langlebiges Leben, im Einklang mit dir selbst und deiner Umgebung. Dein Guide, um bei alltäglichen Situationen mehr Bewusstsein und Qualität in das eigene Mindset zu bringen.</em></h1>
-     
+      <h1>The Longevity Guide</h1>
+<p class="guide-hero-tagline">Inspirationen für ein bewusstes, freies und langlebiges Leben, im Einklang mit dir selbst und deiner Umgebung. Dein Guide, um bei alltäglichen Situationen mehr Bewusstsein und Qualität in das eigene Mindset zu bringen.</p>
       <div class="guide-hero-meta" style="margin-top:32px; margin-bottom:48px;">
   <span>5 Kapitel</span>
   <span class="guide-hero-meta-dot">✦</span>
