@@ -766,10 +766,24 @@ body.guide-page .nav-burger span { background:var(--espresso); }
     <span class="nav-logo-name">Neuer Lab</span>
     <span class="nav-logo-sub">Mindset · Spirituality · Longevity</span>
   </a>
-  <ul class="nav-links">
+    <ul class="nav-links">
+    <li class="nav-tools-item">
+      <button class="nav-tools-trigger" id="navGuideTrigger" aria-expanded="false">Guide <svg class="nav-tools-chevron" width="8" height="5" viewBox="0 0 8 5" fill="none"><path d="M1 1l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="nav-tools-dropdown" id="navGuideDropdown">
+        <a href="https://www.neuerlab.com/longevity-guide" class="nav-tool-item">
+          <span class="nav-tool-body">
+            <span class="nav-tool-name">The Longevity Guide in English</span>
+          </span>
+        </a>
+        <a href="https://main-neuerlab-com.pages.dev/longevity-guide-de" class="nav-tool-item">
+          <span class="nav-tool-body">
+            <span class="nav-tool-name">The Longevity Guide auf Deutsch</span>
+          </span>
+        </a>
+      </div>
+    </li>
     <li><a href="index.html#mission">Mission</a></li>
     <li><a href="clarity.html">Pathways</a></li>
-    <li><a href="longevity-guide.html">Guide</a></li>
     <li><a href="journal.html">Journal</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="index.html#contact">Connect</a></li>
@@ -803,9 +817,13 @@ body.guide-page .nav-burger span { background:var(--espresso); }
   </button>
 </nav>
 <div class="nav-drawer" id="navDrawer">
+  <div class="nav-drawer-group">
+    <span class="nav-drawer-group-label">Guide</span>
+    <a href="https://www.neuerlab.com/longevity-guide">The Longevity Guide in English</a>
+    <a href="https://main-neuerlab-com.pages.dev/longevity-guide-de">The Longevity Guide auf Deutsch</a>
+  </div>
   <a href="index.html#mission">Mission</a>
   <a href="clarity.html">Pathways</a>
-  <a href="longevity-guide.html">Guide</a>
   <a href="journal.html">Journal</a>
   <a href="about.html">About</a>
   <a href="index.html#contact">Connect</a>
@@ -1156,5 +1174,30 @@ body.guide-page .nav-burger span { background:var(--espresso); }
 <script src="assets/js/nav.js"></script>
 <script src="assets/js/footer.js?v=12"></script>
 
+<script>
+/* Guide dropdown — mirrors Tools dropdown behaviour */
+(function(){
+  var trig = document.getElementById('navGuideTrigger');
+  var dd   = document.getElementById('navGuideDropdown');
+  if(!trig || !dd) return;
+  var item = trig.closest('.nav-tools-item');
+  trig.addEventListener('click', function(e){
+    e.stopPropagation();
+    var open = item.classList.toggle('open');
+    trig.setAttribute('aria-expanded', open ? 'true' : 'false');
+    var toolsItem = document.getElementById('navToolsTrigger');
+    if(toolsItem){
+      var ti = toolsItem.closest('.nav-tools-item');
+      if(ti && ti !== item){ ti.classList.remove('open'); toolsItem.setAttribute('aria-expanded','false'); }
+    }
+  });
+  document.addEventListener('click', function(e){
+    if(!item.contains(e.target)){
+      item.classList.remove('open');
+      trig.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+</script>
 </body>
 </html>
