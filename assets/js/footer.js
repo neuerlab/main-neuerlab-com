@@ -47,9 +47,9 @@
         '</div>' +
       '</div>' +
       '<div class="footer-bottom">' +
-        '<div class="footer-copy">&copy; 2025 Neuer Lab &middot; All rights reserved</div>' +
+        '<div class="footer-copy">&copy; 2026 Neuer Lab &middot; All rights reserved</div>' +
         '<div class="footer-links">' +
-          '<a href="' + base + 'terms.html">Terms</a>' +
+          '<a href="' + base + 'terms.html">Imprint</a>' +
           '<a href="' + base + 'privacy.html">Privacy</a>' +
         '</div>' +
       '</div>' +
