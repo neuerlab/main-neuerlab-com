@@ -58,6 +58,7 @@
     async function init() {
       const params = new URLSearchParams(window.location.search);
       const token = params.get("token");
+      const lang = params.get("lang") || "de";
 
       if (!token) {
         const sessionId = params.get("session_id");
@@ -93,13 +94,23 @@
           return;
         }
 
-        document.getElementById("heading").textContent = "Ihr Guide ist bereit!";
-        document.getElementById("subtext").textContent =
-          "Der Download startet automatisch. Falls nicht, bitte den Button klicken.";
-        document.getElementById("action").innerHTML =
-          `<a class="btn" href="${data.url}" download>PDF herunterladen</a>`;
-        document.getElementById("note").textContent =
-          "Dieser Link läuft in 10 Minuten ab. Für einen neuen Link bitte die E-Mail öffnen.";
+        if (lang === "en") {
+          document.getElementById("heading").textContent = "Your Guide is ready!";
+          document.getElementById("subtext").textContent =
+            "The download starts automatically. If not, please click the button.";
+          document.getElementById("action").innerHTML =
+            `<a class="btn" href="${data.url}" download>Download PDF</a>`;
+          document.getElementById("note").textContent =
+            "This link expires in 10 minutes. For a new link, please open your email.";
+        } else {
+          document.getElementById("heading").textContent = "Dein Guide ist bereit!";
+          document.getElementById("subtext").textContent =
+            "Der Download startet automatisch. Falls nicht, bitte den Button klicken.";
+          document.getElementById("action").innerHTML =
+            `<a class="btn" href="${data.url}" download>PDF herunterladen</a>`;
+          document.getElementById("note").textContent =
+            "Dieser Link läuft in 10 Minuten ab. Für einen neuen Link bitte die E-Mail öffnen.";
+        }
 
         window.location.href = data.url;
 
