@@ -60,7 +60,16 @@
       const token = params.get("token");
 
       if (!token) {
-        showError("Kein Download-Token gefunden. Bitte den Link aus Ihrer E-Mail verwenden.");
+        const sessionId = params.get("session_id");
+        if (sessionId) {
+          document.getElementById("heading").textContent = "Vielen Dank für deinen Kauf! ✦";
+          document.getElementById("subtext").textContent =
+            "Dein persönlicher Download-Link ist auf dem Weg zu dir. Bitte prüfe deine E-Mails — er sollte in wenigen Minuten ankommen.";
+          document.getElementById("note").textContent =
+            "Fragen? Schreib uns: hello@neuerlab.com";
+        } else {
+          showError("Kein Download-Token gefunden. Bitte den Link aus deiner E-Mail verwenden.");
+        }
         return;
       }
 
