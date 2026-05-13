@@ -61,14 +61,25 @@
 
       if (!token) {
         const sessionId = params.get("session_id");
+        const lang = params.get("lang") || "de";
         if (sessionId) {
-          document.getElementById("heading").textContent = "Vielen Dank für deinen Kauf! ✦";
-          document.getElementById("subtext").textContent =
-            "Dein persönlicher Download-Link ist auf dem Weg zu dir. Bitte prüfe deine E-Mails — er sollte in wenigen Minuten ankommen.";
-          document.getElementById("note").textContent =
-            "Fragen? Schreib uns: hello@neuerlab.com";
+          if (lang === "en") {
+            document.getElementById("heading").textContent = "Thank you for your purchase! ✦";
+            document.getElementById("subtext").textContent =
+              "Your personal download link is on its way to you. Please check your emails — it should arrive within a few minutes.\n\nHow wonderful that you want to be inspired towards a more conscious life and a closer connection with yourself.";
+            document.getElementById("note").textContent =
+              "Questions? Write to us: office@neuerlab.com";
+          } else {
+            document.getElementById("heading").textContent = "Vielen Dank für deinen Kauf! ✦";
+            document.getElementById("subtext").textContent =
+              "Dein persönlicher Download-Link ist auf dem Weg zu dir. Bitte prüfe deine E-Mails — sie sollte in wenigen Minuten ankommen.\n\nWie schön, dass du dich für ein bewussteres Leben, und eine nähere Verbindung zu dir selbst inspirieren lassen möchtest.";
+            document.getElementById("note").textContent =
+              "Fragen? Schreib uns: office@neuerlab.com";
+          }
         } else {
-          showError("Kein Download-Token gefunden. Bitte den Link aus deiner E-Mail verwenden.");
+          showError(lang === "en"
+            ? "No download token found. Please use the link from your email."
+            : "Kein Download-Token gefunden. Bitte den Link aus deiner E-Mail verwenden.");
         }
         return;
       }
