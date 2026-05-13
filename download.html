@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Download — Neuerlab Guide</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f9f9f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 48px 40px;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 2px 16px rgba(0,0,0,.08);
+    }
+    h1 { font-size: 1.4rem; margin-bottom: 12px; }
+    p  { color: #555; font-size: .95rem; line-height: 1.6; }
+    .btn {
+      display: inline-block;
+      margin-top: 32px;
+      padding: 14px 32px;
+      background: #000;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+    }
+    .btn:disabled { background: #999; cursor: not-allowed; }
+    .note { margin-top: 20px; font-size: .82rem; color: #aaa; }
+    .error { color: #c00; margin-top: 16px; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1 id="heading">Download wird vorbereitet…</h1>
+    <p id="subtext"></p>
+    <div id="action"></div>
+    <p class="note" id="note"></p>
+  </div>
+
+  <script>
+    const API = "https://p16qtw3t37.execute-api.eu-central-1.amazonaws.com";
+
+    async function init() {
+      const params = new URLSearchParams(window.location.search);
+      const token = params.get("token");
+
+      if (!token) {
+        showError("Kein Download-Token gefunden. Bitte den Link aus Ihrer E-Mail verwenden.");
+        return;
+      }
+
+      try {
+        const res = await fetch(`${API}/get-download?token=${encodeURIComponent(token)}`);
+        const data = await res.json();
+
+        if (!res.ok) {
+          showError(data.error || "Ein Fehler ist aufgetreten.");
+          return;
+        }
+
+        document.getElementById("heading").textContent = "Ihr Guide ist bereit!";
+        document.getElementById("subtext").textContent =
+          "Der Download startet automatisch. Falls nicht, bitte den Button klicken.";
+        document.getElementById("action").innerHTML =
+          `<a class="btn" href="${data.url}" download>PDF herunterladen</a>`;
+        document.getElementById("note").textContent =
+          "Dieser Link läuft in 10 Minuten ab. Für einen neuen Link bitte die E-Mail öffnen.";
+
+        window.location.href = data.url;
+
+      } catch (e) {
+        showError("Netzwerkfehler. Bitte nochmals versuchen.");
+      }
+    }
+
+    function showError(msg) {
+      document.getElementById("heading").textContent = "Download nicht verfügbar";
+      document.getElementById("action").innerHTML = `<p class="error">${msg}</p>`;
+      document.getElementById("note").textContent =
+        "Fragen? Schreiben Sie uns: hello@neuerlab.com";
+    }
+
+    init();
+  </script>
+</body>
+</html>
