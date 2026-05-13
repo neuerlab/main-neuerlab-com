@@ -4,7 +4,10 @@ footer { background:var(--petal); border-top:1px solid rgba(184,104,90,.1); padd
 
 /* top row: brand + nav columns */
 .footer-top { display:flex; align-items:flex-start; justify-content:space-between; gap:48px; }
-.footer-brand { flex-shrink:0; padding-top:4px; }
+.footer-brand { flex-shrink:0; padding-top:4px; display:flex; flex-direction:column; gap:16px; }
+.footer-qr-link { display:block; margin-top:4px; }
+.footer-qr { width:80px; height:80px; opacity:.75; transition:opacity .3s; display:block; }
+.footer-qr:hover { opacity:1; }
 .footer-cols { display:flex; gap:48px; flex:1; justify-content:flex-end; }
 .footer-col { display:flex; flex-direction:column; gap:14px; }
 .footer-col-label { font-family:var(--fs); font-size:.5rem; letter-spacing:.24em; text-transform:uppercase; color:rgba(106,74,64,.35); }
