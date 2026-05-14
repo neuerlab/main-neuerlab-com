@@ -12,9 +12,6 @@
             '<span class="nav-logo-name">Neuer Lab</span>' +
             '<span class="nav-logo-sub">Mindset \u00b7 Spirituality \u00b7 Longevity</span>' +
           '</a>' +
-          '<a href="https://www.instagram.com/neuer_lab?igsh=aml3MHI1aGNscDdt&utm_source=qr" target="_blank" rel="noopener" class="footer-qr-link">' +
-            '<img src="' + base + 'assets/images/neuer_lab_qr_transparent.png" alt="Follow on Instagram" class="footer-qr" />' +
-          '</a>' +
         '</div>' +
         '<div class="footer-cols">' +
           '<div class="footer-col">' +
