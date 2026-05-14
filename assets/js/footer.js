@@ -41,6 +41,13 @@
               '<a href="' + base + 'clarity.html">Find Your Path</a>' +
             '</nav>' +
           '</div>' +
+          '<div class="footer-col">' +
+            '<div class="footer-col-label">Guides</div>' +
+            '<nav class="footer-nav footer-nav-col">' +
+              '<a href="' + base + 'longevity-guide.html">The Longevity Guide in English</a>' +
+              '<a href="' + base + 'longevity-guide-de.html">The Longevity Guide auf Deutsch</a>' +
+            '</nav>' +
+          '</div>' +
         '</div>' +
       '</div>' +
       '<div class="footer-bottom">' +
