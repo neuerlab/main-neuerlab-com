@@ -1,135 +1,391 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YYJQ9VV3MZ"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YYJQ9VV3MZ');</script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Download — Neuerlab Guide</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f9f9f9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 24px;
-    }
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 48px 40px;
-      max-width: 480px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 2px 16px rgba(0,0,0,.08);
-    }
-    h1 { font-size: 1.4rem; margin-bottom: 12px; }
-    p  { color: #555; font-size: .95rem; line-height: 1.6; }
-    .btn {
-      display: inline-block;
-      margin-top: 32px;
-      padding: 14px 32px;
-      background: #000;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
-      border: none;
-    }
-    .btn:disabled { background: #999; cursor: not-allowed; }
-    .note { margin-top: 20px; font-size: .82rem; color: #aaa; }
-    .error { color: #c00; margin-top: 16px; font-size: .9rem; }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Download — Neuer Lab</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #F9F5F0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    color: #2B2218;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 56px 48px;
+    max-width: 560px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 32px rgba(43,34,24,.08);
+  }
+
+  .logo {
+    font-size: .72rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: #C0786A;
+    margin-bottom: 32px;
+  }
+
+  .icon { font-size: 2.4rem; margin-bottom: 20px; }
+
+  h1 {
+    font-family: Georgia, serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 12px;
+    color: #2B2218;
+  }
+
+  .sub {
+    font-size: .95rem;
+    color: #7A6B5D;
+    line-height: 1.6;
+    margin-bottom: 36px;
+  }
+
+  .btn-download {
+    display: inline-block;
+    background: #2B2218;
+    color: #fff;
+    padding: 16px 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: .85rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    transition: background .2s;
+  }
+  .btn-download:hover { background: #C0786A; }
+
+  .btn-invoice {
+    display: inline-block;
+    margin-top: 14px;
+    background: none;
+    border: 1.5px solid rgba(43,34,24,.2);
+    color: #2B2218;
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-size: .82rem;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: border-color .2s, color .2s;
+    font-family: inherit;
+  }
+  .btn-invoice:hover { border-color: #C0786A; color: #C0786A; }
+
+  .actions { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+
+  .note {
+    margin-top: 28px;
+    font-size: .78rem;
+    color: #B0A090;
+    line-height: 1.5;
+  }
+
+  .error-msg {
+    color: #C0786A;
+    font-size: .9rem;
+    margin-top: 16px;
+    line-height: 1.6;
+  }
+
+  /* Invoice overlay */
+  .invoice-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(43,34,24,.5);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .invoice-overlay.open { display: flex; }
+
+  .invoice-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 48px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+  }
+
+  .invoice-close {
+    position: absolute;
+    top: 16px; right: 20px;
+    background: none; border: none;
+    font-size: 1.4rem; cursor: pointer;
+    color: #B0A090;
+  }
+
+  .invoice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .invoice-brand { font-size: .72rem; letter-spacing: .15em; text-transform: uppercase; color: #C0786A; }
+  .invoice-brand strong { display: block; font-size: 1.1rem; font-family: Georgia,serif; color: #2B2218; letter-spacing: 0; margin-top: 4px; }
+
+  .invoice-meta { text-align: right; font-size: .82rem; color: #7A6B5D; line-height: 1.8; }
+  .invoice-meta strong { color: #2B2218; }
+
+  .invoice-parties {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 28px;
+    font-size: .83rem;
+    color: #555;
+    line-height: 1.7;
+  }
+  .invoice-parties h4 { font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: #B0A090; margin-bottom: 6px; }
+
+  .invoice-table { width: 100%; border-collapse: collapse; font-size: .84rem; margin-bottom: 24px; }
+  .invoice-table th { text-align: left; padding: 8px 0; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: #B0A090; border-bottom: 1px solid #eee; }
+  .invoice-table th:last-child { text-align: right; }
+  .invoice-table td { padding: 12px 0; border-bottom: 1px solid #f5f5f5; color: #2B2218; }
+  .invoice-table td:last-child { text-align: right; }
+  .invoice-table .sub-row td { font-size: .78rem; color: #999; padding: 3px 0; border: none; }
+  .invoice-table .total-row td { font-weight: 700; font-size: .92rem; border-top: 2px solid #2B2218; border-bottom: none; padding-top: 12px; }
+
+  .invoice-legal {
+    font-size: .72rem;
+    color: #C0A090;
+    line-height: 1.7;
+    padding-top: 20px;
+    border-top: 1px solid #f0ece8;
+  }
+
+  .btn-print {
+    display: block;
+    width: 100%;
+    margin-top: 24px;
+    padding: 13px;
+    background: #2B2218;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: .82rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background .2s;
+  }
+  .btn-print:hover { background: #C0786A; }
+
+  @media print {
+    body * { visibility: hidden; }
+    .invoice-box, .invoice-box * { visibility: visible; }
+    .invoice-box { position: fixed; inset: 0; box-shadow: none; border-radius: 0; padding: 40px; }
+    .invoice-close, .btn-print { display: none; }
+  }
+
+  @media (max-width: 520px) {
+    .card { padding: 40px 28px; }
+    .invoice-box { padding: 32px 24px; }
+    .invoice-parties { grid-template-columns: 1fr; }
+    .invoice-header { flex-direction: column; gap: 16px; }
+    .invoice-meta { text-align: left; }
+  }
+</style>
 </head>
 <body>
-  <div class="card">
-    <h1 id="heading">Download wird vorbereitet…</h1>
-    <p id="subtext"></p>
-    <div id="action"></div>
-    <p class="note" id="note"></p>
+
+<div class="card" id="card">
+  <div class="logo">Neuer Lab</div>
+  <div class="icon" id="icon">⏳</div>
+  <h1 id="heading">Wird vorbereitet…</h1>
+  <p class="sub" id="subtext"></p>
+  <div class="actions" id="actions"></div>
+  <p class="note" id="note"></p>
+</div>
+
+<!-- Invoice overlay -->
+<div class="invoice-overlay" id="invoiceOverlay">
+  <div class="invoice-box" id="invoiceBox">
+    <button class="invoice-close" onclick="closeInvoice()">✕</button>
+    <div id="invoiceContent"></div>
+    <button class="btn-print" onclick="window.print()">Als PDF speichern / Save as PDF</button>
   </div>
+</div>
 
-  <script>
-    const API = "https://p16qtw3t37.execute-api.eu-central-1.amazonaws.com";
+<script>
+const API = "https://p16qtw3t37.execute-api.eu-central-1.amazonaws.com";
+let invoiceData = null;
 
-    async function init() {
-      const params = new URLSearchParams(window.location.search);
-      const token = params.get("token");
-      const lang = params.get("lang") || "de";
+async function init() {
+  const params = new URLSearchParams(window.location.search);
+  const sessionId = params.get("session_id");
+  const lang = params.get("lang") || "de";
+  const isDE = lang === "de";
 
-      if (!token) {
-        const sessionId = params.get("session_id");
-        const lang = params.get("lang") || "de";
-        if (sessionId) {
-          if (lang === "en") {
-            document.getElementById("heading").textContent = "Thank you for your purchase! ✦";
-            document.getElementById("subtext").textContent =
-              "Your personal download link is on its way to you. Please check your emails — it should arrive within a few minutes.\n\nHow wonderful that you want to be inspired towards a more conscious life and a closer connection with yourself.";
-            document.getElementById("note").textContent =
-              "Questions? Write to us: office@neuerlab.com";
-          } else {
-            document.getElementById("heading").textContent = "Vielen Dank für deinen Kauf! ✦";
-            document.getElementById("subtext").textContent =
-              "Dein persönlicher Download-Link ist auf dem Weg zu dir. Bitte prüfe deine E-Mails — sie sollte in wenigen Minuten ankommen.\n\nWie schön, dass du dich für ein bewussteres Leben, und eine nähere Verbindung zu dir selbst inspirieren lassen möchtest.";
-            document.getElementById("note").textContent =
-              "Fragen? Schreib uns: office@neuerlab.com";
-          }
-        } else {
-          showError(lang === "en"
-            ? "No download token found. Please use the link from your email."
-            : "Kein Download-Token gefunden. Bitte den Link aus deiner E-Mail verwenden.");
-        }
-        return;
+  if (!sessionId) {
+    showError(isDE
+      ? "Kein Zahlungsnachweis gefunden. Bitte den Link aus deiner Bestellbestätigung verwenden."
+      : "No payment reference found. Please use the link from your order confirmation.");
+    return;
+  }
+
+  try {
+    const res = await fetch(`${API}/get-download?session_id=${encodeURIComponent(sessionId)}`);
+    const data = await res.json();
+
+    if (!res.ok) {
+      if (data.error === "already_downloaded") {
+        showAlreadyDownloaded(isDE);
+      } else {
+        showError(data.error || (isDE ? "Ein Fehler ist aufgetreten." : "An error occurred."));
       }
-
-      try {
-        const res = await fetch(`${API}/get-download?token=${encodeURIComponent(token)}`);
-        const data = await res.json();
-
-        if (!res.ok) {
-          showError(data.error || "Ein Fehler ist aufgetreten.");
-          return;
-        }
-
-        if (lang === "en") {
-          document.getElementById("heading").textContent = "Your Guide is ready!";
-          document.getElementById("subtext").textContent =
-            "The download starts automatically. If not, please click the button.";
-          document.getElementById("action").innerHTML =
-            `<a class="btn" href="${data.url}" download>Download PDF</a>`;
-          document.getElementById("note").textContent =
-            "This link expires in 10 minutes. For a new link, please open your email.";
-        } else {
-          document.getElementById("heading").textContent = "Dein Guide ist bereit!";
-          document.getElementById("subtext").textContent =
-            "Der Download startet automatisch. Falls nicht, bitte den Button klicken.";
-          document.getElementById("action").innerHTML =
-            `<a class="btn" href="${data.url}" download>PDF herunterladen</a>`;
-          document.getElementById("note").textContent =
-            "Dieser Link läuft in 10 Minuten ab. Für einen neuen Link bitte die E-Mail öffnen.";
-        }
-
-        window.location.href = data.url;
-
-      } catch (e) {
-        showError("Netzwerkfehler. Bitte nochmals versuchen.");
-      }
+      return;
     }
 
-    function showError(msg) {
-      document.getElementById("heading").textContent = "Download nicht verfügbar";
-      document.getElementById("action").innerHTML = `<p class="error">${msg}</p>`;
-      document.getElementById("note").textContent =
-        "Fragen? Schreiben Sie uns: hello@neuerlab.com";
-    }
+    invoiceData = data;
+    showSuccess(data, isDE);
 
-    init();
-  </script>
+    // Auto-download
+    setTimeout(() => { window.location.href = data.url; }, 800);
+
+  } catch (e) {
+    showError(isDE ? "Netzwerkfehler. Bitte Seite neu laden." : "Network error. Please reload.");
+  }
+}
+
+function showSuccess(data, isDE) {
+  document.getElementById("icon").textContent = "✓";
+  document.getElementById("icon").style.color = "#C0786A";
+  document.getElementById("heading").textContent = isDE ? "Vielen Dank für deinen Kauf!" : "Thank you for your purchase!";
+  document.getElementById("subtext").textContent = isDE
+    ? "Dein Download startet automatisch. Falls nicht, klicke auf den Button."
+    : "Your download starts automatically. If not, click the button below.";
+
+  document.getElementById("actions").innerHTML = `
+    <a class="btn-download" href="${data.url}" download>
+      ${isDE ? "Guide herunterladen" : "Download Guide"}
+    </a>
+    <button class="btn-invoice" onclick="openInvoice()">
+      ${isDE ? "Rechnung anzeigen" : "View Invoice"}
+    </button>`;
+
+  document.getElementById("note").textContent = isDE
+    ? "Der Download-Link ist nur einmalig gültig. Bitte den Guide direkt speichern."
+    : "This download link is valid once only. Please save the guide directly.";
+}
+
+function showAlreadyDownloaded(isDE) {
+  document.getElementById("icon").textContent = "ℹ️";
+  document.getElementById("heading").textContent = isDE ? "Bereits heruntergeladen" : "Already downloaded";
+  document.getElementById("subtext").textContent = isDE
+    ? "Dieser Guide wurde bereits heruntergeladen. Bei Fragen melde dich bitte bei uns."
+    : "This guide has already been downloaded. Please contact us if you need assistance.";
+  document.getElementById("note").textContent = "office@neuerlab.com";
+}
+
+function showError(msg) {
+  document.getElementById("icon").textContent = "✕";
+  document.getElementById("heading").textContent = "Download nicht verfügbar";
+  document.getElementById("actions").innerHTML = `<p class="error-msg">${msg}</p>`;
+  document.getElementById("note").textContent = "office@neuerlab.com";
+}
+
+function openInvoice() {
+  if (!invoiceData) return;
+  const d = invoiceData;
+  const isDE = d.lang === "de";
+
+  document.getElementById("invoiceContent").innerHTML = `
+    <div class="invoice-header">
+      <div>
+        <div class="invoice-brand">Neuer Lab<strong>Nicola Neuer</strong></div>
+      </div>
+      <div class="invoice-meta">
+        ${isDE ? "Rechnungsnr." : "Invoice No."} <strong>${d.invoiceNum}</strong><br>
+        ${isDE ? "Datum" : "Date"} <strong>${d.invoiceDate}</strong>
+      </div>
+    </div>
+    <div class="invoice-parties">
+      <div>
+        <h4>${isDE ? "Verkäufer" : "Seller"}</h4>
+        Nicola Neuer<br>
+        Schloss Schönbrunn 39<br>
+        Gartendirektorstöckl<br>
+        1130 Wien, Österreich<br>
+        UID: ATU79264537
+      </div>
+      <div>
+        <h4>${isDE ? "Käufer" : "Buyer"}</h4>
+        ${d.customerName ? d.customerName + "<br>" : ""}
+        ${d.customerEmail || "—"}
+      </div>
+    </div>
+    <table class="invoice-table">
+      <thead>
+        <tr>
+          <th>${isDE ? "Beschreibung" : "Description"}</th>
+          <th>${isDE ? "Betrag" : "Amount"}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>${d.productName}</td>
+          <td>${d.grossAmount} ${d.currency}</td>
+        </tr>
+        <tr class="sub-row">
+          <td>${isDE ? "Netto" : "Net"}</td>
+          <td>${d.netAmount} ${d.currency}</td>
+        </tr>
+        <tr class="sub-row">
+          <td>USt. 10 % gem. § 10 Abs. 2 Z 9 UStG</td>
+          <td>${d.vatAmount} ${d.currency}</td>
+        </tr>
+        <tr class="total-row">
+          <td>${isDE ? "Gesamt" : "Total"}</td>
+          <td>${d.grossAmount} ${d.currency}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="invoice-legal">
+      Mit dem Kauf eines digitalen Produkts (Download) stimmen Sie zu, dass die Lieferung sofort nach Zahlungseingang beginnt. Gemäß § 18 Abs. 1 Z 11 FAGG erlischt damit das Widerrufsrecht. Eine Rückerstattung ist nach erfolgtem Download ausgeschlossen.<br><br>
+      By purchasing a digital product (download), you agree that delivery begins immediately upon payment. In accordance with § 18 para. 1 no. 11 FAGG, the right of withdrawal is thereby waived. Refunds are excluded after download.
+    </div>`;
+
+  document.getElementById("invoiceOverlay").classList.add("open");
+}
+
+function closeInvoice() {
+  document.getElementById("invoiceOverlay").classList.remove("open");
+}
+
+// Close overlay on backdrop click
+document.getElementById("invoiceOverlay").addEventListener("click", function(e) {
+  if (e.target === this) closeInvoice();
+});
+
+init();
+</script>
 </body>
 </html>
