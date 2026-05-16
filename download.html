@@ -442,6 +442,26 @@ async function init() {
   const t = TEXTS[lang] || TEXTS.de;
   const isDE = lang === "de";
 
+  // Preview mode: ?preview=1
+  if (params.get("preview") === "1") {
+    const fakeData = {
+      url: "#",
+      lang,
+      productName: isDE ? "Der Longevity Guide" : "The Longevity Guide",
+      invoiceNum: "NL-2026-0001",
+      invoiceDate: new Date().toLocaleDateString("de-AT", { day:"2-digit", month:"2-digit", year:"numeric" }),
+      grossAmount: "29.00",
+      netAmount: "26.36",
+      vatAmount: "2.64",
+      currency: "EUR",
+      customerName: "Nicola Neuer",
+      customerEmail: "office@neuerlab.com",
+    };
+    invoiceData = fakeData;
+    showSuccess(fakeData, t, isDE);
+    return;
+  }
+
   if (!sessionId) {
     showState("✕", t.errorTitle,
       isDE ? "Kein Zahlungsnachweis gefunden. Bitte verwende den Link aus deiner Bestellbestätigung." : "No payment reference found.");
