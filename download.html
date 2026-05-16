@@ -415,20 +415,21 @@ const TEXTS = {
   },
   en: {
     heading: "Thank you for your purchase! ✦",
-    downloadNote: "Your Longevity Guide is ready.\n\nThe download starts automatically. If the file doesn't open or download directly, please click the button below:",
+    downloadNote: "Your Longevity Guide is ready for you.\n\nThe download will start automatically. If the file does not open or download right away, simply click the button below:",
     btnDownload: "Download Longevity Guide",
     btnInvoice: "View Invoice",
     oneTime: "✦  This download link is valid once only — please save the file directly after downloading.",
     divider: "an invitation",
     message: [
-      "How wonderful that you have chosen this step.",
-      "The Longevity Guide is more than a digital workbook. It is an invitation to look at your life more consciously — not only through nutrition, movement or routines, but also through your thoughts, your nervous system, your regeneration and the way you meet yourself in everyday life.",
-      "Please take your time with this guide.\nYou don't need to work through it quickly. You don't need to understand, answer or change everything at once. Let the content work at your own pace and return to the exercises and reflection questions again and again.",
-      "Perhaps this guide will accompany you on a quiet morning, in a new phase of life or in a moment when you are seeking more clarity, energy and connection with yourself.",
+      "How wonderful that you have chosen to take this step.",
+      "The Longevity Guide is more than a digital workbook. It is an invitation to look at your life more consciously — not only through nutrition, movement, or routines, but also through your thoughts, your nervous system, your regeneration, and the way you meet yourself in everyday life.",
+      "Please take your time with this guide.\nYou do not need to rush through it. You do not need to understand, answer, or change everything right away. Let the content unfold at your own pace, and return to the exercises and reflection questions whenever it feels right.",
+      "Perhaps this guide will accompany you on a quiet morning, in a new chapter of life, or in a moment when you are seeking more clarity, energy, and connection with yourself.",
       "May it remind you that conscious change often does not begin loudly, but with an honest decision: to give yourself more attention again.",
-      "Thank you for your trust and enjoy your guide.",
+      "Thank you for your trust — and enjoy your guide.",
+      "Would you prefer to experience the Longevity Guide in German? I am happy to gift it to you. Write to me at office@neuerlab.com and I will send it to you free of charge. ♡",
     ],
-    signature: "Nicola",
+    signature: "For any questions, I am happy to help,",
     alreadyTitle: "Already downloaded",
     alreadyText: "This guide has already been downloaded. Please contact us if you need assistance.",
     errorTitle: "Download unavailable",
@@ -515,8 +516,8 @@ function showSuccess(data, t, isDE) {
     `<p>${p.replace(/\n/g, '<br>')}</p>`
   ).join("") +
   `<div class="signature">
-    ${isDE ? "Herzliche Grüße," : "Warm regards,"}<br>
-    <em>${t.signature}</em><br>
+    ${isDE ? "Herzliche Grüße," : t.signature}<br>
+    <em>Nicola</em><br>
     <span class="sig-email">office@neuerlab.com</span>
   </div>`;
 }
