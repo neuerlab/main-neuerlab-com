@@ -333,6 +333,13 @@
     .invoice-header { flex-direction: column; }
     .invoice-meta { text-align: left; }
     h1 { font-size: 2rem; }
+    .btn-download {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 20px 24px;
+      font-size: .8rem;
+    }
   }
 </style>
 </head>
@@ -394,7 +401,7 @@ let invoiceData = null;
 const TEXTS = {
   de: {
     heading: "Danke für deinen Kauf! ✦",
-    downloadNote: "Dein Longevity Guide ist bereit für dich.\n\nDer Download startet automatisch. Falls sich die Datei nicht direkt öffnet oder herunterlädt, klicke einfach auf den Button unten:\n\nDu möchtest den Longevity Guide lieber auf Englisch auf dich wirken lassen? Dann schenke ich ihn dir gerne dazu. Schreibe mir auf office@neuerlab.com und ich sende ihn dir kostenfrei per E-Mail zu. ♡",
+    downloadNote: "Dein Longevity Guide ist bereit für dich.\n\nAuf dem Computer startet der Download automatisch. Auf dem Smartphone tippe bitte auf den Button unten, um die Datei zu speichern.",
     btnDownload: "Longevity Guide herunterladen",
     btnInvoice: "Rechnung anzeigen",
     oneTime: "✦  Dieser Download-Link ist einmalig gültig — bitte speichere die Datei direkt nach dem Herunterladen.",
@@ -415,7 +422,7 @@ const TEXTS = {
   },
   en: {
     heading: "Thank you for your purchase! ✦",
-    downloadNote: "Your Longevity Guide is ready for you.\n\nThe download will start automatically. If the file does not open or download right away, simply click the button below:\n\nWould you prefer to experience the Longevity Guide in German? I am happy to gift it to you. Write to me at office@neuerlab.com and I will send it to you free of charge. ♡",
+    downloadNote: "Your Longevity Guide is ready for you.\n\nOn desktop, the download starts automatically. On your phone, simply tap the button below to save the file.",
     btnDownload: "Download Longevity Guide",
     btnInvoice: "View Invoice",
     oneTime: "✦  This download link is valid once only — please save the file directly after downloading.",
@@ -484,7 +491,20 @@ async function init() {
 
     invoiceData = data;
     showSuccess(data, t, isDE);
-    setTimeout(() => { window.location.href = data.url; }, 900);
+
+    // Auto-download: desktop only — mobile browsers block programmatic downloads
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (!isMobile) {
+      setTimeout(() => {
+        const a = document.createElement('a');
+        a.href = data.url;
+        a.download = (data.productName || 'longevity-guide') + '.pdf';
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => document.body.removeChild(a), 200);
+      }, 1500);
+    }
 
   } catch (e) {
     showState("✕", t.errorTitle, isDE ? "Netzwerkfehler. Bitte Seite neu laden." : "Network error. Please reload.");
