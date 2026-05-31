@@ -74,8 +74,21 @@ body.guide-page .nav-burger span { background:var(--espresso); }
   margin:0 auto;
   padding:0 56px;
   width:100%;
+  display:flex;
+  align-items:center;
+  gap:60px;
 }
-.guide-hero-text { max-width:780px; }
+.guide-hero-text { flex:1; }
+.guide-hero-book {
+  flex-shrink:0;
+  width:380px;
+}
+.guide-hero-book img {
+  width:100%;
+  display:block;
+  mix-blend-mode:multiply;
+  filter:drop-shadow(0 24px 48px rgba(0,0,0,.18));
+}
 .guide-hero-eyebrow {
   font-family:var(--fs);
   font-size:.58rem;
@@ -752,6 +765,8 @@ body.guide-page .nav-burger span { background:var(--espresso); }
   #guide-hero { padding:110px 0 72px; }
   .guide-excerpt-body { padding:28px 24px; }
   .guide-hero-ctas { flex-direction:column; align-items:flex-start; gap:20px; }
+  .guide-hero-content { flex-direction:column; gap:40px; }
+  .guide-hero-book { width:280px; align-self:center; }
 }
 @media (max-width:560px) {
   .guide-pillars-grid { grid-template-columns:1fr; }
@@ -882,6 +897,9 @@ body.guide-page .nav-burger span { background:var(--espresso); }
         </div>
         <div style="font-family:var(--fs);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(251,247,244,.5);margin-top:4px;">Gültig bis 31.07.2026 · danach € 39,–</div>
       </div>
+    </div>
+    <div class="guide-hero-book">
+      <img src="assets/images/guide-book-photo.png" alt="The Longevity Guide — Neuer Lab">
     </div>
   </div>
 </section>
