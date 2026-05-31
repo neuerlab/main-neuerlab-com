@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.neuerlab.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.neuerlab.com/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Longevity Guide EN -->
+  <url>
+    <loc>https://www.neuerlab.com/longevity-guide</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.neuerlab.com/longevity-guide"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.neuerlab.com/longevity-guide-de"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Longevity Guide DE -->
+  <url>
+    <loc>https://www.neuerlab.com/longevity-guide-de</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.neuerlab.com/longevity-guide-de"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.neuerlab.com/longevity-guide"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Services -->
+  <url>
+    <loc>https://www.neuerlab.com/mediumship</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.neuerlab.com/mental-training</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.neuerlab.com/emotional-release</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://www.neuerlab.com/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Journal index -->
+  <url>
+    <loc>https://www.neuerlab.com/journal</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Journal articles -->
+  <url>
+    <loc>https://www.neuerlab.com/journal/future-of-healthcare</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.neuerlab.com/journal/alignment-not-discipline</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.neuerlab.com/journal/what-mediumship-really-is</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Tools -->
+  <url>
+    <loc>https://www.neuerlab.com/alignment</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.neuerlab.com/affirmations</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.neuerlab.com/clarity</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>

@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Block pages that should not appear in search results
+Disallow: /download
+Disallow: /download.html
+Disallow: /privacy
+Disallow: /privacy.html
+Disallow: /terms
+Disallow: /terms.html
+Disallow: /gradient-preview
+Disallow: /gradient-preview.html
+Disallow: /hero-preview
+Disallow: /hero-preview.html
+
+# Sitemap location
+Sitemap: https://www.neuerlab.com/sitemap.xml
