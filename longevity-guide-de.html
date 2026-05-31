@@ -127,17 +127,18 @@ body.guide-page .nav-burger span { background:var(--espresso); }
 .guide-hero-meta {
   display:flex;
   align-items:center;
-  gap:18px;
-  flex-wrap:wrap;
+  gap:10px;
+  flex-wrap:nowrap;
   margin-bottom:44px;
   animation:fadeUp 1s ease .55s both;
 }
 .guide-hero-meta span {
   font-family:var(--fs);
-  font-size:.75rem;
-  letter-spacing:.22em;
+  font-size:.72rem;
+  letter-spacing:.14em;
   text-transform:uppercase;
   color:rgba(251,247,244,.55);
+  white-space:nowrap;
 }
 .guide-hero-meta-dot { color:var(--gold) !important; }
 .guide-hero-ctas {
@@ -156,15 +157,15 @@ body.guide-page .nav-burger span { background:var(--espresso); }
   text-transform:uppercase;
   text-decoration:none;
   padding:16px 34px;
-  background:var(--gold);
-  color:var(--rose-deep);
-  border:1px solid var(--gold);
+  background:var(--espresso);
+  color:var(--cream);
+  border:1px solid var(--espresso);
   transition:background .3s, color .3s, transform .2s, box-shadow .3s;
-  box-shadow:0 4px 24px rgba(196,132,106,.3);
+  box-shadow:0 4px 24px rgba(58,36,32,.25);
 }
 .btn-guide-primary:hover {
   background:var(--rose-deep);
-  color:var(--gold);
+  color:var(--cream);
   transform:translateY(-1px);
   box-shadow:0 6px 32px rgba(122,58,44,.35);
 }
@@ -757,6 +758,8 @@ body.guide-page .nav-burger span { background:var(--espresso); }
   .guide-weeks { grid-template-columns:1fr; }
   .guide-price-display .price-new { font-size:2.6rem; }
   .guide-price-card { padding:28px 24px; }
+  .guide-hero-meta { flex-wrap:wrap; gap:8px; }
+  .guide-hero-meta span { white-space:normal; }
 }
 </style>
 </head>
@@ -860,7 +863,7 @@ body.guide-page .nav-burger span { background:var(--espresso); }
       <div class="guide-hero-eyebrow">Ein neues Arbeitsbuch von Neuer Lab</div>
       <h1>The Longevity Guide</h1>
 <p class="guide-hero-tagline">Inspirationen für ein bewusstes, freies und langlebiges Leben, im Einklang mit dir selbst und deiner Umgebung. Dein Guide, um bei alltäglichen Situationen mehr Bewusstsein und Qualität in das eigene Mindset zu bringen.</p>
-      <div class="guide-hero-meta" style="margin-top:32px; margin-bottom:48px;">
+      <div class="guide-hero-meta">
   <span>7 Kapitel</span>
   <span class="guide-hero-meta-dot">✦</span>
   <span>165 Seiten</span>
