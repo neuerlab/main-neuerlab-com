@@ -341,6 +341,64 @@
       font-size: .8rem;
     }
   }
+
+  /* ── INSTAGRAM BROWSER WARNING ── */
+  .insta-warning {
+    background: var(--cream);
+    border: 1.5px solid rgba(196,132,106,.35);
+    border-radius: 12px;
+    padding: 48px 36px 40px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 32px rgba(58,36,32,.07);
+  }
+  .insta-warning-icon {
+    font-size: 1.6rem;
+    color: var(--gold);
+    letter-spacing: .3em;
+    margin-bottom: 20px;
+  }
+  .insta-warning h2 {
+    font-family: var(--fd);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 300;
+    color: var(--espresso);
+    margin-bottom: 16px;
+    line-height: 1.25;
+  }
+  .insta-warning p {
+    font-size: .88rem;
+    color: var(--cocoa);
+    line-height: 1.8;
+    margin-bottom: 0;
+  }
+  .insta-steps {
+    background: var(--blush);
+    border-radius: 8px;
+    padding: 22px 24px;
+    margin: 24px 0 20px;
+    text-align: left;
+    font-size: .86rem;
+    color: var(--espresso);
+    line-height: 2.1;
+  }
+  .insta-steps strong.insta-label {
+    display: block;
+    font-family: var(--fs);
+    font-size: .65rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .insta-note {
+    font-size: .78rem;
+    color: var(--gold);
+    letter-spacing: .05em;
+    margin-top: 4px;
+  }
 </style>
 </head>
 <body>
@@ -383,6 +441,17 @@
 
 <!-- Error / already downloaded state -->
 <div id="stateCard" style="display:none"></div>
+
+<!-- Instagram in-app browser warning -->
+<div id="instagramBanner" style="display:none; flex-direction:column; align-items:center; width:100%;">
+  <div class="insta-warning">
+    <div class="insta-warning-icon">✦ ✦ ✦</div>
+    <h2 id="instaTitle"></h2>
+    <p id="instaText"></p>
+    <div class="insta-steps" id="instaSteps"></div>
+    <p class="insta-note" id="instaNote"></p>
+  </div>
+</div>
 
 <!-- Invoice overlay -->
 <div class="invoice-overlay" id="invoiceOverlay">
@@ -622,7 +691,43 @@ document.getElementById("invoiceOverlay").addEventListener("click", function(e) 
   if (e.target === this) closeInvoice();
 });
 
-init();
+function showInstagramWarning() {
+  const params = new URLSearchParams(window.location.search);
+  const lang = params.get('lang') || 'de';
+  const isDE = lang !== 'en';
+
+  document.getElementById('loading').style.display = 'none';
+
+  const banner = document.getElementById('instagramBanner');
+  banner.style.display = 'flex';
+
+  document.getElementById('instaTitle').textContent = isDE
+    ? 'Bitte in Safari öffnen'
+    : 'Please open in Safari';
+
+  document.getElementById('instaText').innerHTML = isDE
+    ? 'Du bist gerade im Instagram-Browser. Dieser unterstützt leider keine Datei-Downloads.<br><br>Öffne diese Seite kurz in Safari — dann startet dein Download sofort.'
+    : 'You are currently in the Instagram browser, which does not support file downloads.<br><br>Open this page in Safari — your download will start immediately.';
+
+  document.getElementById('instaSteps').innerHTML = isDE
+    ? '<strong class="insta-label">So geht\'s in 2 Schritten</strong>'
+      + '① &nbsp;Tippe auf die <strong>drei Punkte ···</strong> oben rechts<br>'
+      + '② &nbsp;Wähle <strong>„Im Browser öffnen"</strong>'
+    : '<strong class="insta-label">2 simple steps</strong>'
+      + '① &nbsp;Tap the <strong>three dots ···</strong> at the top right<br>'
+      + '② &nbsp;Select <strong>"Open in browser"</strong>';
+
+  document.getElementById('instaNote').textContent = isDE
+    ? '✦  Dein Kauf ist sicher gespeichert — du verlierst nichts.'
+    : '✦  Your purchase is safely saved — nothing will be lost.';
+}
+
+// Detect Instagram in-app browser before consuming the download token
+if (/Instagram/i.test(navigator.userAgent)) {
+  showInstagramWarning();
+} else {
+  init();
+}
 </script>
 </body>
 </html>
