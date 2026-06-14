@@ -1333,28 +1333,7 @@ body.guide-page .nav-burger span { background:var(--espresso); }
 </script>
 <script>
 const API = "https://p16qtw3t37.execute-api.eu-central-1.amazonaws.com";
-function showInAppWarning() {
-  let el = document.getElementById('inapp-warning');
-  if (!el) {
-    el = document.createElement('div');
-    el.id = 'inapp-warning';
-    el.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#3A2420;color:#FAF5F2;padding:20px 24px 28px;text-align:center;font-family:system-ui,sans-serif;font-size:.9rem;line-height:1.6;box-shadow:0 -4px 24px rgba(0,0,0,.3)';
-    el.innerHTML = '<strong style="display:block;font-size:1rem;margin-bottom:8px">Please open in an external browser</strong>'
-      + 'Tap the <strong>three dots ···</strong> in the top right<br>and select <strong>"Open in browser"</strong><br>'
-      + '<span style="font-size:.78rem;opacity:.7;margin-top:8px;display:block">This ensures your purchase and download work smoothly ✦</span>';
-    document.body.appendChild(el);
-  }
-  el.style.display = 'block';
-}
-
 function buyGuide(lang) {
-  const ua = navigator.userAgent || '';
-  const isInApp = /Instagram|FBAN|FBAV|FB_IAB|LinktreeApp|BytedanceWebview|TikTok|Snapchat/i.test(ua)
-    || (/iPhone|iPad|iPod/i.test(ua) && !/Safari/i.test(ua) && /AppleWebKit/i.test(ua));
-  if (isInApp) {
-    showInAppWarning();
-    return;
-  }
   const btns = document.querySelectorAll('[onclick*="buyGuide"]');
   btns.forEach(b => { b.style.pointerEvents = "none"; b.style.opacity = "0.6"; });
   fetch(API + "/create-checkout", {
