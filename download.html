@@ -722,8 +722,11 @@ function showInstagramWarning() {
     : '✦  Your purchase is safely saved — nothing will be lost.';
 }
 
-// Detect Instagram in-app browser before consuming the download token
-if (/Instagram/i.test(navigator.userAgent)) {
+// Detect in-app browsers (Instagram, Facebook, Linktree, TikTok, etc.)
+const _ua = navigator.userAgent || '';
+const _isInApp = /Instagram|FBAN|FBAV|FB_IAB|LinktreeApp|BytedanceWebview|TikTok|Snapchat|Twitter|MicroMessenger/i.test(_ua)
+  || (/iPhone|iPad|iPod/i.test(_ua) && !/Safari/i.test(_ua) && /AppleWebKit/i.test(_ua));
+if (_isInApp) {
   showInstagramWarning();
 } else {
   init();
