@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YYJQ9VV3MZ"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YYJQ9VV3MZ');</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Find Your Path — Mental Clarity & Emotional Release | Neuer Lab</title>
-<meta name="description" content="Not sure where to start? Find your path forward with this guided clarity tool — designed for mental fog, emotional weight, and inner direction.">
+<title>Die 7-Fragen-Standortbestimmung · Neuer Lab</title>
+<meta name="description" content="Sieben Fragen, die dich erkennen lassen, woher deine Gefühlslandschaft kommt. Longevity beginnt nicht im Körper. Kostenloses Arbeitsblatt von Nicola Neuer.">
+<meta name="robots" content="index, follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
@@ -15,10 +16,9 @@
 <link rel="stylesheet" href="assets/css/nav.css">
 <link rel="stylesheet" href="assets/css/footer.css?v=13">
 <link rel="stylesheet" href="assets/css/logo.css">
-<link rel="stylesheet" href="assets/css/sections.css?v=12">
-<link rel="stylesheet" href="assets/css/clarity.css?v=12">
+<link rel="stylesheet" href="assets/css/selbstreflexion.css?v=1">
 </head>
-<body>
+<body class="reflexion-page">
 
 <!-- ─── NAV ──────────────────────────────────────────────────────── -->
 <nav id="navbar" class="scrolled">
@@ -26,7 +26,7 @@
     <span class="nav-logo-name">Neuer Lab</span>
     <span class="nav-logo-sub">Mindset · Spirituality · Longevity</span>
   </a>
-    <ul class="nav-links">
+  <ul class="nav-links">
     <li class="nav-tools-item">
       <button class="nav-tools-trigger" id="navGuideTrigger" aria-expanded="false">Guide <svg class="nav-tools-chevron" width="8" height="5" viewBox="0 0 8 5" fill="none"><path d="M1 1l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <div class="nav-tools-dropdown" id="navGuideDropdown">
@@ -136,58 +136,180 @@
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════
-     CLARITY TOOL
+     DIE 7-FRAGEN-STANDORTBESTIMMUNG
 ═══════════════════════════════════════════════════════════════ -->
-<section id="clarity">
-  <div class="clarity-inner">
+<main id="reflexion">
 
-    <!-- Step 1: Choose -->
-    <div class="clarity-step" id="step1">
-      <div class="clarity-eyebrow">✦ Pre-Session Clarity</div>
-      <h1 class="clarity-question">What do you need<br><em>right now?</em></h1>
-      <p class="clarity-sub">Choose what resonates. There is no wrong answer.</p>
-      <div class="clarity-choices">
-        <button class="clarity-choice" data-path="mental">
-          <div class="choice-symbol">◎</div>
-          <div class="choice-title">Mental Clarity</div>
-          <div class="choice-desc">Dissolve patterns. Sharpen focus. Unlock what holds you back.</div>
-        </button>
-        <button class="clarity-choice" data-path="emotional">
-          <div class="choice-symbol">♡</div>
-          <div class="choice-title">Emotional Release</div>
-          <div class="choice-desc">Process grief. Move stuck energy. Return to ease and wholeness.</div>
-        </button>
-        <button class="clarity-choice" data-path="spiritual">
-          <div class="choice-symbol">✦</div>
-          <div class="choice-title">Spiritual Connection</div>
-          <div class="choice-desc">Reconnect with what lies beyond. Find solace, clarity, and love.</div>
-        </button>
+<!-- ══════════ HERO ══════════ -->
+<header class="r-hero">
+  <div class="wrap">
+    <span class="eyebrow">Neuer Lab · Kostenloses Arbeitsblatt</span>
+
+    <div class="r-hero-grid">
+      <div>
+        <h1>Wo stehst du <em>wirklich?</em></h1>
+
+        <p class="lede">Sieben Fragen, die dich erkennen lassen, woher deine
+        Gefühlslandschaft kommt. Nicht nach Blutwerten. Nach dem, was du spürst.
+        Denn Longevity beginnt nicht im Körper, sondern in der Art und Weise,
+        wie du über dich und das Leben denkst.</p>
+
+        <ul class="gets">
+          <li>Sieben Reflexionsfragen, je eine zu Mindset, Spiritualität, Ernährung,
+              Bewegung, Regeneration, Verbindung und Sinn, samt Auszügen aus dem Buch
+              <i>The Longevity Guide</i></li>
+          <li>Die Fünf-Schritt-Methode, mit der eine Frage tatsächlich etwas verändert</li>
+          <li>Das Longevity-Rad zum Ausfüllen, dein Ausgangspunkt, den du in drei
+              Monaten wieder ansiehst</li>
+        </ul>
+
+        <div class="form-card">
+          <!-- ═══════════════════════════════════════════════════════════
+               HIER DAS FORMULAR DES E-MAIL-TOOLS EINSETZEN.
+               ═══════════════════════════════════════════════════════════ -->
+          <form class="signup" action="#TOOL-FORM-ACTION" method="post" novalidate>
+            <div class="row">
+              <label class="sr" for="email-hero">E-Mail-Adresse</label>
+              <input id="email-hero" type="email" name="email" required
+                     autocomplete="email" placeholder="deine@e-mail.at">
+              <button class="cta" type="submit">Schick mir die sieben Fragen</button>
+            </div>
+            <p class="consent">
+              Du bekommst das Arbeitsblatt per E-Mail und danach etwa einmal pro Woche
+              eine Reflexionsfrage von mir. Abmeldung jederzeit mit einem Klick.
+              <a href="privacy.html">Datenschutz</a>
+            </p>
+          </form>
+          <p class="nospam">Kein Newsletter im üblichen Sinn · Keine Weitergabe deiner Daten</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="mock" role="img"
+             aria-label="Vorschau des Arbeitsblatts: Die 7-Fragen-Standortbestimmung. Kostenloses Arbeitsblatt zur Selbstreflexion.">
+          <span class="m-top">Neuer Lab</span>
+          <div>
+            <div class="m-title">Die 7&nbsp;Fragen<em>Standortbestimmung.</em></div>
+            <div class="m-rule"></div>
+            <div class="m-meta">Mindset · Spiritualität · Longevity<br>12 Seiten · zum Ausdrucken</div>
+          </div>
+          <span class="m-author">Nicola Neuer</span>
+          <span class="m-ribbon">Kostenloses Arbeitsblatt zur Selbstreflexion</span>
+        </div>
       </div>
     </div>
+  </div>
+</header>
 
-    <!-- Step 2: Result (hidden initially) -->
-    <div class="clarity-result" id="result" style="display:none">
-      <button class="result-back" id="resultBack">← Explore other paths</button>
-      <div class="result-path-label" id="resultLabel"></div>
-      <h2 class="result-title" id="resultTitle"></h2>
-      <p class="result-desc" id="resultDesc"></p>
-      <div class="result-affirmation" id="resultAff"></div>
-      <div class="result-practice">
-        <div class="result-practice-label">A moment for you</div>
-        <p id="resultPractice"></p>
-      </div>
-      <p class="result-resonance">If this resonates, you may be ready to go deeper.</p>
-      <div class="result-ctas">
-        <a href="#" class="btn" id="resultCta"></a>
-        <a href="#" class="btn btn-outline" id="resultCtaSecondary"></a>
-      </div>
+<!-- ══════════ WARUM ══════════ -->
+<section class="band">
+  <div class="wrap narrow">
+    <span class="eyebrow">Warum diese sieben Fragen</span>
+    <h2>Die meisten Menschen wissen längst, was <em>gesund wäre.</em></h2>
+
+    <p>Sie haben Bücher gelesen, Podcasts gehört, dreimal angefangen. Das Wissen liegt vor,
+    gelebt wird es nicht. Und irgendwann entsteht dieser Satz: <em>Ich schaffe es
+    sowieso nicht richtig.</em></p>
+
+    <p>Was fehlt, ist selten die Information. Was fehlt, ist die Verbindung zwischen dem
+    Wissen und dem Menschen, der es leben soll. Genau diese Verbindung stellen Reflexionsfragen
+    her, vorausgesetzt, man arbeitet richtig mit ihnen.</p>
+
+    <p>Denn die meisten lesen eine Frage, beantworten sie innerlich in zwei Sekunden und
+    blättern weiter. Das ist der sicherste Weg, nichts zu verändern.</p>
+
+    <div class="pull">
+      <span class="mark">✦ Essenz</span>
+      <p>Die erste Antwort ist meist die vertraute. Die zweite ist ehrlicher.
+      Die dritte beginnt, etwas Neues zu zeigen.</p>
     </div>
-
   </div>
 </section>
 
+<!-- ══════════ WAS DRIN IST ══════════ -->
+<section class="band">
+  <div class="wrap narrow">
+    <span class="eyebrow">Was du bekommst</span>
+    <h2>Zwölf Seiten, die du <em>ausdruckst</em> und beschreibst.</h2>
+
+    <p>Kein E-Book zum Überfliegen. Ein Arbeitsblatt zum Hinsetzen, mit Zeilen, weil
+    handschriftliches Schreiben andere neuronale Netzwerke aktiviert als Tippen. Es verlangsamt
+    den Denkprozess und vertieft ihn.</p>
+
+    <ol class="method">
+      <li><b>Rahmen schaffen</b><span>Zwanzig ungestörte Minuten, Telefon außer Sichtweite,
+      Stift bereit.</span></li>
+      <li><b>Die Frage einatmen</b><span>Zweimal lesen, drei ruhige Atemzüge, beobachten, was
+      in dir reagiert, ohne bereits zu antworten.</span></li>
+      <li><b>Frei schreiben</b><span>Zehn Minuten ohne abzusetzen. Kein Rechtschreib-, kein
+      Logik-, kein Stilanspruch.</span></li>
+      <li><b>Unter die Oberfläche fragen</b><span>Und was liegt darunter? Seit wann glaube ich
+      das? Wem gehört dieser Gedanke eigentlich?</span></li>
+      <li><b>Eine Mikro-Handlung ableiten</b><span>Ein konkreter Schritt für die nächsten
+      achtundvierzig Stunden. Erkenntnis ohne Handlung verpufft.</span></li>
+    </ol>
+
+    <!-- Verweis auf den Guide -->
+    <div class="guide-box">
+      <p>Die sieben Fragen und die Methode sind Auszüge aus <i>The Longevity Guide</i>.
+      Im Buch findest du über fünfzig Reflexionsfragen, mehr als vierzig Übungen, die sieben
+      Säulen ausführlich und einen 30-Tage-Einstieg für alle, die nicht wissen, wo sie
+      anfangen sollen.</p>
+      <a class="btn" href="https://www.neuerlab.com/longevity-guide-de">The Longevity Guide ansehen</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ÜBER NICOLA ══════════ -->
+<section class="band">
+  <div class="wrap">
+    <span class="eyebrow">Wer schreibt hier</span>
+    <div class="about" style="margin-top:22px">
+      <img class="portrait" src="assets/images/nicola.jpg"
+           alt="Nicola Neuer" width="800" height="1000" loading="lazy">
+      <div>
+        <h3>Nicola Neuer</h3>
+        <p>Durch jahrelanges intensives Selbststudium, hunderte Stunden Praxis und eine tiefe
+        Auseinandersetzung mit Wissenschaft und Spiritualität bin ich zu der geworden, die ich
+        heute bin, eine zertifizierte Neuro-Mentaltrainerin und Medium.</p>
+        <p>Heute arbeite ich an der Schnittstelle von Mental Training auf Basis der
+        Neurowissenschaft, Achtsamkeit, spiritueller Praxis und evidenzbasierter Medialität
+        und halte Raum für Transformationen, die fundiert, behutsam und echt sind.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ABSCHLUSS ══════════ -->
+<section class="band r-closing">
+  <div class="wrap narrow">
+    <span class="eyebrow">Jetzt anfangen</span>
+    <h2>Sieben Fragen. Zwanzig Minuten. <em>Ein ehrlicher Blick.</em></h2>
+    <p>Du bekommst das kostenlose Arbeitsblatt sofort nach der Bestätigung als PDF
+    zum Ausdrucken.</p>
+
+    <div class="form-card" style="margin-top:26px">
+      <!-- Zweites Formular, denselben Einbettungscode wie oben verwenden. -->
+      <form class="signup" action="#TOOL-FORM-ACTION" method="post" novalidate>
+        <div class="row">
+          <label class="sr" for="email-closing">E-Mail-Adresse</label>
+          <input id="email-closing" type="email" name="email" required
+                 autocomplete="email" placeholder="deine@e-mail.at">
+          <button class="cta" type="submit">Schick mir die sieben Fragen</button>
+        </div>
+        <p class="consent">
+          Du bekommst das Arbeitsblatt per E-Mail und danach etwa einmal pro Woche
+          eine Reflexionsfrage von mir. Abmeldung jederzeit mit einem Klick.
+          <a href="privacy.html">Datenschutz</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
 <script src="assets/js/nav.js"></script>
-<script src="assets/js/clarity.js"></script>
 <script src="assets/js/footer.js?v=12"></script>
 <script>
 /* Guide dropdown — mirrors Tools dropdown behaviour */

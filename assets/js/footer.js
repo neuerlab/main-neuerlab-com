@@ -36,6 +36,7 @@
           '<div class="footer-col">' +
             '<div class="footer-col-label">Tools</div>' +
             '<nav class="footer-nav footer-nav-col">' +
+              '<a href="' + base + 'selbstreflexion.html">Gratis - 7 Fragen zur Selbstreflexion</a>' +
               '<a href="' + base + 'affirmations.html">Daily Affirmations</a>' +
               '<a href="' + base + 'alignment.html">Daily Alignment</a>' +
               '<a href="' + base + 'clarity.html">Find Your Path</a>' +
@@ -46,6 +47,7 @@
             '<nav class="footer-nav footer-nav-col">' +
               '<a href="' + base + 'longevity-guide.html">The Longevity Guide in English</a>' +
               '<a href="' + base + 'longevity-guide-de.html">The Longevity Guide auf Deutsch</a>' +
+              '<a href="' + base + 'selbstreflexion.html">Kostenloses Selbstreflexions-Arbeitsblatt</a>' +
             '</nav>' +
           '</div>' +
         '</div>' +
