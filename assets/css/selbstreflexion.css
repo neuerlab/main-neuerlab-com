@@ -191,8 +191,8 @@ body.reflexion-page{
 /* ─────────── Über Nicola ─────────── */
 #reflexion .about{display:grid;grid-template-columns:220px 1fr;gap:38px;align-items:start;max-width:800px}
 #reflexion .portrait{
-  width:100%;height:auto;aspect-ratio:4/5;
-  object-fit:cover;object-position:50% 30%;
+  width:100%;height:auto;aspect-ratio:1281/1920;
+  object-fit:cover;object-position:50% 50%;
   display:block;background:var(--r-sand-2);
 }
 #reflexion .about h3{font-family:var(--r-serif);font-weight:500;font-size:1.3rem;margin:0 0 12px;color:var(--r-navy)}
