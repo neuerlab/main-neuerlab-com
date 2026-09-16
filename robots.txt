@@ -13,5 +13,10 @@ Disallow: /gradient-preview.html
 Disallow: /hero-preview
 Disallow: /hero-preview.html
 
+Disallow: /selbstreflexion-bestaetigen
+Disallow: /selbstreflexion-bestaetigen.html
+Disallow: /selbstreflexion-danke
+Disallow: /selbstreflexion-danke.html
+
 # Sitemap location
 Sitemap: https://www.neuerlab.com/sitemap.xml

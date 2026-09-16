@@ -99,4 +99,25 @@
     <priority>0.5</priority>
   </url>
 
+
+  <!-- Selbstreflexion Landing Page -->
+  <url>
+    <loc>https://www.neuerlab.com/selbstreflexion</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Journal: Why You Feel Lost -->
+  <url>
+    <loc>https://www.neuerlab.com/journal/why-you-feel-lost</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Journal: Hidden Cost of Thinking -->
+  <url>
+    <loc>https://www.neuerlab.com/journal/hidden-cost-of-thinking</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
