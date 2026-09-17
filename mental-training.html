@@ -310,6 +310,94 @@ body.mental-training-page .nav-burger span { background:var(--espresso); }
   flex-wrap:wrap;
 }
 
+/* ─── H3 SUBHEADINGS ─────────────────────────────────────────── */
+.page-section-inner h3 {
+  font-family:var(--fd);
+  font-size:1.45rem;
+  font-weight:500;
+  color:var(--espresso);
+  margin-top:36px;
+  margin-bottom:10px;
+}
+.page-section-inner h3:first-child { margin-top:0; }
+
+/* ─── RELATED PATHS GRID ────────────────────────────────────── */
+.page-related-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  margin-top:40px;
+}
+.page-related-card {
+  display:block;
+  text-decoration:none;
+  padding:28px 24px;
+  background:var(--cream);
+  border:1px solid rgba(184,104,90,.10);
+  border-radius:2px;
+  transition:border-color .3s, transform .2s;
+}
+.page-related-card:hover {
+  border-color:var(--gold);
+  transform:translateY(-2px);
+}
+.page-related-card-title {
+  font-family:var(--fd);
+  font-size:1.2rem;
+  font-weight:500;
+  color:var(--espresso);
+  margin-bottom:6px;
+}
+.page-related-card-desc {
+  font-family:var(--fd);
+  font-size:1rem;
+  line-height:1.6;
+  color:var(--cocoa);
+}
+
+/* ─── ARTICLE CALLOUT ───────────────────────────────────────── */
+.page-callout {
+  margin-top:48px;
+  padding:36px 32px;
+  background:var(--cream);
+  border-left:3px solid var(--gold);
+}
+.page-callout-label {
+  font-family:var(--fs);
+  font-size:.58rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:14px;
+}
+.page-callout-title {
+  font-family:var(--fd);
+  font-size:1.3rem;
+  font-weight:500;
+  color:var(--espresso);
+  margin-bottom:10px;
+}
+.page-callout-text {
+  font-family:var(--fd);
+  font-size:1.1rem;
+  line-height:1.8;
+  color:var(--cocoa);
+  margin-bottom:16px;
+}
+.page-callout-link {
+  font-family:var(--fs);
+  font-size:.72rem;
+  font-weight:500;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--gold);
+  text-decoration:none;
+  border-bottom:1px solid var(--gold);
+  padding-bottom:2px;
+  transition:color .3s;
+}
+.page-callout-link:hover { color:var(--rose-deep); border-color:var(--rose-deep); }
+
 /* ─── RESPONSIVE ─────────────────────────────────────────────── */
 @media (max-width:900px) {
   .page-hero-content { padding:0 24px; }
@@ -321,21 +409,102 @@ body.mental-training-page .nav-burger span { background:var(--espresso); }
 </style>
 <!-- ─── SEO: canonical, Open Graph, Twitter Card, favicon ─── -->
 <link rel="canonical" href="https://www.neuerlab.com/mental-training">
-<meta property="og:title" content="Mental Training — Mindset Coach &amp; Limiting Beliefs | Neuer Lab">
-<meta property="og:description" content="1:1 mental training sessions with Nicola Neuer. Dissolve limiting beliefs, clarify your values, and build a mindset that carries you toward your goals. Online.">
+<meta property="og:title" content="1:1 Mental Training &amp; Mindset Coaching with Nicola Neuer | Neuer Lab">
+<meta property="og:description" content="Private mental training sessions that dissolve limiting beliefs and build a mindset that holds under pressure. Online and in person with Nicola Neuer.">
 <meta property="og:url" content="https://www.neuerlab.com/mental-training">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://www.neuerlab.com/assets/images/guide-book-photo-en.png">
 <meta property="og:site_name" content="Neuer Lab">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Mental Training — Mindset Coach &amp; Limiting Beliefs | Neuer Lab">
-<meta name="twitter:description" content="1:1 mental training sessions with Nicola Neuer. Dissolve limiting beliefs, clarify your values, and build a mindset that carries you toward your goals. Online.">
+<meta name="twitter:title" content="1:1 Mental Training &amp; Mindset Coaching with Nicola Neuer | Neuer Lab">
+<meta name="twitter:description" content="Private mental training sessions that dissolve limiting beliefs and build a mindset that holds under pressure. Online and in person with Nicola Neuer.">
 <meta name="twitter:image" content="https://www.neuerlab.com/assets/images/guide-book-photo-en.png">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- ─── Structured Data: Service + FAQPage ─── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "1:1 Mental Training & Mindset Coaching",
+  "description": "Private mental training sessions that dissolve limiting beliefs and build a mindset that holds under pressure. Online and in person with Nicola Neuer.",
+  "provider": {
+    "@type": "Person",
+    "name": "Nicola Neuer",
+    "url": "https://www.neuerlab.com/about"
+  },
+  "areaServed": "Worldwide",
+  "serviceType": "Mental training, mindset coaching, limiting beliefs work",
+  "url": "https://www.neuerlab.com/mental-training",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "price": "0",
+    "priceCurrency": "EUR",
+    "description": "Free 15-minute introductory call",
+    "url": "https://calendar.app.google/biqbVJuuzFLTgKoy7"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this therapy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Mental training works with your thinking patterns and beliefs, and it is forward-looking and solution-oriented. If deeper therapeutic support is needed, Nicola will say so clearly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many sessions do I need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Some people experience significant shifts in a single session. Others choose to work over several months. This is assessed together after the first session."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this available in German?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Sessions are available in both English and German."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long until I see results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many people notice a shift in perspective after the first session. Deeper, lasting change in thinking patterns typically unfolds over three to six sessions as the new mental habits take root."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are sessions online or in person?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sessions are held online via video call, and in person is available on request. Both formats work equally well for mental training."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is mental training evidence-based?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The methods draw on established research in psychological flexibility and acceptance-based interventions. A 2026 meta-analysis of 45 studies with over 16,000 participants found that psychological flexibility and mindfulness are closely intertwined capacities, and that building one tends to strengthen the other."
+      }
+    }
+  ]
+}
+</script>
 </head>
 
 <body class="mental-training-page">
@@ -485,6 +654,20 @@ body.mental-training-page .nav-burger span { background:var(--espresso); }
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════
+     HOW MENTAL TRAINING WORKS
+═══════════════════════════════════════════════════════════════ -->
+<section class="page-section-light">
+  <div class="section-inner">
+    <div class="page-section-inner reveal">
+      <span class="label">The Mechanism</span>
+      <h2>How mental training works</h2>
+      <p>Mental training works with the architecture of your thinking. The beliefs you hold, the values that drive your decisions, the patterns that repeat across years of your life. Most of these were formed long before you had the perspective to question them. The work loosens the patterns that quietly run the show, so that your own judgment, rather than an old script, decides where your energy goes.</p>
+      <p>This approach is grounded in a real research base. A 2026 meta-analysis pooling 45 studies and over 16,000 participants found that psychological flexibility, the capacity to stay with difficult experience while pursuing what matters to you, and mindfulness, the capacity to attend to the present without judgment, are closely intertwined capacities. Where one grows, the other tends to grow. That is exactly the territory mental training works in: building the inner flexibility to hold what is hard, and the clarity to keep moving toward what is real for you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
      THE WORK
 ═══════════════════════════════════════════════════════════════ -->
 <section class="page-section-light">
@@ -492,8 +675,19 @@ body.mental-training-page .nav-burger span { background:var(--espresso); }
     <div class="page-section-inner reveal">
       <span class="label">The Work</span>
       <h2>What we work on together</h2>
-      <p>Mental training is not motivational coaching. It is precise, practical, and deep. Together we work with the specific beliefs and patterns that keep you circling the same results — and replace them with ways of thinking that actually serve where you are going.</p>
-      <p>The work includes dissolving old limiting beliefs at the root, values clarification to understand what truly drives you, solution-oriented exercises to close the gap between where you are and where you want to be, and practices to shift the default tone of your thinking — from resistance to possibility.</p>
+      <p>Mental training is precise, practical, and deep. Together we work with the specific beliefs and patterns that keep you circling the same results, and replace them with ways of thinking that actually serve where you are going.</p>
+
+      <h3>Dissolving limiting beliefs</h3>
+      <p>Most limiting beliefs were never chosen. They were absorbed early, repeated until they felt like fact, and then quietly left in place for decades. "I am not ready yet." "If I succeed, I lose the people I love." "I will be found out." We trace these beliefs to their root and work with them directly, so the thought loses its grip and your own judgment takes its place.</p>
+
+      <h3>Clarifying your values</h3>
+      <p>When you know what actually matters to you, decisions become simpler. Not easy, but clearer. Values clarification is the process of separating what you genuinely care about from what you were taught to care about, and then aligning your choices with what is real.</p>
+
+      <h3>Solution-oriented exercises</h3>
+      <p>Between sessions you work with targeted exercises that close the gap between insight and lived change. Some are written, some are contemplative, all are designed to create real movement in how you think and act.</p>
+
+      <h3>Shifting the default tone of your thinking</h3>
+      <p>Every mind has a default tone, a habitual way of meeting experience. When that tone is resistance, life feels harder than it needs to be. We work to shift it toward openness and possibility, so that your baseline way of meeting the day changes from the inside out.</p>
     </div>
   </div>
 </section>
@@ -518,6 +712,46 @@ body.mental-training-page .nav-burger span { background:var(--espresso); }
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════
+     COMMON PATTERNS
+═══════════════════════════════════════════════════════════════ -->
+<section class="page-section-light">
+  <div class="section-inner">
+    <div class="page-section-inner reveal">
+      <span class="label">Recognise Yourself</span>
+      <h2>Common patterns we dissolve</h2>
+      <p>The beliefs that hold people back tend to follow recognizable shapes. If any of these sound familiar, you are in the right place.</p>
+
+      <h3>"I am not ready yet."</h3>
+      <p>The belief that there is a threshold of readiness you must cross before you are allowed to act, speak, or decide. In practice, readiness comes from doing, and waiting for it is the thing that keeps you stuck.</p>
+
+      <h3>"If I succeed, I lose the people I love."</h3>
+      <p>The fear that growth creates distance. It is one of the most common patterns in ambitious people, and it quietly keeps them smaller than they are, to protect relationships that would likely survive the growth just fine.</p>
+
+      <h3>"I will be found out."</h3>
+      <p>The conviction that your competence is a mistake others will eventually notice. Even when the evidence of your life says otherwise, the feeling persists. We work with the belief directly, addressing the root rather than the feeling it produces.</p>
+
+      <h3>"My past defines what is possible for me."</h3>
+      <p>The assumption that because a pattern has repeated, it must repeat. Patterns repeat because the thinking that produces them has not been examined. Once it is, the pattern can finally shift.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     MENTAL TRAINING VS THERAPY
+═══════════════════════════════════════════════════════════════ -->
+<section class="page-section-blush">
+  <div class="section-inner">
+    <div class="page-section-inner reveal">
+      <span class="label">A Clear Distinction</span>
+      <h2>Mental training vs therapy</h2>
+      <p>Therapy looks backward to understand why a pattern exists. Mental training looks forward to change how you think and act now. Both have their place, and they answer different questions.</p>
+      <p>If you are dealing with trauma, clinical depression, or a mental health condition, therapy is the right first step. Mental training complements therapy beautifully for people who are functionally well but feel held back by patterns of thought. It is practical, present-focused, and built around the life you are trying to build.</p>
+      <p>If we begin working together and it becomes clear that therapeutic support would serve you better, I will say so honestly. The goal is your genuine well-being.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
      A SESSION
 ═══════════════════════════════════════════════════════════════ -->
 <section class="page-section-light">
@@ -525,7 +759,10 @@ body.mental-training-page .nav-burger span { background:var(--espresso); }
     <div class="page-section-inner reveal">
       <span class="label">A Session</span>
       <h2>What a session looks like</h2>
-      <p>Each session is 1:1, 60 minutes, conducted online. We begin with where you are. We work with targeted exercises — some quiet, some active, all designed to create real movement. You leave with clarity, a shifted perspective, and concrete next steps.</p>
+      <p>Each session is 1:1 and 60 minutes, conducted online or in person. We begin with where you are. We work with targeted exercises, some quiet, some active, all designed to create real movement. You leave with clarity, a shifted perspective, and concrete next steps.</p>
+      <p>Before our first full session, we have a free 15-minute introductory call. That is where we meet, you share what brings you to this work, and we decide together whether it is the right fit. There is no pressure and no commitment beyond that call.</p>
+      <p>During a session we may trace a specific belief to its origin, work with a values exercise to clarify what is driving your decisions, or practice a technique you can use between sessions. The work is always tailored to what is alive for you that day, never a scripted curriculum.</p>
+      <p>After the session you receive a brief summary of what we worked on and the practice or exercise to take into the week. The real change happens in the days between sessions, where the new thinking gets tested in your actual life.</p>
     </div>
   </div>
 </section>
@@ -552,6 +789,59 @@ body.mental-training-page .nav-burger span { background:var(--espresso); }
         <summary>Is this available in German?</summary>
         <p>Yes. Sessions are available in both English and German.</p>
       </details>
+      <details class="page-faq-item">
+        <summary>How long until I see results?</summary>
+        <p>Many people notice a shift in perspective after the first session. Deeper, lasting change in thinking patterns typically unfolds over three to six sessions as the new mental habits take root.</p>
+      </details>
+      <details class="page-faq-item">
+        <summary>Are sessions online or in person?</summary>
+        <p>Sessions are held online via video call, and in person is available on request. Both formats work equally well for mental training.</p>
+      </details>
+      <details class="page-faq-item">
+        <summary>Is mental training evidence-based?</summary>
+        <p>The methods draw on established research in psychological flexibility and acceptance-based interventions. A 2026 meta-analysis of 45 studies with over 16,000 participants found that psychological flexibility and mindfulness are closely intertwined capacities, and that building one tends to strengthen the other.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     RELATED PATHS + ARTICLE CALLOUT
+═══════════════════════════════════════════════════════════════ -->
+<section class="page-section-light">
+  <div class="section-inner">
+    <div class="page-section-inner reveal">
+      <span class="label">Related Paths</span>
+      <h2>Where this work leads</h2>
+      <div class="page-related-grid">
+        <a href="alignment.html" class="page-related-card">
+          <div class="page-related-card-title">Daily Alignment</div>
+          <div class="page-related-card-desc">A free three-minute morning practice to arrive, acknowledge, and set your intention.</div>
+        </a>
+        <a href="emotional-release.html" class="page-related-card">
+          <div class="page-related-card-title">Emotional Release</div>
+          <div class="page-related-card-desc">Constellation work and values-based release for what the mind alone cannot reach.</div>
+        </a>
+        <a href="clarity.html" class="page-related-card">
+          <div class="page-related-card-title">Find Your Path</div>
+          <div class="page-related-card-desc">A guided process for mental clarity when you feel uncertain about direction.</div>
+        </a>
+        <a href="longevity-guide" class="page-related-card">
+          <div class="page-related-card-title">The Longevity Guide</div>
+          <div class="page-related-card-desc">The book at the centre of this work. Mindset, meaning, and conscious living.</div>
+        </a>
+        <a href="selbstreflexion" class="page-related-card">
+          <div class="page-related-card-title">Self-Reflection Worksheet</div>
+          <div class="page-related-card-desc">Seven questions for an honest check-in. Free, printable, in German.</div>
+        </a>
+      </div>
+
+      <div class="page-callout">
+        <div class="page-callout-label">Read More</div>
+        <div class="page-callout-title">The Hidden Cost of Constant Thinking</div>
+        <p class="page-callout-text">There is a difference between the thinking mind and the aware mind. Most people never know the second one exists. If mental training interests you, this article explores the same territory from the inside.</p>
+        <a href="journal/hidden-cost-of-thinking.html" class="page-callout-link">Read the article →</a>
+      </div>
     </div>
   </div>
 </section>
