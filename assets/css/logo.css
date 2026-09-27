@@ -24,8 +24,8 @@
 }
 
 /* Scrolled navbar — dark text */
-#navbar.scrolled .nav-logo-name { color:var(--espresso); }
-#navbar.scrolled .nav-logo-sub  { color:var(--gold); }
+#navbar.scrolled .nav-logo-name, body.agent-active #navbar .nav-logo-name { color:var(--espresso); }
+#navbar.scrolled .nav-logo-sub, body.agent-active #navbar .nav-logo-sub { color:var(--gold); }
 
 /* Footer logo — always dark */
 .footer-logo-link {
