@@ -341,6 +341,57 @@ body.emotional-release-page .nav-burger span { background:var(--espresso); }
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- ─── Structured Data: WebSite, Organization, Person, Service ─── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.neuerlab.com/#website",
+      "name": "Neuer Lab",
+      "url": "https://www.neuerlab.com/",
+      "description": "A longevity center where science meets the soul. 1:1 Mental Training, Evidential Mediumship, Emotional Release, Leadership Workshops, and The Longevity Guide workbook by Nicola Neuer.",
+      "publisher": {
+        "@id": "https://www.neuerlab.com/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.neuerlab.com/#organization",
+      "name": "Neuer Lab",
+      "url": "https://www.neuerlab.com/",
+      "description": "A longevity center where science meets the soul. 1:1 Mental Training, Evidential Mediumship, Emotional Release, Leadership Workshops, and The Longevity Guide workbook by Nicola Neuer.",
+      "email": "office@neuerlab.com",
+      "founder": {
+        "@id": "https://www.neuerlab.com/#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.neuerlab.com/#person",
+      "name": "Nicola Neuer",
+      "url": "https://www.neuerlab.com/about",
+      "jobTitle": "Neuro-Mental Coach, Evidential Medium, Author",
+      "worksFor": {
+        "@id": "https://www.neuerlab.com/#organization"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.neuerlab.com/emotional-release#service",
+      "name": "Emotional Release",
+      "description": "1:1 emotional release sessions with Nicola Neuer. Constellation work, values clarification, and affirmation practice to move what has been stored. In person only, in Vienna, Austria, or Nicola travels to you.",
+      "provider": {
+        "@id": "https://www.neuerlab.com/#person"
+      },
+      "areaServed": "Worldwide",
+      "serviceType": "Family constellations, values work, affirmation practice",
+      "url": "https://www.neuerlab.com/emotional-release"
+    }
+  ]
+}
+</script>
 </head>
 
 <body class="emotional-release-page">

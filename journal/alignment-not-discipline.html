@@ -33,6 +33,60 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- ─── Structured Data: WebSite, Organization, Person, Article ─── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.neuerlab.com/#website",
+      "name": "Neuer Lab",
+      "url": "https://www.neuerlab.com/",
+      "description": "A longevity center where science meets the soul. 1:1 Mental Training, Evidential Mediumship, Emotional Release, Leadership Workshops, and The Longevity Guide workbook by Nicola Neuer.",
+      "publisher": {
+        "@id": "https://www.neuerlab.com/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.neuerlab.com/#organization",
+      "name": "Neuer Lab",
+      "url": "https://www.neuerlab.com/",
+      "description": "A longevity center where science meets the soul. 1:1 Mental Training, Evidential Mediumship, Emotional Release, Leadership Workshops, and The Longevity Guide workbook by Nicola Neuer.",
+      "email": "office@neuerlab.com",
+      "founder": {
+        "@id": "https://www.neuerlab.com/#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.neuerlab.com/#person",
+      "name": "Nicola Neuer",
+      "url": "https://www.neuerlab.com/about",
+      "jobTitle": "Neuro-Mental Coach, Evidential Medium, Author",
+      "worksFor": {
+        "@id": "https://www.neuerlab.com/#organization"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://www.neuerlab.com/journal/alignment-not-discipline#article",
+      "headline": "You Don't Need More Discipline, You Need Alignment",
+      "url": "https://www.neuerlab.com/journal/alignment-not-discipline",
+      "datePublished": "2026-02-03",
+      "articleSection": "Burnout & Reset",
+      "inLanguage": "en",
+      "author": {
+        "@id": "https://www.neuerlab.com/#person"
+      },
+      "publisher": {
+        "@id": "https://www.neuerlab.com/#organization"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
