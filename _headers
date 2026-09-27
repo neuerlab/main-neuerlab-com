@@ -1,0 +1,5 @@
+# Set correct Content-Type for Markdown files
+# so they render as text instead of being offered as a download
+/*.md
+  Content-Type: text/markdown; charset=utf-8
+  X-Content-Type-Options: nosniff

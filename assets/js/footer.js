@@ -57,6 +57,7 @@
         '<div class="footer-links">' +
           '<a href="' + base + 'terms.html">Imprint</a>' +
           '<a href="' + base + 'privacy.html">Privacy</a>' +
+          '<button type="button" class="footer-agent-link" title="View this site as Markdown for AI systems"><span class="agent-prompt" aria-hidden="true">&gt;_</span>Agent</button>' +
         '</div>' +
       '</div>' +
     '</div>';
