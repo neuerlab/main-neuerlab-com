@@ -5,6 +5,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://www.neuerlab.com/</loc>
+    <lastmod>2026-09-27</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.neuerlab.com/"/>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -13,6 +14,7 @@
   <!-- Longevity Guide EN -->
   <url>
     <loc>https://www.neuerlab.com/longevity-guide</loc>
+    <lastmod>2026-09-27</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.neuerlab.com/longevity-guide"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.neuerlab.com/longevity-guide-de"/>
     <changefreq>monthly</changefreq>
@@ -22,6 +24,7 @@
   <!-- Longevity Guide DE -->
   <url>
     <loc>https://www.neuerlab.com/longevity-guide-de</loc>
+    <lastmod>2026-09-27</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.neuerlab.com/longevity-guide-de"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.neuerlab.com/longevity-guide"/>
     <changefreq>monthly</changefreq>
@@ -31,18 +34,21 @@
   <!-- Services -->
   <url>
     <loc>https://www.neuerlab.com/mediumship</loc>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.neuerlab.com/mental-training</loc>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.neuerlab.com/emotional-release</loc>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -50,6 +56,7 @@
   <!-- About -->
   <url>
     <loc>https://www.neuerlab.com/about</loc>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -57,25 +64,78 @@
   <!-- Journal index -->
   <url>
     <loc>https://www.neuerlab.com/journal</loc>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Journal articles -->
   <url>
+    <loc>https://www.neuerlab.com/journal/daily-alignment</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.neuerlab.com/journal/the-body-that-rests</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.neuerlab.com/journal/the-practice-of-the-body</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.neuerlab.com/journal/the-forgiving-body</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.neuerlab.com/journal/the-tissue-of-connection</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
     <loc>https://www.neuerlab.com/journal/future-of-healthcare</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://www.neuerlab.com/journal/alignment-not-discipline</loc>
+    <lastmod>2026-02-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://www.neuerlab.com/journal/what-mediumship-really-is</loc>
+    <lastmod>2026-03-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.neuerlab.com/journal/why-you-feel-lost</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.neuerlab.com/journal/hidden-cost-of-thinking</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -83,41 +143,31 @@
   <!-- Tools -->
   <url>
     <loc>https://www.neuerlab.com/alignment</loc>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://www.neuerlab.com/affirmations</loc>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://www.neuerlab.com/clarity</loc>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
 
-
   <!-- Selbstreflexion Landing Page -->
   <url>
     <loc>https://www.neuerlab.com/selbstreflexion</loc>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Journal: Why You Feel Lost -->
-  <url>
-    <loc>https://www.neuerlab.com/journal/why-you-feel-lost</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Journal: Hidden Cost of Thinking -->
-  <url>
-    <loc>https://www.neuerlab.com/journal/hidden-cost-of-thinking</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
 </urlset>
