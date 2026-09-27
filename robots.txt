@@ -18,5 +18,35 @@ Disallow: /selbstreflexion-bestaetigen.html
 Disallow: /selbstreflexion-danke
 Disallow: /selbstreflexion-danke.html
 
+# AI crawlers welcome to index this site
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: meta-externalagent
+User-agent: CCBot
+Allow: /
+Disallow: /download
+Disallow: /download.html
+Disallow: /privacy
+Disallow: /privacy.html
+Disallow: /terms
+Disallow: /terms.html
+Disallow: /gradient-preview
+Disallow: /gradient-preview.html
+Disallow: /hero-preview
+Disallow: /hero-preview.html
+Disallow: /selbstreflexion-bestaetigen
+Disallow: /selbstreflexion-bestaetigen.html
+Disallow: /selbstreflexion-danke
+Disallow: /selbstreflexion-danke.html
+
 # Sitemap location
+# LLM-readable summary of this site: https://www.neuerlab.com/llms.txt
 Sitemap: https://www.neuerlab.com/sitemap.xml
