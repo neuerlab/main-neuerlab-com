@@ -18,7 +18,7 @@ Nicola Neuer is a certified Neuro-Mental Coach, evidential medium, and author of
 
 ## The Longevity Guide
 
-- [The Longevity Guide in English](https://www.neuerlab.com/longevity-guide): A 186-page workbook weaving neuroscience, nourishment, movement and spirit into a living practice. 7 chapters, 43 mindfulness practices, 54 reflection prompts, 30-day beginning. By Nicola Neuer. Launch price EUR 29.
+- [The Longevity Guide in English](https://www.neuerlab.com/longevity-guide): A 186-page workbook weaving neuroscience, nourishment, movement and spirit into a living practice. 7 chapters, 43 mindfulness practices, 54 reflection prompts, 30-day beginning. By Nicola Neuer. EUR 29.
 - [Der Longevity Guide auf Deutsch](https://www.neuerlab.com/longevity-guide-de): The same workbook in German. 186 pages, 7 chapters, 43 practices, 54 reflection prompts. For Germany, Austria and Switzerland.
 
 ## Services
