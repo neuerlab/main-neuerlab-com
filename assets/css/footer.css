@@ -48,6 +48,9 @@ footer { background:var(--petal); border-top:1px solid rgba(184,104,90,.1); padd
   transition:color .3s;
 }
 .footer-bottom .footer-links a:hover { color:var(--gold); }
+.footer-social-divider { width:1px; height:14px; background:rgba(184,104,90,.25); display:inline-block; }
+.footer-social-link { opacity:.7; transition:opacity .3s, color .3s; }
+.footer-social-link:hover { opacity:1 !important; color:var(--gold) !important; }
 
 @media (max-width:900px) {
   .footer-inner { gap:36px; }

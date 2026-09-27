@@ -57,6 +57,9 @@
         '<div class="footer-links">' +
           '<a href="' + base + 'terms.html">Imprint</a>' +
           '<a href="' + base + 'privacy.html">Privacy</a>' +
+          '<span class="footer-social-divider" aria-hidden="true"></span>' +
+          '<a href="https://www.linkedin.com/company/neuer-lab" target="_blank" rel="noopener" class="footer-social-link" title="Neuer Lab on LinkedIn">LinkedIn</a>' +
+          '<a href="https://www.instagram.com/neuer_lab" target="_blank" rel="noopener" class="footer-social-link" title="Neuer Lab on Instagram">Instagram</a>' +
           '<button type="button" class="footer-agent-link" title="View this site as Markdown for AI systems"><span class="agent-prompt" aria-hidden="true">&gt;_</span>Agent</button>' +
         '</div>' +
       '</div>' +
