@@ -34,6 +34,7 @@ footer { background:var(--petal); border-top:1px solid rgba(184,104,90,.1); padd
 }
 .footer-bottom .footer-links {
   display:flex;
+  align-items:center;
   gap:24px;
   justify-content:flex-end;
   margin:0;
