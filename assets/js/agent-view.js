@@ -1,12 +1,13 @@
 // ─── AGENT VIEW ────────────────────────────────────────────────
 // Human/Agent audience toggle. When Agent mode is active, the page's human
 // content is hidden and a Markdown view of /neuer-lab.md is shown instead.
-// #agent in the URL opens Agent view directly.
+// #agent in the URL opens Agent view directly, and is the only thing that does; the
+// choice is never stored, so it never outlives the visit.
 
 (function () {
   'use strict';
 
-  var KEY = 'nl-mode';
+  var KEY = 'nl-mode'; // legacy key, only read to delete it
   var mdLoaded = false;
   var mdText = '';
 
@@ -74,9 +75,14 @@
   function setMode(mode, opts) {
     opts = opts || {};
     apply(mode);
-    try { localStorage.setItem(KEY, mode); } catch (e) {}
-    if (mode !== 'agent' && location.hash === '#agent' && window.history.replaceState) {
-      window.history.replaceState(null, '', location.pathname + location.search);
+    // Deliberately not persisted across visits. The URL is the state, so a shared #agent link
+    // keeps working and a reload stays put, while a fresh visit always opens the human site.
+    if (window.history.replaceState) {
+      if (mode === 'agent' && location.hash !== '#agent') {
+        window.history.replaceState(null, '', location.pathname + location.search + '#agent');
+      } else if (mode !== 'agent' && location.hash === '#agent') {
+        window.history.replaceState(null, '', location.pathname + location.search);
+      }
     }
     if (opts.scroll) window.scrollTo(0, 0);
   }
@@ -117,10 +123,10 @@
   function init() {
     buildAgentView();
 
-    var saved = 'human';
-    try { saved = localStorage.getItem(KEY) === 'agent' ? 'agent' : 'human'; } catch (e) {}
-    if (location.hash === '#agent') saved = 'agent';
-    apply(saved);
+    // Clear the preference this script used to store, so anyone still carrying it is released
+    // from agent view on their next visit.
+    try { localStorage.removeItem(KEY); } catch (e) {}
+    apply(location.hash === '#agent' ? 'agent' : 'human');
   }
 
   if (document.readyState === 'loading') {
