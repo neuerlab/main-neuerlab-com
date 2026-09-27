@@ -11,6 +11,9 @@
   var mdLoaded = false;
   var mdText = '';
 
+  // The heading here is an h2 on purpose. This section is injected as the first child of
+  // <body>, so an h1 would become the first heading a JS-rendering crawler sees and would
+  // outrank the page's own article headline.
   // Build the agent-view section and insert it right after the <body> opening,
   // so it sits beneath the navbar when active.
   function buildAgentView() {
@@ -23,7 +26,7 @@
     section.innerHTML =
       '<div class="agent-wrap">' +
         '<div class="agent-eyebrow"><span aria-hidden="true">&gt;_</span> Agent view</div>' +
-        '<h1 class="agent-title" id="agent-title-h">Neuer Lab,<br><em>in Markdown.</em></h1>' +
+        '<h2 class="agent-title" id="agent-title-h">Neuer Lab,<br><em>in Markdown.</em></h2>' +
         '<p class="agent-explain">A factual summary of the entire site in plain text, for people and AI systems. No hidden instructions, just reference material.</p>' +
         '<div class="agent-actions">' +
           '<button type="button" class="agent-copy" id="agentCopyBtn">Copy Markdown</button>' +
